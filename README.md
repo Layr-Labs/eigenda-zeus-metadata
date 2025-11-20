@@ -1,4 +1,4 @@
-# eigenlayer-contracts-metadata
+# eigenda-zeus-metadata
 
 This repository contains the latest metadata for [layr-labs/eigenda](https://github.com/layr-labs/eigenda). 
 
@@ -18,4 +18,4 @@ This repository is **read-only** and serves as the definitive source for all dep
 
 ## License
 
-This repository is licensed under the same terms as [layr-labs/eigenlayer-contracts](https://github.com/layr-labs/eigenlayer-contracts). See [LICENSE](./LICENSE) for details.
+This repository is licensed under the same terms as [layr-labs/eigenda](https://github.com/layr-labs/eigenda). See [LICENSE](./LICENSE) for details.
