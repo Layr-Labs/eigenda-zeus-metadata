@@ -1,32 +1,11 @@
 {
-  "id": "mainnet",
+  "id": "hoodi",
   "deployedVersion": "unknown",
   "contracts": {
     "static": {
       "PauserRegistry_Impl": {
-        "address": "0x0c431C66F4dE941d089625E5B423D00707977060",
+        "address": "0x82709Af24146467AC3B55AD4b9cf51323302ade0",
         "contract": "PauserRegistry_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "BlsApkRegistry_Proxy": {
-        "singleton": true,
-        "address": "0x00A5Fd09F6CeE6AE9C8b0E5e33287F7c82880505",
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "BlsApkRegistry_Impl": {
-        "address": "0x5d0B9cE2e277Daf508528E9f6Bf6314E79e4eD2b",
-        "contract": "BlsApkRegistry_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
@@ -37,7 +16,7 @@
       },
       "IndexRegistry_Proxy": {
         "singleton": true,
-        "address": "0xBd35a7a1CDeF403a6a99e4E8BA0974D198455030",
+        "address": "0xcBA24F6576dAEA8d9BAA3308C8408849e8d1dF63",
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
           "name": "",
@@ -46,29 +25,8 @@
         }
       },
       "IndexRegistry_Impl": {
-        "address": "0x1ae0b73118906f39D5ED30Ae4A484ce2F479a14c",
+        "address": "0x204f05Bc72f84dBeb11750257faf7586ebd33697",
         "contract": "IndexRegistry_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "StakeRegistry_Proxy": {
-        "singleton": true,
-        "address": "0x006124Ae7976137266feeBFb3F4D2BE4C073139D",
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "StakeRegistry_Impl": {
-        "address": "0x1C468cf7089D263c2f53e2579b329B16aBc4dd96",
-        "contract": "StakeRegistry_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
@@ -79,7 +37,7 @@
       },
       "SocketRegistry_Proxy": {
         "singleton": true,
-        "address": "0x5a3eD432f2De9645940333e4474bBAAB8cf64cf2",
+        "address": "0x108e0D939802f060659758851f1B259D9c0170cC",
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
           "name": "",
@@ -88,8 +46,50 @@
         }
       },
       "SocketRegistry_Impl": {
-        "address": "0x5b60105ceD5207D6ad217BF2d426e133454eCFB4",
+        "address": "0xf43D40E50299178ECBfCd955cffFBc1a01E649e0",
         "contract": "SocketRegistry_Impl",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "BlsApkRegistry_Proxy": {
+        "singleton": true,
+        "address": "0xe175Eae102Dda253c00d921fd49657CdA94AC003",
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "BlsApkRegistry_Impl": {
+        "address": "0xf5cdc3f1Cd861CC8cDeEeeA6eC82BfC960e9d39f",
+        "contract": "BlsApkRegistry_Impl",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "StakeRegistry_Proxy": {
+        "singleton": true,
+        "address": "0xdC529F6E864AB6213741Cd7d7e93BB7d8a88c9b2",
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "StakeRegistry_Impl": {
+        "address": "0x7f1ecE48B2970DC801f6b4bE0127B39E3E04C3f9",
+        "contract": "StakeRegistry_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
@@ -100,7 +100,7 @@
       },
       "RegistryCoordinator_Proxy": {
         "singleton": true,
-        "address": "0x0BAAc79acD45A023E19345c352d8a7a83C4e5656",
+        "address": "0xB5b76D561eeF36CD772890C94C6Bde8b895455e2",
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
           "name": "",
@@ -109,61 +109,8 @@
         }
       },
       "RegistryCoordinator_Impl": {
-        "address": "0x2088435ABcB1234A9427B755931C9064C93a2595",
+        "address": "0x857760850d7f64386Bdb62A0ef313779742810Fa",
         "contract": "RegistryCoordinator_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "EjectionManager_Proxy": {
-        "singleton": true,
-        "address": "0x130d8EA0052B45554e4C99079B84df292149Bd5E",
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "EjectionManager_Impl": {
-        "address": "0xC125fECDDabFe13f29EB287Bb8551892AEE7C98A",
-        "contract": "EjectionManager_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "ServiceManager_Proxy": {
-        "singleton": true,
-        "address": "0x870679E138bCdf293b7Ff14dD44b70FC97e12fc0",
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "ServiceManager_Impl": {
-        "address": "0xae448D008B6F69033AfdA361b46b36C472B6FEE0",
-        "contract": "ServiceManager_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "OperatorStateRetriever_Impl": {
-        "address": "0xEC35aa6521d23479318104E10B4aA216DBBE63Ce",
-        "contract": "OperatorStateRetriever_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
@@ -174,7 +121,7 @@
       },
       "ThresholdRegistry_Proxy": {
         "singleton": true,
-        "address": "0xdb4c89956eEa6F606135E7d366322F2bDE609F15",
+        "address": "0x4Bc2E03A7a14c203031F3A1Edf2b41f83296f55a",
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
           "name": "",
@@ -183,7 +130,7 @@
         }
       },
       "ThresholdRegistry_Impl": {
-        "address": "0x92104977f16dAe423966caa5cD9C115F2D25a8D6",
+        "address": "0x2411bb237a40e95c36ba47A91129b689b4C58988",
         "contract": "ThresholdRegistry_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
@@ -195,7 +142,7 @@
       },
       "RelayRegistry_Proxy": {
         "singleton": true,
-        "address": "0xD160e6C1543f562fc2B0A5bf090aED32640Ec55B",
+        "address": "0xA4B7d142Ab1F73763f58364b146e60E108eDa705",
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
           "name": "",
@@ -204,7 +151,7 @@
         }
       },
       "RelayRegistry_Impl": {
-        "address": "0xF6D82FBBdf700c086389e72C3023812e956ECa9e",
+        "address": "0x69167D25d4Bbd72c61BC40761Fc5D6834fa8F67a",
         "contract": "RelayRegistry_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
@@ -216,7 +163,7 @@
       },
       "DisperserRegistry_Proxy": {
         "singleton": true,
-        "address": "0x78cb05379a3b66E5227f2C1496432D7FFE794Fad",
+        "address": "0xBE414375C8053E777BaabaF736d7F9f469136a62",
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
           "name": "",
@@ -225,8 +172,29 @@
         }
       },
       "DisperserRegistry_Impl": {
-        "address": "0x7DECf99BE82Ea4Cf72F381a5fCBc04228955FBE5",
+        "address": "0xc23e8Fc2113e2dA6B30A0dE16227C6399340031e",
         "contract": "DisperserRegistry_Impl",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "ServiceManager_Proxy": {
+        "singleton": true,
+        "address": "0x3FF2204A567C15dC3731140B95362ABb4b17d8ED",
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "ServiceManager_Impl": {
+        "address": "0x84063ACb999629e8a5B391b39fc9DF019627FEb4",
+        "contract": "ServiceManager_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
@@ -237,7 +205,7 @@
       },
       "PaymentVault_Proxy": {
         "singleton": true,
-        "address": "0xb2e7ef419a2A399472ae22ef5cFcCb8bE97A4B05",
+        "address": "0xc043730ec3069171961aB995801f230d70B2bFb2",
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
           "name": "",
@@ -246,7 +214,7 @@
         }
       },
       "PaymentVault_Impl": {
-        "address": "0x62242213E6FA34E943844f9B3124150EFb9CB0dD",
+        "address": "0xC179EB2dC024ABEF62D52eF466906bC9D7952bE3",
         "contract": "PaymentVault_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
@@ -256,8 +224,40 @@
           "segment": 0
         }
       },
+      "EjectionManager_Proxy": {
+        "singleton": true,
+        "address": "0x3e48f73A63b488B88d26677c383DeEE15A9ab55b",
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "EjectionManager_Impl": {
+        "address": "0x860E7B8FcCBB2B1BE350F6A836C6eAF73eb45b96",
+        "contract": "EjectionManager_Impl",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "OperatorStateRetriever_Impl": {
+        "address": "0xd0f7FFE228e0D1D47f9df5726ad06FEd01bb9A1E",
+        "contract": "OperatorStateRetriever_Impl",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
       "CertVerifier_Impl": {
-        "address": "0x61692e93b6B045c444e942A91EcD1527F23A3FB7",
+        "address": "0xe0F78542A950A8695f43B19Ad1Db654249e12643",
         "contract": "CertVerifier_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
@@ -269,7 +269,7 @@
       },
       "CertVerifierRouter_Proxy": {
         "singleton": true,
-        "address": "0x1be7258230250Bc6a4548F8D59d576a87D216C12",
+        "address": "0x87Fe54C70B8bbf2F18a52c744e8CD6421D730d78",
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
           "name": "",
@@ -278,7 +278,7 @@
         }
       },
       "CertVerifierRouter_Impl": {
-        "address": "0xff35F7DC73F7fA664910Ab58200dFD4129F1D9E0",
+        "address": "0xC8e12c1Cab33C5d5F4afd311BdC60f2aEe10D6cd",
         "contract": "CertVerifierRouter_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
@@ -288,31 +288,9 @@
           "segment": 0
         }
       },
-      "CertVerifierLegacyV1_Impl": {
-        "address": "0xE1Ae45810A738F13e70Ac8966354d7D0feCF7BD6",
-        "contract": "CertVerifierLegacyV1_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "CertVerifierLegacyV2_Impl": {
-        "address": "0xE1Ae45810A738F13e70Ac8966354d7D0feCF7BD6",
-        "contract": "CertVerifierLegacyV2_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
-      "AccessControl_Impl": {
-        "address": "0xF8B9aeEe0681a37c1C2960DE74481d6FD724CE51",
-        "contract": "AccessControl_Impl",
+      "EigenDaEjectionManager_Impl": {
+        "address": "0x7A0D6553941BFc3864E5EEdEa7B2d9EA6Eb5883E",
+        "contract": "EigenDaEjectionManager_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
@@ -325,5 +303,5 @@
     "instances": []
   },
   "latestDeployedCommit": "",
-  "chainId": 1
+  "chainId": 15084
 }
