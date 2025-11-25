@@ -256,17 +256,6 @@
           "segment": 0
         }
       },
-      "EjectionManager_Impl": {
-        "address": "0x860E7B8FcCBB2B1BE350F6A836C6eAF73eb45b96",
-        "contract": "EjectionManager_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
       "OperatorStateRetriever_Impl": {
         "address": "0xd0f7FFE228e0D1D47f9df5726ad06FEd01bb9A1E",
         "contract": "OperatorStateRetriever_Impl",
@@ -310,9 +299,9 @@
           "segment": 0
         }
       },
-      "EigenDaEjectionManager_Impl": {
+      "EjectionManager_Impl": {
         "address": "0x7A0D6553941BFc3864E5EEdEa7B2d9EA6Eb5883E",
-        "contract": "EigenDaEjectionManager_Impl",
+        "contract": "EjectionManager_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {

@@ -151,17 +151,6 @@
           "segment": 0
         }
       },
-      "EjectionManager_Impl": {
-        "address": "0x77d9df8bbcD3215B20a84C39b15c177035Ae5571",
-        "contract": "EjectionManager_Impl",
-        "singleton": true,
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
       "ServiceManager_Proxy": {
         "singleton": true,
         "address": "0x3a5acf46ba6890B8536420F4900AC9BC45Df4764",
@@ -343,9 +332,9 @@
           "segment": 0
         }
       },
-      "EigenDaEjectionManager_Impl": {
+      "EjectionManager_Impl": {
         "address": "0xFA4403511612C5C0bD77906CC472ed25cAfcCd28",
-        "contract": "EigenDaEjectionManager_Impl",
+        "contract": "EjectionManager_Impl",
         "singleton": true,
         "deployedBytecodeHash": "0x",
         "lastUpdatedIn": {
