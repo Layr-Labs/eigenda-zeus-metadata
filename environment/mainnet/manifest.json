@@ -342,28 +342,28 @@
           "phase": "",
           "segment": 0
         }
-      }
-    },
-    "AVSDirectory_Proxy": {
-      "address": "0x135dda560e946695d6f155dacafc6f1f25c1f5af",
-      "contract": "AVSDirectory_Proxy",
-      "singleton": true,
-      "deployedBytecodeHash": "0x",
-      "lastUpdatedIn": {
-        "name": "",
-        "phase": "",
-        "segment": 0
-      }
-    },
-    "RewardsCoordinator_Proxy": {
-      "address": "0x7750d328b314EfFa365A0402CcfD489B80B0adda",
-      "contract": "RewardsCoordinator_Proxy",
-      "singleton": true,
-      "deployedBytecodeHash": "0x",
-      "lastUpdatedIn": {
-        "name": "",
-        "phase": "",
-        "segment": 0
+      },
+      "AVSDirectory_Proxy": {
+        "address": "0x135dda560e946695d6f155dacafc6f1f25c1f5af",
+        "contract": "AVSDirectory_Proxy",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "RewardsCoordinator_Proxy": {
+        "address": "0x7750d328b314EfFa365A0402CcfD489B80B0adda",
+        "contract": "RewardsCoordinator_Proxy",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
       }
     },
     "instances": []
