@@ -331,6 +331,17 @@
           "phase": "",
           "segment": 0
         }
+      },
+      "Owner_Impl": {
+        "address": "0x72447Fea3354F525263F36544A548982e64F230C",
+        "contract": "Owner_Impl",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
       }
     },
     "instances": []
