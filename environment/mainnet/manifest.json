@@ -3,6 +3,28 @@
   "deployedVersion": "unknown",
   "contracts": {
     "static": {
+      "Directory_Proxy": {
+        "address": "0x64AB2e9A86FA2E183CB6f01B2D4050c1c2dFAad4",
+        "contract": "Directory_Proxy",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
+      "Directory_Impl": {
+        "address": "0x2E93b67585542124692Cf6BABE761a5C212692d4",
+        "contract": "Directory_Impl",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
       "PauserRegistry_Impl": {
         "address": "0x0c431C66F4dE941d089625E5B423D00707977060",
         "contract": "PauserRegistry_Impl",
@@ -320,6 +342,28 @@
           "phase": "",
           "segment": 0
         }
+      }
+    },
+    "AVSDirectory_Proxy": {
+      "address": "0x135dda560e946695d6f155dacafc6f1f25c1f5af",
+      "contract": "AVSDirectory_Proxy",
+      "singleton": true,
+      "deployedBytecodeHash": "0x",
+      "lastUpdatedIn": {
+        "name": "",
+        "phase": "",
+        "segment": 0
+      }
+    },
+    "RewardsCoordinator_Proxy": {
+      "address": "0x7750d328b314EfFa365A0402CcfD489B80B0adda",
+      "contract": "RewardsCoordinator_Proxy",
+      "singleton": true,
+      "deployedBytecodeHash": "0x",
+      "lastUpdatedIn": {
+        "name": "",
+        "phase": "",
+        "segment": 0
       }
     },
     "instances": []
