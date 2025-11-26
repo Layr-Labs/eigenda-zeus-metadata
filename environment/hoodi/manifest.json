@@ -342,6 +342,17 @@
           "phase": "",
           "segment": 0
         }
+      },
+      "ProxyAdmin_Impl": {
+        "address": "0x9186f2E2703b7d70f5DB24eB67693c1231936424",
+        "contract": "ProxyAdmin_Impl",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
       }
     },
     "instances": []
