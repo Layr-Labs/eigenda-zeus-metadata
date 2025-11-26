@@ -17,7 +17,7 @@
   "metadata": [],
   "upgrade": "v2.4.1-access-control-migration",
   "upgradePath": "script/releases/v2.4.1-access-control-migration",
-  "phase": "",
+  "phase": "eoa_validate",
   "chainId": 15084,
   "startTime": "Wed Nov 26 2025 16:17:41 GMT-0500 (Eastern Standard Time)",
   "startTimestamp": 1764191861.152
