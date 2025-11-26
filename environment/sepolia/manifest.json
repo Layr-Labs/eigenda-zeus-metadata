@@ -365,6 +365,17 @@
           "segment": 0
         }
       },
+      "DelegationManager_Proxy": {
+        "address": "0xD4A7E1Bd8015057293f0D0A557088c286942e84b",
+        "contract": "DelegationManager_Proxy",
+        "singleton": true,
+        "deployedBytecodeHash": "0x",
+        "lastUpdatedIn": {
+          "name": "",
+          "phase": "",
+          "segment": 0
+        }
+      },
       "ProxyAdmin_Impl": {
         "address": "0x562480eBb8B43474BCD864d827E7fA511D929F16",
         "contract": "ProxyAdmin_Impl",
