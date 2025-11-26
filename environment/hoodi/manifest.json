@@ -1,6 +1,6 @@
 {
   "id": "hoodi",
-  "deployedVersion": "unknown",
+  "deployedVersion": "0.0.0",
   "contracts": {
     "static": {
       "Directory_Proxy": {
