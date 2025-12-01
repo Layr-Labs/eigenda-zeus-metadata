@@ -16,7 +16,7 @@
   ],
   "metadata": [],
   "upgrade": "v2.4.1-access-control-migration",
-  "upgradePath": "contracts/script/releases/v2.4.1-access-control-migration",
+  "upgradePath": "script/releases/v2.4.1-access-control-migration",
   "phase": "",
   "chainId": 560048,
   "startTime": "Mon Dec 01 2025 12:56:59 GMT-0500 (Eastern Standard Time)",
