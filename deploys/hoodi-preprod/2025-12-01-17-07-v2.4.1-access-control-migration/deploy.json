@@ -1,0 +1,24 @@
+{
+  "name": "2025-12-01-17-07-v2.4.1-access-control-migration",
+  "env": "hoodi-preprod",
+  "segmentId": 0,
+  "segments": [
+    {
+      "type": "eoa",
+      "filename": "1-DeployImplementations.s.sol",
+      "id": 0
+    },
+    {
+      "type": "eoa",
+      "filename": "2-ExecuteUpgrade.s.sol",
+      "id": 1
+    }
+  ],
+  "metadata": [],
+  "upgrade": "v2.4.1-access-control-migration",
+  "upgradePath": "script/releases/v2.4.1-access-control-migration",
+  "phase": "",
+  "chainId": 560048,
+  "startTime": "Mon Dec 01 2025 17:07:59 GMT-0500 (Eastern Standard Time)",
+  "startTimestamp": 1764626879.325
+}
