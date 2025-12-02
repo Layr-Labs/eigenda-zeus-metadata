@@ -14,10 +14,94 @@
       "id": 1
     }
   ],
-  "metadata": [],
+  "metadata": [
+    {
+      "type": "eoa",
+      "signer": "0x72447Fea3354F525263F36544A548982e64F230C",
+      "transactions": [],
+      "deployments": [
+        {
+          "address": "0x405e082d8D63D3ef15988557748B70569067b0Ca",
+          "contract": "AccessControl_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0x9A01e032Eba5d5C32d6E68b8CAc294A11506D173",
+          "contract": "BlsApkRegistry_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0xcf812b078d5eCe3A124b1EC77094B01d8faF509F",
+          "contract": "CertVerifierRouter_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0xE51d9a9C4f2684aa7f57d9AA426C2d707Fbfb893",
+          "contract": "Directory_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0x0c95Fa6345566B1A1de8DdEb94c0c83A3f061984",
+          "contract": "DisperserRegistry_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0xdd9482c254Ce828a445Bc497eDE97e518a13F20b",
+          "contract": "IndexRegistry_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0x031BB4bd5BCe55a4d0701C518fbE6138905B9ea5",
+          "contract": "OperatorStateRetriever_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0xb64596191A9235199Bdc3e1FcE5F1D161Ff6dBa2",
+          "contract": "PauserRegistry_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0xFA12D3e63429C190dc3a9AAbEC109eF54867C634",
+          "contract": "PaymentVault_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0xEf50E960600916BB6655dF1B067bd090e17bDd4B",
+          "contract": "RegistryCoordinator_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0xd5aA25c070DAE3204e969323B80ae1B09c50914e",
+          "contract": "RelayRegistry_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0x37bEf9661092AA659124513C7De2d3e87015f511",
+          "contract": "ServiceManager_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0x680095f8525006fb602a780Fc7cFD77c3d66132b",
+          "contract": "SocketRegistry_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0xbA52d6A9DF35565dce82fB258aaf0B6014D44e81",
+          "contract": "StakeRegistry_Impl",
+          "singleton": true
+        },
+        {
+          "address": "0x747bdb23d1C77E1D4f5526609E8c9274266E636c",
+          "contract": "ThresholdRegistry_Impl",
+          "singleton": true
+        }
+      ],
+      "confirmed": false
+    }
+  ],
   "upgrade": "v2.4.1-access-control-migration",
   "upgradePath": "script/releases/v2.4.1-access-control-migration",
-  "phase": "eoa_start",
+  "phase": "eoa_wait_confirm",
   "chainId": 560048,
   "startTime": "Tue Dec 02 2025 10:09:25 GMT-0500 (Eastern Standard Time)",
   "startTimestamp": 1764688165.311
