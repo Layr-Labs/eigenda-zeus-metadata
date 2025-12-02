@@ -1,6 +1,7 @@
 {
   "id": "sepolia",
   "deployedVersion": "0.0.0",
+  "prefix": "EigenDA",
   "contracts": {
     "static": {
       "Directory_Proxy": {
