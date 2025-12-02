@@ -97,11 +97,18 @@
         }
       ],
       "confirmed": true
+    },
+    {
+      "type": "eoa",
+      "signer": "0x72447Fea3354F525263F36544A548982e64F230C",
+      "transactions": [],
+      "deployments": [],
+      "confirmed": false
     }
   ],
   "upgrade": "v2.4.1-access-control-migration",
   "upgradePath": "script/releases/v2.4.1-access-control-migration",
-  "phase": "eoa_start",
+  "phase": "eoa_wait_confirm",
   "chainId": 560048,
   "startTime": "Tue Dec 02 2025 12:55:47 GMT-0500 (Eastern Standard Time)",
   "startTimestamp": 1764698147.476
