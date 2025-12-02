@@ -1,0 +1,674 @@
+{
+  "abi": [
+    {
+      "type": "function",
+      "name": "addCertVerifier",
+      "inputs": [
+        {
+          "name": "activationBlockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        },
+        {
+          "name": "certVerifier",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "certVerifierABNs",
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "certVerifiers",
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "checkDACert",
+      "inputs": [
+        {
+          "name": "abiEncodedCert",
+          "type": "bytes",
+          "internalType": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getCertVerifierAt",
+      "inputs": [
+        {
+          "name": "referenceBlockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "initialize",
+      "inputs": [
+        {
+          "name": "initialOwner",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "initABNs",
+          "type": "uint32[]",
+          "internalType": "uint32[]"
+        },
+        {
+          "name": "initCertVerifiers",
+          "type": "address[]",
+          "internalType": "address[]"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "owner",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "renounceOwnership",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "transferOwnership",
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "event",
+      "name": "CertVerifierAdded",
+      "inputs": [
+        {
+          "name": "activationBlockNumber",
+          "type": "uint32",
+          "indexed": true,
+          "internalType": "uint32"
+        },
+        {
+          "name": "certVerifier",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "Initialized",
+      "inputs": [
+        {
+          "name": "version",
+          "type": "uint8",
+          "indexed": false,
+          "internalType": "uint8"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "OwnershipTransferred",
+      "inputs": [
+        {
+          "name": "previousOwner",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "newOwner",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "error",
+      "name": "ABNNotGreaterThanLast",
+      "inputs": [
+        {
+          "name": "activationBlockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ]
+    },
+    {
+      "type": "error",
+      "name": "ABNNotInFuture",
+      "inputs": [
+        {
+          "name": "activationBlockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ]
+    },
+    {
+      "type": "error",
+      "name": "InvalidCertLength",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "LengthMismatch",
+      "inputs": []
+    },
+    {
+      "type": "error",
+      "name": "RBNInFuture",
+      "inputs": [
+        {
+          "name": "referenceBlockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ]
+    }
+  ],
+  "bytecode": {
+    "object": "0x6080604052348015600e575f5ffd5b50610ba28061001c5f395ff3fe608060405234801561000f575f5ffd5b5060043610610090575f3560e01c80639077193b116100635780639077193b146101075780639d8ecd851461012c578063bfda00de1461013f578063f0df66df14610152578063f2fde38b1461017a575f5ffd5b80634a4ae0e2146100945780634c046566146100c4578063715018a6146100ec5780638da5cb5b146100f6575b5f5ffd5b6100a76100a2366004610814565b61018d565b6040516001600160a01b0390911681526020015b60405180910390f35b6100a76100d2366004610814565b60656020525f90815260409020546001600160a01b031681565b6100f46101bf565b005b6033546001600160a01b03166100a7565b61011a61011536600461082d565b6101d2565b60405160ff90911681526020016100bb565b6100f461013a36600461098a565b610255565b6100f461014d366004610a5c565b61044b565b610165610160366004610a8d565b610506565b60405163ffffffff90911681526020016100bb565b6100f4610188366004610aa4565b61053d565b5f60655f61019a846105b6565b63ffffffff16815260208101919091526040015f20546001600160a01b031692915050565b6101c7610666565b6101d05f6106c0565b565b5f6101e06100a28484610711565b6001600160a01b0316639077193b84846040518363ffffffff1660e01b815260040161020d929190610abd565b602060405180830381865afa158015610228573d5f5f3e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061024c9190610aeb565b90505b92915050565b5f54600290610100900460ff1615801561027557505f5460ff8083169116105b6102dd5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b60648201526084015b60405180910390fd5b5f805461ffff191660ff8316176101001790556102f9846106c0565b815183511461031e576040516001621398b960e31b0319815260040160405180910390fd5b5f5f5b8451811015610403578185828151811061033d5761033d610b12565b602002602001015163ffffffff161115801561035857505f81115b1561039d5784818151811061036f5761036f610b12565b602002602001015160405163faf9cb6960e01b81526004016102d4919063ffffffff91909116815260200190565b8481815181106103af576103af610b12565b602002602001015163ffffffff1691506103fb8582815181106103d4576103d4610b12565b60200260200101518583815181106103ee576103ee610b12565b602002602001015161074f565b600101610321565b50505f805461ff001916905560405160ff821681527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a150505050565b610453610666565b438263ffffffff161161048157604051631549aaf560e21b815263ffffffff831660048201526024016102d4565b6066805461049190600190610b26565b815481106104a1576104a1610b12565b905f5260205f2090600891828204019190066004029054906101000a900463ffffffff1663ffffffff168263ffffffff16116104f85760405163faf9cb6960e01b815263ffffffff831660048201526024016102d4565b610502828261074f565b5050565b60668181548110610515575f80fd5b905f5260205f209060089182820401919006600402915054906101000a900463ffffffff1681565b610545610666565b6001600160a01b0381166105aa5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b60648201526084016102d4565b6105b3816106c0565b50565b5f438263ffffffff1611156105e6576040516311fea51560e21b815263ffffffff831660048201526024016102d4565b6066545f906105f790600190610b26565b90505f5b60665481101561065f5760666106118284610b26565b8154811061062157610621610b12565b5f918252602090912060088204015460079091166004026101000a900463ffffffff908116935084168311610657575050919050565b6001016105fb565b5050919050565b6033546001600160a01b031633146101d05760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064016102d4565b603380546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0905f90a35050565b5f6060821015610734576040516303af3ba560e51b815260040160405180910390fd5b610742606060408486610b45565b81019061024c9190610814565b63ffffffff8281165f8181526065602052604080822080546001600160a01b0319166001600160a01b038716908117909155606680546001810182559084527f46501879b8ca8525e8c2fd519e2fbfcfa2ebea26501294aa02cbfcfb12e943546008820401805460079092166004026101000a9687021990911695850295909517909455517f3c87ded09f10478b3e4c40df4329a85dc74ce5f77d000d69a438e6af6096b0e29190a35050565b803563ffffffff8116811461080f575f5ffd5b919050565b5f60208284031215610824575f5ffd5b61024c826107fc565b5f5f6020838503121561083e575f5ffd5b823567ffffffffffffffff811115610854575f5ffd5b8301601f81018513610864575f5ffd5b803567ffffffffffffffff81111561087a575f5ffd5b85602082840101111561088b575f5ffd5b6020919091019590945092505050565b80356001600160a01b038116811461080f575f5ffd5b634e487b7160e01b5f52604160045260245ffd5b604051601f8201601f1916810167ffffffffffffffff811182821017156108ee576108ee6108b1565b604052919050565b5f67ffffffffffffffff82111561090f5761090f6108b1565b5060051b60200190565b5f82601f830112610928575f5ffd5b813561093b610936826108f6565b6108c5565b8082825260208201915060208360051b86010192508583111561095c575f5ffd5b602085015b83811015610980576109728161089b565b835260209283019201610961565b5095945050505050565b5f5f5f6060848603121561099c575f5ffd5b6109a58461089b565b9250602084013567ffffffffffffffff8111156109c0575f5ffd5b8401601f810186136109d0575f5ffd5b80356109de610936826108f6565b8082825260208201915060208360051b8501019250888311156109ff575f5ffd5b6020840193505b82841015610a2857610a17846107fc565b825260209384019390910190610a06565b9450505050604084013567ffffffffffffffff811115610a46575f5ffd5b610a5286828701610919565b9150509250925092565b5f5f60408385031215610a6d575f5ffd5b610a76836107fc565b9150610a846020840161089b565b90509250929050565b5f60208284031215610a9d575f5ffd5b5035919050565b5f60208284031215610ab4575f5ffd5b61024c8261089b565b60208152816020820152818360408301375f818301604090810191909152601f909201601f19160101919050565b5f60208284031215610afb575f5ffd5b815160ff81168114610b0b575f5ffd5b9392505050565b634e487b7160e01b5f52603260045260245ffd5b8181038181111561024f57634e487b7160e01b5f52601160045260245ffd5b5f5f85851115610b53575f5ffd5b83861115610b5f575f5ffd5b505082019391909203915056fea2646970667358221220593b756ef2fa73af2e9398b4da7557ad3a1ffd854f71ce87bb2eddaddce567a464736f6c634300081d0033",
+    "sourceMap": "385:5502:225:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561000f575f5ffd5b5060043610610090575f3560e01c80639077193b116100635780639077193b146101075780639d8ecd851461012c578063bfda00de1461013f578063f0df66df14610152578063f2fde38b1461017a575f5ffd5b80634a4ae0e2146100945780634c046566146100c4578063715018a6146100ec5780638da5cb5b146100f6575b5f5ffd5b6100a76100a2366004610814565b61018d565b6040516001600160a01b0390911681526020015b60405180910390f35b6100a76100d2366004610814565b60656020525f90815260409020546001600160a01b031681565b6100f46101bf565b005b6033546001600160a01b03166100a7565b61011a61011536600461082d565b6101d2565b60405160ff90911681526020016100bb565b6100f461013a36600461098a565b610255565b6100f461014d366004610a5c565b61044b565b610165610160366004610a8d565b610506565b60405163ffffffff90911681526020016100bb565b6100f4610188366004610aa4565b61053d565b5f60655f61019a846105b6565b63ffffffff16815260208101919091526040015f20546001600160a01b031692915050565b6101c7610666565b6101d05f6106c0565b565b5f6101e06100a28484610711565b6001600160a01b0316639077193b84846040518363ffffffff1660e01b815260040161020d929190610abd565b602060405180830381865afa158015610228573d5f5f3e3d5ffd5b505050506040513d601f19601f8201168201806040525081019061024c9190610aeb565b90505b92915050565b5f54600290610100900460ff1615801561027557505f5460ff8083169116105b6102dd5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b60648201526084015b60405180910390fd5b5f805461ffff191660ff8316176101001790556102f9846106c0565b815183511461031e576040516001621398b960e31b0319815260040160405180910390fd5b5f5f5b8451811015610403578185828151811061033d5761033d610b12565b602002602001015163ffffffff161115801561035857505f81115b1561039d5784818151811061036f5761036f610b12565b602002602001015160405163faf9cb6960e01b81526004016102d4919063ffffffff91909116815260200190565b8481815181106103af576103af610b12565b602002602001015163ffffffff1691506103fb8582815181106103d4576103d4610b12565b60200260200101518583815181106103ee576103ee610b12565b602002602001015161074f565b600101610321565b50505f805461ff001916905560405160ff821681527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a150505050565b610453610666565b438263ffffffff161161048157604051631549aaf560e21b815263ffffffff831660048201526024016102d4565b6066805461049190600190610b26565b815481106104a1576104a1610b12565b905f5260205f2090600891828204019190066004029054906101000a900463ffffffff1663ffffffff168263ffffffff16116104f85760405163faf9cb6960e01b815263ffffffff831660048201526024016102d4565b610502828261074f565b5050565b60668181548110610515575f80fd5b905f5260205f209060089182820401919006600402915054906101000a900463ffffffff1681565b610545610666565b6001600160a01b0381166105aa5760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b60648201526084016102d4565b6105b3816106c0565b50565b5f438263ffffffff1611156105e6576040516311fea51560e21b815263ffffffff831660048201526024016102d4565b6066545f906105f790600190610b26565b90505f5b60665481101561065f5760666106118284610b26565b8154811061062157610621610b12565b5f918252602090912060088204015460079091166004026101000a900463ffffffff908116935084168311610657575050919050565b6001016105fb565b5050919050565b6033546001600160a01b031633146101d05760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e657260448201526064016102d4565b603380546001600160a01b038381166001600160a01b0319831681179093556040519116919082907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0905f90a35050565b5f6060821015610734576040516303af3ba560e51b815260040160405180910390fd5b610742606060408486610b45565b81019061024c9190610814565b63ffffffff8281165f8181526065602052604080822080546001600160a01b0319166001600160a01b038716908117909155606680546001810182559084527f46501879b8ca8525e8c2fd519e2fbfcfa2ebea26501294aa02cbfcfb12e943546008820401805460079092166004026101000a9687021990911695850295909517909455517f3c87ded09f10478b3e4c40df4329a85dc74ce5f77d000d69a438e6af6096b0e29190a35050565b803563ffffffff8116811461080f575f5ffd5b919050565b5f60208284031215610824575f5ffd5b61024c826107fc565b5f5f6020838503121561083e575f5ffd5b823567ffffffffffffffff811115610854575f5ffd5b8301601f81018513610864575f5ffd5b803567ffffffffffffffff81111561087a575f5ffd5b85602082840101111561088b575f5ffd5b6020919091019590945092505050565b80356001600160a01b038116811461080f575f5ffd5b634e487b7160e01b5f52604160045260245ffd5b604051601f8201601f1916810167ffffffffffffffff811182821017156108ee576108ee6108b1565b604052919050565b5f67ffffffffffffffff82111561090f5761090f6108b1565b5060051b60200190565b5f82601f830112610928575f5ffd5b813561093b610936826108f6565b6108c5565b8082825260208201915060208360051b86010192508583111561095c575f5ffd5b602085015b83811015610980576109728161089b565b835260209283019201610961565b5095945050505050565b5f5f5f6060848603121561099c575f5ffd5b6109a58461089b565b9250602084013567ffffffffffffffff8111156109c0575f5ffd5b8401601f810186136109d0575f5ffd5b80356109de610936826108f6565b8082825260208201915060208360051b8501019250888311156109ff575f5ffd5b6020840193505b82841015610a2857610a17846107fc565b825260209384019390910190610a06565b9450505050604084013567ffffffffffffffff811115610a46575f5ffd5b610a5286828701610919565b9150509250925092565b5f5f60408385031215610a6d575f5ffd5b610a76836107fc565b9150610a846020840161089b565b90509250929050565b5f60208284031215610a9d575f5ffd5b5035919050565b5f60208284031215610ab4575f5ffd5b61024c8261089b565b60208152816020820152818360408301375f818301604090810191909152601f909201601f19160101919050565b5f60208284031215610afb575f5ffd5b815160ff81168114610b0b575f5ffd5b9392505050565b634e487b7160e01b5f52603260045260245ffd5b8181038181111561024f57634e487b7160e01b5f52601160045260245ffd5b5f5f85851115610b53575f5ffd5b83861115610b5f575f5ffd5b505082019391909203915056fea2646970667358221220593b756ef2fa73af2e9398b4da7557ad3a1ffd854f71ce87bb2eddaddce567a464736f6c634300081d0033",
+    "sourceMap": "385:5502:225:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1499:174;;;;;;:::i;:::-;;:::i;:::-;;;-1:-1:-1;;;;;535:32:246;;;517:51;;505:2;490:18;1499:174:225;;;;;;;;568:47;;;;;;:::i;:::-;;;;;;;;;;;;-1:-1:-1;;;;;568:47:225;;;2071:101:98;;;:::i;:::-;;1441:85;1513:6;;-1:-1:-1;;;;;1513:6:98;1441:85;;1291:202:225;;;;;;:::i;:::-;;:::i;:::-;;;1342:4:246;1330:17;;;1312:36;;1300:2;1285:18;1291:202:225;1170:184:246;2039:770:225;;;;;;:::i;:::-;;:::i;3467:637::-;;;;;;:::i;:::-;;:::i;838:32::-;;;;;;:::i;:::-;;:::i;:::-;;;4647:10:246;4635:23;;;4617:42;;4605:2;4590:18;838:32:225;4473:192:246;2321:198:98;;;;;;:::i;:::-;;:::i;1499:174:225:-;1576:7;1602:13;:64;1616:49;1644:20;1616:27;:49::i;:::-;1602:64;;;;;;;;;;;;;-1:-1:-1;1602:64:225;;-1:-1:-1;;;;;1602:64:225;;1499:174;-1:-1:-1;;1499:174:225:o;2071:101:98:-;1334:13;:11;:13::i;:::-;2135:30:::1;2162:1;2135:18;:30::i;:::-;2071:101::o:0;1291:202:225:-;1366:5;1415:42;1433:23;1441:14;;1433:7;:23::i;1415:42::-;-1:-1:-1;;;;;1390:80:225;;1471:14;;1390:96;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1383:103;;1291:202;;;;;:::o;2039:770::-;4418:13:99;;2182:1:225;;4418:13:99;;;;;4417:14;:40;;;;-1:-1:-1;4435:12:99;;:22;;;;:12;;:22;4417:40;4409:99;;;;-1:-1:-1;;;4409:99:99;;5734:2:246;4409:99:99;;;5716:21:246;5773:2;5753:18;;;5746:30;5812:34;5792:18;;;5785:62;-1:-1:-1;;;5863:18:246;;;5856:44;5917:19;;4409:99:99;;;;;;;;;4518:12;:22;;-1:-1:-1;;4550:20:99;4518:22;;;4550:20;4518:22;4550:20;;;2199:32:225::1;2218:12:::0;2199:18:::1;:32::i;:::-;2264:17;:24;2245:8;:15;:43;2241:97;;2311:16;;-1:-1:-1::0;;;;;;2311:16:225::1;;;;;;;;;;;2241:97;2501:15;2531:9;2526:277;2546:8;:15;2542:1;:19;2526:277;;;2601:7;2586:8;2595:1;2586:11;;;;;;;;:::i;:::-;;;;;;;:22;;;;:31;;;;;2616:1;2612;:5;2586:31;2582:111;;;2666:8;2675:1;2666:11;;;;;;;;:::i;:::-;;;;;;;2644:34;;-1:-1:-1::0;;;2644:34:225::1;;;;;;;4647:10:246::0;4635:23;;;;4617:42;;4605:2;4590:18;;4473:192;2582:111:225::1;2716:8;2725:1;2716:11;;;;;;;;:::i;:::-;;;;;;;2706:21;;;;2741:51;2758:8;2767:1;2758:11;;;;;;;;:::i;:::-;;;;;;;2771:17;2789:1;2771:20;;;;;;;;:::i;:::-;;;;;;;2741:16;:51::i;:::-;2563:3;;2526:277;;;-1:-1:-1::0;;4607:5:99;4591:21;;-1:-1:-1;;4591:21:99;;;4627:20;;1342:4:246;1330:17;;1312:36;;4627:20:99;;1300:2:246;1285:18;4627:20:99;;;;;;;2039:770:225;;;;:::o;3467:637::-;1334:13:98;:11;:13::i;:::-;3791:12:225::1;3766:21;:37;;;3762:112;;3826:37;::::0;-1:-1:-1;;;3826:37:225;;4647:10:246;4635:23;;3826:37:225::1;::::0;::::1;4617:42:246::0;4590:18;;3826:37:225::1;4473:192:246::0;3762:112:225::1;3912:16;3929:23:::0;;:27:::1;::::0;3955:1:::1;::::0;3929:27:::1;:::i;:::-;3912:45;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;3887:70;;:21;:70;;;3883:152;;3980:44;::::0;-1:-1:-1;;;3980:44:225;;4647:10:246;4635:23;;3980:44:225::1;::::0;::::1;4617:42:246::0;4590:18;;3980:44:225::1;4473:192:246::0;3883:152:225::1;4044:53;4061:21;4084:12;4044:16;:53::i;:::-;3467:637:::0;;:::o;838:32::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;2321:198:98:-;1334:13;:11;:13::i;:::-;-1:-1:-1;;;;;2409:22:98;::::1;2401:73;;;::::0;-1:-1:-1;;;2401:73:98;;6511:2:246;2401:73:98::1;::::0;::::1;6493:21:246::0;6550:2;6530:18;;;6523:30;6589:34;6569:18;;;6562:62;-1:-1:-1;;;6640:18:246;;;6633:36;6686:19;;2401:73:98::1;6309:402:246::0;2401:73:98::1;2484:28;2503:8;2484:18;:28::i;:::-;2321:198:::0;:::o;5195:690:225:-;5308:28;5379:12;5356:20;:35;;;5352:106;;;5414:33;;-1:-1:-1;;;5414:33:225;;4647:10:246;4635:23;;5414:33:225;;;4617:42:246;4590:18;;5414:33:225;4473:192:246;5352:106:225;5566:16;:23;5544:19;;5566:27;;5592:1;;5566:27;:::i;:::-;5544:49;;5627:9;5622:257;5642:16;:23;5638:27;;5622:257;;;5710:16;5727:15;5741:1;5727:11;:15;:::i;:::-;5710:33;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;5761:45:225;;;;5757:112;;5826:28;;5195:690;;;:::o;5757:112::-;5667:3;;5622:257;;;;5342:543;5195:690;;;:::o;1599:130:98:-;1513:6;;-1:-1:-1;;;;;1513:6:98;929:10:101;1662:23:98;1654:68;;;;-1:-1:-1;;;1654:68:98;;6918:2:246;1654:68:98;;;6900:21:246;;;6937:18;;;6930:30;6996:34;6976:18;;;6969:62;7048:18;;1654:68:98;6716:356:246;2673:187:98;2765:6;;;-1:-1:-1;;;;;2781:17:98;;;-1:-1:-1;;;;;;2781:17:98;;;;;;;2813:40;;2765:6;;;2781:17;2765:6;;2813:40;;2746:16;;2813:40;2736:124;2673:187;:::o;4416:356:225:-;4482:6;4656:2;4637:21;;4633:78;;;4681:19;;-1:-1:-1;;;4681:19:225;;;;;;;;;;;4633:78;4738:16;4751:2;4748;4738:9;;:16;:::i;:::-;4727:38;;;;;;;:::i;4132:278::-;4229:36;;;;;;;;:13;:36;;;;;;:51;;-1:-1:-1;;;;;;4229:51:225;-1:-1:-1;;;;;4229:51:225;;;;;;;;4290:16;:44;;-1:-1:-1;4290:44:225;;;;;;;;;;;;;;;;;;;;4229:51;4290:44;;;;;;;;;;;;;;;;;;4349:54;;;4229:36;4349:54;4132:278;;:::o;14:163:246:-;81:20;;141:10;130:22;;120:33;;110:61;;167:1;164;157:12;110:61;14:163;;;:::o;182:184::-;240:6;293:2;281:9;272:7;268:23;264:32;261:52;;;309:1;306;299:12;261:52;332:28;350:9;332:28;:::i;579:586::-;649:6;657;710:2;698:9;689:7;685:23;681:32;678:52;;;726:1;723;716:12;678:52;766:9;753:23;799:18;791:6;788:30;785:50;;;831:1;828;821:12;785:50;854:22;;907:4;899:13;;895:27;-1:-1:-1;885:55:246;;936:1;933;926:12;885:55;976:2;963:16;1002:18;994:6;991:30;988:50;;;1034:1;1031;1024:12;988:50;1079:7;1074:2;1065:6;1061:2;1057:15;1053:24;1050:37;1047:57;;;1100:1;1097;1090:12;1047:57;1131:2;1123:11;;;;;1153:6;;-1:-1:-1;579:586:246;-1:-1:-1;;;579:586:246:o;1359:173::-;1427:20;;-1:-1:-1;;;;;1476:31:246;;1466:42;;1456:70;;1522:1;1519;1512:12;1537:127;1598:10;1593:3;1589:20;1586:1;1579:31;1629:4;1626:1;1619:15;1653:4;1650:1;1643:15;1669:275;1740:2;1734:9;1805:2;1786:13;;-1:-1:-1;;1782:27:246;1770:40;;1840:18;1825:34;;1861:22;;;1822:62;1819:88;;;1887:18;;:::i;:::-;1923:2;1916:22;1669:275;;-1:-1:-1;1669:275:246:o;1949:182::-;2008:4;2041:18;2033:6;2030:30;2027:56;;;2063:18;;:::i;:::-;-1:-1:-1;2108:1:246;2104:14;2120:4;2100:25;;1949:182::o;2136:674::-;2190:5;2243:3;2236:4;2228:6;2224:17;2220:27;2210:55;;2261:1;2258;2251:12;2210:55;2301:6;2288:20;2328:63;2344:46;2383:6;2344:46;:::i;:::-;2328:63;:::i;:::-;2415:3;2439:6;2434:3;2427:19;2471:4;2466:3;2462:14;2455:21;;2532:4;2522:6;2519:1;2515:14;2507:6;2503:27;2499:38;2485:52;;2560:3;2552:6;2549:15;2546:35;;;2577:1;2574;2567:12;2546:35;2613:4;2605:6;2601:17;2627:152;2643:6;2638:3;2635:15;2627:152;;;2711:23;2730:3;2711:23;:::i;:::-;2699:36;;2764:4;2755:14;;;;2660;2627:152;;;-1:-1:-1;2797:7:246;2136:674;-1:-1:-1;;;;;2136:674:246:o;2815:1205::-;2941:6;2949;2957;3010:2;2998:9;2989:7;2985:23;2981:32;2978:52;;;3026:1;3023;3016:12;2978:52;3049:29;3068:9;3049:29;:::i;:::-;3039:39;;3129:2;3118:9;3114:18;3101:32;3156:18;3148:6;3145:30;3142:50;;;3188:1;3185;3178:12;3142:50;3211:22;;3264:4;3256:13;;3252:27;-1:-1:-1;3242:55:246;;3293:1;3290;3283:12;3242:55;3333:2;3320:16;3356:63;3372:46;3411:6;3372:46;:::i;3356:63::-;3441:3;3465:6;3460:3;3453:19;3497:2;3492:3;3488:12;3481:19;;3552:2;3542:6;3539:1;3535:14;3531:2;3527:23;3523:32;3509:46;;3578:7;3570:6;3567:19;3564:39;;;3599:1;3596;3589:12;3564:39;3631:2;3627;3623:11;3612:22;;3643:147;3659:6;3654:3;3651:15;3643:147;;;3725:22;3743:3;3725:22;:::i;:::-;3713:35;;3777:2;3676:12;;;;3768;;;;3643:147;;;3809:5;-1:-1:-1;;;;3867:2:246;3852:18;;3839:32;3896:18;3883:32;;3880:52;;;3928:1;3925;3918:12;3880:52;3951:63;4006:7;3995:8;3984:9;3980:24;3951:63;:::i;:::-;3941:73;;;2815:1205;;;;;:::o;4025:258::-;4092:6;4100;4153:2;4141:9;4132:7;4128:23;4124:32;4121:52;;;4169:1;4166;4159:12;4121:52;4192:28;4210:9;4192:28;:::i;:::-;4182:38;;4239;4273:2;4262:9;4258:18;4239:38;:::i;:::-;4229:48;;4025:258;;;;;:::o;4288:180::-;4347:6;4400:2;4388:9;4379:7;4375:23;4371:32;4368:52;;;4416:1;4413;4406:12;4368:52;-1:-1:-1;4439:23:246;;4288:180;-1:-1:-1;4288:180:246:o;4670:186::-;4729:6;4782:2;4770:9;4761:7;4757:23;4753:32;4750:52;;;4798:1;4795;4788:12;4750:52;4821:29;4840:9;4821:29;:::i;4861:388::-;5018:2;5007:9;5000:21;5057:6;5052:2;5041:9;5037:18;5030:34;5114:6;5106;5101:2;5090:9;5086:18;5073:48;5170:1;5141:22;;;5165:2;5137:31;;;5130:42;;;;5233:2;5212:15;;;-1:-1:-1;;5208:29:246;5193:45;5189:54;;4861:388;-1:-1:-1;4861:388:246:o;5254:273::-;5322:6;5375:2;5363:9;5354:7;5350:23;5346:32;5343:52;;;5391:1;5388;5381:12;5343:52;5423:9;5417:16;5473:4;5466:5;5462:16;5455:5;5452:27;5442:55;;5493:1;5490;5483:12;5442:55;5516:5;5254:273;-1:-1:-1;;;5254:273:246:o;5947:127::-;6008:10;6003:3;5999:20;5996:1;5989:31;6039:4;6036:1;6029:15;6063:4;6060:1;6053:15;6079:225;6146:9;;;6167:11;;;6164:134;;;6220:10;6215:3;6211:20;6208:1;6201:31;6255:4;6252:1;6245:15;6283:4;6280:1;6273:15;7077:331;7182:9;7193;7235:8;7223:10;7220:24;7217:44;;;7257:1;7254;7247:12;7217:44;7286:6;7276:8;7273:20;7270:40;;;7306:1;7303;7296:12;7270:40;-1:-1:-1;;7332:23:246;;;7377:25;;;;;-1:-1:-1;7077:331:246:o",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "addCertVerifier(uint32,address)": "bfda00de",
+    "certVerifierABNs(uint256)": "f0df66df",
+    "certVerifiers(uint32)": "4c046566",
+    "checkDACert(bytes)": "9077193b",
+    "getCertVerifierAt(uint32)": "4a4ae0e2",
+    "initialize(address,uint32[],address[])": "9d8ecd85",
+    "owner()": "8da5cb5b",
+    "renounceOwnership()": "715018a6",
+    "transferOwnership(address)": "f2fde38b"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.29+commit.ab55807c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"activationBlockNumber\",\"type\":\"uint32\"}],\"name\":\"ABNNotGreaterThanLast\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"activationBlockNumber\",\"type\":\"uint32\"}],\"name\":\"ABNNotInFuture\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCertLength\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"LengthMismatch\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"referenceBlockNumber\",\"type\":\"uint32\"}],\"name\":\"RBNInFuture\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint32\",\"name\":\"activationBlockNumber\",\"type\":\"uint32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"certVerifier\",\"type\":\"address\"}],\"name\":\"CertVerifierAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"activationBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"address\",\"name\":\"certVerifier\",\"type\":\"address\"}],\"name\":\"addCertVerifier\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"certVerifierABNs\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"name\":\"certVerifiers\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"abiEncodedCert\",\"type\":\"bytes\"}],\"name\":\"checkDACert\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"referenceBlockNumber\",\"type\":\"uint32\"}],\"name\":\"getCertVerifierAt\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"initialOwner\",\"type\":\"address\"},{\"internalType\":\"uint32[]\",\"name\":\"initABNs\",\"type\":\"uint32[]\"},{\"internalType\":\"address[]\",\"name\":\"initCertVerifiers\",\"type\":\"address[]\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"Initialized(uint8)\":{\"details\":\"Triggered when the contract has been initialized or reinitialized.\"}},\"kind\":\"dev\",\"methods\":{\"addCertVerifier(uint32,address)\":{\"details\":\"EigenDA recommends that a mechanism be implemented to ensure a cert verifier cannot be added too close to the current block number.      This is to prevent a malicious party from setting a cert verifier without enough time for other parties to react.      This could be a timelock, multisig transaction restriction on activationBlockNumber, delay, ownerless contract, etc..\",\"params\":{\"activationBlockNumber\":\"The block number at which the cert verifier will be activated. Must be in the future.\",\"certVerifier\":\"The address of the cert verifier to be added.\"}},\"checkDACert(bytes)\":{\"details\":\"This function should never revert on invalid certs, and should instead return an error status code. This is because cert invalidity needs to be proven to the rollup's derivation pipeline that the cert can be discarded. We use Risc0's Steel library for this purpose, which doesn't support reverts: https://github.com/risc0/risc0-ethereum/issues/438\",\"params\":{\"abiEncodedCert\":\"The ABI encoded certificate. Any cert verifier should decode this ABI encoding based on the certificate version.\"},\"returns\":{\"_0\":\"An enum value. Success is always mapped to 1, and other values are errors specific to each CertVerifier.\"}},\"initialize(address,uint32[],address[])\":{\"params\":{\"initABNs\":\"A list of ABNs that will be initialized with cert verifiers\",\"initCertVerifiers\":\"A list of cert verifiers corresponding to initABNs.\",\"initialOwner\":\"The owner can add new cert verifiers. See addCertVerifier for security implications.\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"stateVariables\":{\"certVerifierABNs\":{\"details\":\"The list is guaranteed to be in ascending order      and corresponds to the keys of the certVerifiers mapping.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"addCertVerifier(uint32,address)\":{\"notice\":\"Adds a cert verifier to the router.\"},\"certVerifierABNs(uint256)\":{\"notice\":\"The list of Activation Block Numbers (ABNs) for the cert verifiers.\"},\"certVerifiers(uint32)\":{\"notice\":\"A mapping from an activation block number (ABN) to a cert verifier address.\"},\"checkDACert(bytes)\":{\"notice\":\"Check a DA cert's validity\"},\"getCertVerifierAt(uint32)\":{\"notice\":\"Returns the address for the active cert verifier at a given reference block number.         The reference block number must not be in the future.\"},\"initialize(address,uint32[],address[])\":{\"notice\":\"Initializes the EigenDACertVerifierRouter.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/integrations/cert/router/EigenDACertVerifierRouter.sol\":\"EigenDACertVerifierRouter\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/\",\":@openzeppelin-upgrades/=lib/eigenlayer-middleware/lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":ds-test/=lib/eigenlayer-middleware/lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/\",\":eigenlayer-middleware/=lib/eigenlayer-middleware/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":halmos-cheatcodes/=lib/openzeppelin-contracts-upgradeable/lib/halmos-cheatcodes/src/\",\":openzeppelin-contracts-upgradeable-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/contracts/\",\":zeus-templates/=lib/zeus-templates/src/\"]},\"sources\":{\"lib/openzeppelin-contracts-upgradeable/contracts/access/OwnableUpgradeable.sol\":{\"keccak256\":\"0x247c62047745915c0af6b955470a72d1696ebad4352d7d3011aef1a2463cd888\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d7fc8396619de513c96b6e00301b88dd790e83542aab918425633a5f7297a15a\",\"dweb:/ipfs/QmXbP4kiZyp7guuS7xe8KaybnwkRPGrBc2Kbi3vhcTfpxb\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol\":{\"keccak256\":\"0x0203dcadc5737d9ef2c211d6fa15d18ebc3b30dfa51903b64870b01a062b0b4e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6eb2fd1e9894dbe778f4b8131adecebe570689e63cf892f4e21257bfe1252497\",\"dweb:/ipfs/QmXgUGNfZvrn6N2miv3nooSs7Jm34A41qz94fu2GtDFcx8\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0x611aa3f23e59cfdd1863c536776407b3e33d695152a266fa7cfb34440a29a8a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9b4b2110b7f2b3eb32951bc08046fa90feccffa594e1176cb91cdfb0e94726b4\",\"dweb:/ipfs/QmSxLwYjicf9zWFuieRc8WQwE4FisA1Um5jp1iSa731TGt\"]},\"lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c\",\"dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a\"]},\"src/integrations/cert/interfaces/IEigenDACertVerifierBase.sol\":{\"keccak256\":\"0x7754929e0f36d5f27c7e6df9b5da959acf5f6b74bf6731f9699a22159172188c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://832fae16918013dd7190270ef7eeb823b44e803e6fdf996e989110a99f79983c\",\"dweb:/ipfs/QmSpFdtTEfG8ymUyzsPQWaDAXfqz6F8Zfx8cKfmjk6G16Q\"]},\"src/integrations/cert/interfaces/IEigenDACertVerifierRouter.sol\":{\"keccak256\":\"0x7dda0046025ec5dff316b3a499cd55524e4423d44e81f9ed71c807fd7c1c1a9e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2174de9884ed81fefaf0fb099955c57b59e4b162212e317786462d9da9296322\",\"dweb:/ipfs/QmQ373gEmuqcoraMLnEmt5pajvWWfxypirxQRXojuhAE3f\"]},\"src/integrations/cert/router/EigenDACertVerifierRouter.sol\":{\"keccak256\":\"0x326444b96a6a964fd113c6cd737fc606fb59128ebf66b5f4428e805b55b0e188\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3d5c30839d7ad9a4846b408880cf1b282cf2616ff2ab72743f422fcca182dda3\",\"dweb:/ipfs/Qmei345yHaJ5RbKKpqJgQ8C5xnNCgWiFXJHxRchptbBdkG\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.29+commit.ab55807c"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "activationBlockNumber",
+              "type": "uint32"
+            }
+          ],
+          "type": "error",
+          "name": "ABNNotGreaterThanLast"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "activationBlockNumber",
+              "type": "uint32"
+            }
+          ],
+          "type": "error",
+          "name": "ABNNotInFuture"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidCertLength"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "LengthMismatch"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "referenceBlockNumber",
+              "type": "uint32"
+            }
+          ],
+          "type": "error",
+          "name": "RBNInFuture"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "activationBlockNumber",
+              "type": "uint32",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "certVerifier",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "CertVerifierAdded",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "version",
+              "type": "uint8",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Initialized",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "OwnershipTransferred",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "activationBlockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "address",
+              "name": "certVerifier",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addCertVerifier"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "certVerifierABNs",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "certVerifiers",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes",
+              "name": "abiEncodedCert",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "checkDACert",
+          "outputs": [
+            {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "referenceBlockNumber",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getCertVerifierAt",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "initialOwner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint32[]",
+              "name": "initABNs",
+              "type": "uint32[]"
+            },
+            {
+              "internalType": "address[]",
+              "name": "initCertVerifiers",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "initialize"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "owner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "renounceOwnership"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferOwnership"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addCertVerifier(uint32,address)": {
+            "details": "EigenDA recommends that a mechanism be implemented to ensure a cert verifier cannot be added too close to the current block number.      This is to prevent a malicious party from setting a cert verifier without enough time for other parties to react.      This could be a timelock, multisig transaction restriction on activationBlockNumber, delay, ownerless contract, etc..",
+            "params": {
+              "activationBlockNumber": "The block number at which the cert verifier will be activated. Must be in the future.",
+              "certVerifier": "The address of the cert verifier to be added."
+            }
+          },
+          "checkDACert(bytes)": {
+            "details": "This function should never revert on invalid certs, and should instead return an error status code. This is because cert invalidity needs to be proven to the rollup's derivation pipeline that the cert can be discarded. We use Risc0's Steel library for this purpose, which doesn't support reverts: https://github.com/risc0/risc0-ethereum/issues/438",
+            "params": {
+              "abiEncodedCert": "The ABI encoded certificate. Any cert verifier should decode this ABI encoding based on the certificate version."
+            },
+            "returns": {
+              "_0": "An enum value. Success is always mapped to 1, and other values are errors specific to each CertVerifier."
+            }
+          },
+          "initialize(address,uint32[],address[])": {
+            "params": {
+              "initABNs": "A list of ABNs that will be initialized with cert verifiers",
+              "initCertVerifiers": "A list of cert verifiers corresponding to initABNs.",
+              "initialOwner": "The owner can add new cert verifiers. See addCertVerifier for security implications."
+            }
+          },
+          "owner()": {
+            "details": "Returns the address of the current owner."
+          },
+          "renounceOwnership()": {
+            "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+          },
+          "transferOwnership(address)": {
+            "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "addCertVerifier(uint32,address)": {
+            "notice": "Adds a cert verifier to the router."
+          },
+          "certVerifierABNs(uint256)": {
+            "notice": "The list of Activation Block Numbers (ABNs) for the cert verifiers."
+          },
+          "certVerifiers(uint32)": {
+            "notice": "A mapping from an activation block number (ABN) to a cert verifier address."
+          },
+          "checkDACert(bytes)": {
+            "notice": "Check a DA cert's validity"
+          },
+          "getCertVerifierAt(uint32)": {
+            "notice": "Returns the address for the active cert verifier at a given reference block number.         The reference block number must not be in the future."
+          },
+          "initialize(address,uint32[],address[])": {
+            "notice": "Initializes the EigenDACertVerifierRouter."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/",
+        "@openzeppelin-upgrades/=lib/eigenlayer-middleware/lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/",
+        "@openzeppelin/=node_modules/@openzeppelin/",
+        "ds-test/=lib/eigenlayer-middleware/lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/",
+        "eigenlayer-middleware/=lib/eigenlayer-middleware/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "halmos-cheatcodes/=lib/openzeppelin-contracts-upgradeable/lib/halmos-cheatcodes/src/",
+        "openzeppelin-contracts-upgradeable-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/contracts/",
+        "zeus-templates/=lib/zeus-templates/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/integrations/cert/router/EigenDACertVerifierRouter.sol": "EigenDACertVerifierRouter"
+      },
+      "evmVersion": "prague",
+      "libraries": {}
+    },
+    "sources": {
+      "lib/openzeppelin-contracts-upgradeable/contracts/access/OwnableUpgradeable.sol": {
+        "keccak256": "0x247c62047745915c0af6b955470a72d1696ebad4352d7d3011aef1a2463cd888",
+        "urls": [
+          "bzz-raw://d7fc8396619de513c96b6e00301b88dd790e83542aab918425633a5f7297a15a",
+          "dweb:/ipfs/QmXbP4kiZyp7guuS7xe8KaybnwkRPGrBc2Kbi3vhcTfpxb"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol": {
+        "keccak256": "0x0203dcadc5737d9ef2c211d6fa15d18ebc3b30dfa51903b64870b01a062b0b4e",
+        "urls": [
+          "bzz-raw://6eb2fd1e9894dbe778f4b8131adecebe570689e63cf892f4e21257bfe1252497",
+          "dweb:/ipfs/QmXgUGNfZvrn6N2miv3nooSs7Jm34A41qz94fu2GtDFcx8"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol": {
+        "keccak256": "0x611aa3f23e59cfdd1863c536776407b3e33d695152a266fa7cfb34440a29a8a3",
+        "urls": [
+          "bzz-raw://9b4b2110b7f2b3eb32951bc08046fa90feccffa594e1176cb91cdfb0e94726b4",
+          "dweb:/ipfs/QmSxLwYjicf9zWFuieRc8WQwE4FisA1Um5jp1iSa731TGt"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts-upgradeable/contracts/utils/ContextUpgradeable.sol": {
+        "keccak256": "0x963ea7f0b48b032eef72fe3a7582edf78408d6f834115b9feadd673a4d5bd149",
+        "urls": [
+          "bzz-raw://d6520943ea55fdf5f0bafb39ed909f64de17051bc954ff3e88c9e5621412c79c",
+          "dweb:/ipfs/QmWZ4rAKTQbNG2HxGs46AcTXShsVytKeLs7CUCdCSv5N7a"
+        ],
+        "license": "MIT"
+      },
+      "src/integrations/cert/interfaces/IEigenDACertVerifierBase.sol": {
+        "keccak256": "0x7754929e0f36d5f27c7e6df9b5da959acf5f6b74bf6731f9699a22159172188c",
+        "urls": [
+          "bzz-raw://832fae16918013dd7190270ef7eeb823b44e803e6fdf996e989110a99f79983c",
+          "dweb:/ipfs/QmSpFdtTEfG8ymUyzsPQWaDAXfqz6F8Zfx8cKfmjk6G16Q"
+        ],
+        "license": "MIT"
+      },
+      "src/integrations/cert/interfaces/IEigenDACertVerifierRouter.sol": {
+        "keccak256": "0x7dda0046025ec5dff316b3a499cd55524e4423d44e81f9ed71c807fd7c1c1a9e",
+        "urls": [
+          "bzz-raw://2174de9884ed81fefaf0fb099955c57b59e4b162212e317786462d9da9296322",
+          "dweb:/ipfs/QmQ373gEmuqcoraMLnEmt5pajvWWfxypirxQRXojuhAE3f"
+        ],
+        "license": "MIT"
+      },
+      "src/integrations/cert/router/EigenDACertVerifierRouter.sol": {
+        "keccak256": "0x326444b96a6a964fd113c6cd737fc606fb59128ebf66b5f4428e805b55b0e188",
+        "urls": [
+          "bzz-raw://3d5c30839d7ad9a4846b408880cf1b282cf2616ff2ab72743f422fcca182dda3",
+          "dweb:/ipfs/Qmei345yHaJ5RbKKpqJgQ8C5xnNCgWiFXJHxRchptbBdkG"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "id": 225
+}
