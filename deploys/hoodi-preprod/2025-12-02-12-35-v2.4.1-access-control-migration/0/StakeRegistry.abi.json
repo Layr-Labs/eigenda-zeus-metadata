@@ -1,0 +1,2393 @@
+{
+  "abi": [
+    {
+      "type": "constructor",
+      "inputs": [
+        {
+          "name": "_registryCoordinator",
+          "type": "address",
+          "internalType": "contract IRegistryCoordinator"
+        },
+        {
+          "name": "_delegationManager",
+          "type": "address",
+          "internalType": "contract IDelegationManager"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "MAX_WEIGHING_FUNCTION_LENGTH",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "WEIGHTING_DIVISOR",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "addStrategies",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "_strategyParams",
+          "type": "tuple[]",
+          "internalType": "struct IStakeRegistry.StrategyParams[]",
+          "components": [
+            {
+              "name": "strategy",
+              "type": "address",
+              "internalType": "contract IStrategy"
+            },
+            {
+              "name": "multiplier",
+              "type": "uint96",
+              "internalType": "uint96"
+            }
+          ]
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "delegation",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "contract IDelegationManager"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "deregisterOperator",
+      "inputs": [
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumbers",
+          "type": "bytes",
+          "internalType": "bytes"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "getCurrentStake",
+      "inputs": [
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getCurrentTotalStake",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getLatestStakeUpdate",
+      "inputs": [
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "tuple",
+          "internalType": "struct IStakeRegistry.StakeUpdate",
+          "components": [
+            {
+              "name": "updateBlockNumber",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "nextUpdateBlockNumber",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "stake",
+              "type": "uint96",
+              "internalType": "uint96"
+            }
+          ]
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getStakeAtBlockNumber",
+      "inputs": [
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "blockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getStakeAtBlockNumberAndIndex",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "blockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        },
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "index",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getStakeHistory",
+      "inputs": [
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "tuple[]",
+          "internalType": "struct IStakeRegistry.StakeUpdate[]",
+          "components": [
+            {
+              "name": "updateBlockNumber",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "nextUpdateBlockNumber",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "stake",
+              "type": "uint96",
+              "internalType": "uint96"
+            }
+          ]
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getStakeHistoryLength",
+      "inputs": [
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getStakeUpdateAtIndex",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "index",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "tuple",
+          "internalType": "struct IStakeRegistry.StakeUpdate",
+          "components": [
+            {
+              "name": "updateBlockNumber",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "nextUpdateBlockNumber",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "stake",
+              "type": "uint96",
+              "internalType": "uint96"
+            }
+          ]
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getStakeUpdateIndexAtBlockNumber",
+      "inputs": [
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "blockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint32",
+          "internalType": "uint32"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getTotalStakeAtBlockNumberFromIndex",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "blockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        },
+        {
+          "name": "index",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getTotalStakeHistoryLength",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getTotalStakeIndicesAtBlockNumber",
+      "inputs": [
+        {
+          "name": "blockNumber",
+          "type": "uint32",
+          "internalType": "uint32"
+        },
+        {
+          "name": "quorumNumbers",
+          "type": "bytes",
+          "internalType": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint32[]",
+          "internalType": "uint32[]"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "getTotalStakeUpdateAtIndex",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "index",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "tuple",
+          "internalType": "struct IStakeRegistry.StakeUpdate",
+          "components": [
+            {
+              "name": "updateBlockNumber",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "nextUpdateBlockNumber",
+              "type": "uint32",
+              "internalType": "uint32"
+            },
+            {
+              "name": "stake",
+              "type": "uint96",
+              "internalType": "uint96"
+            }
+          ]
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "initializeQuorum",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "minimumStake",
+          "type": "uint96",
+          "internalType": "uint96"
+        },
+        {
+          "name": "_strategyParams",
+          "type": "tuple[]",
+          "internalType": "struct IStakeRegistry.StrategyParams[]",
+          "components": [
+            {
+              "name": "strategy",
+              "type": "address",
+              "internalType": "contract IStrategy"
+            },
+            {
+              "name": "multiplier",
+              "type": "uint96",
+              "internalType": "uint96"
+            }
+          ]
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "minimumStakeForQuorum",
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "modifyStrategyParams",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "strategyIndices",
+          "type": "uint256[]",
+          "internalType": "uint256[]"
+        },
+        {
+          "name": "newMultipliers",
+          "type": "uint96[]",
+          "internalType": "uint96[]"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "registerOperator",
+      "inputs": [
+        {
+          "name": "operator",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumbers",
+          "type": "bytes",
+          "internalType": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint96[]",
+          "internalType": "uint96[]"
+        },
+        {
+          "name": "",
+          "type": "uint96[]",
+          "internalType": "uint96[]"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "registryCoordinator",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "removeStrategies",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "indicesToRemove",
+          "type": "uint256[]",
+          "internalType": "uint256[]"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "setMinimumStakeForQuorum",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "minimumStake",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "strategiesPerQuorum",
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "contract IStrategy"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "strategyParams",
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "strategy",
+          "type": "address",
+          "internalType": "contract IStrategy"
+        },
+        {
+          "name": "multiplier",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "strategyParamsByIndex",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "index",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "tuple",
+          "internalType": "struct IStakeRegistry.StrategyParams",
+          "components": [
+            {
+              "name": "strategy",
+              "type": "address",
+              "internalType": "contract IStrategy"
+            },
+            {
+              "name": "multiplier",
+              "type": "uint96",
+              "internalType": "uint96"
+            }
+          ]
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "strategyParamsLength",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "updateOperatorStake",
+      "inputs": [
+        {
+          "name": "operator",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumbers",
+          "type": "bytes",
+          "internalType": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint192",
+          "internalType": "uint192"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "weightOfOperatorForQuorum",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "internalType": "uint8"
+        },
+        {
+          "name": "operator",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint96",
+          "internalType": "uint96"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "event",
+      "name": "MinimumStakeForQuorumUpdated",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "indexed": true,
+          "internalType": "uint8"
+        },
+        {
+          "name": "minimumStake",
+          "type": "uint96",
+          "indexed": false,
+          "internalType": "uint96"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "OperatorStakeUpdate",
+      "inputs": [
+        {
+          "name": "operatorId",
+          "type": "bytes32",
+          "indexed": true,
+          "internalType": "bytes32"
+        },
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "indexed": false,
+          "internalType": "uint8"
+        },
+        {
+          "name": "stake",
+          "type": "uint96",
+          "indexed": false,
+          "internalType": "uint96"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "QuorumCreated",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "indexed": true,
+          "internalType": "uint8"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "StrategyAddedToQuorum",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "indexed": true,
+          "internalType": "uint8"
+        },
+        {
+          "name": "strategy",
+          "type": "address",
+          "indexed": false,
+          "internalType": "contract IStrategy"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "StrategyMultiplierUpdated",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "indexed": true,
+          "internalType": "uint8"
+        },
+        {
+          "name": "strategy",
+          "type": "address",
+          "indexed": false,
+          "internalType": "contract IStrategy"
+        },
+        {
+          "name": "multiplier",
+          "type": "uint256",
+          "indexed": false,
+          "internalType": "uint256"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "StrategyRemovedFromQuorum",
+      "inputs": [
+        {
+          "name": "quorumNumber",
+          "type": "uint8",
+          "indexed": true,
+          "internalType": "uint8"
+        },
+        {
+          "name": "strategy",
+          "type": "address",
+          "indexed": false,
+          "internalType": "contract IStrategy"
+        }
+      ],
+      "anonymous": false
+    }
+  ],
+  "bytecode": {
+    "object": "0x60c060405234801561000f575f5ffd5b5060405161320f38038061320f83398101604081905261002e9161005c565b6001600160a01b0391821660a05216608052610094565b6001600160a01b0381168114610059575f5ffd5b50565b5f5f6040838503121561006d575f5ffd5b825161007881610045565b602084015190925061008981610045565b809150509250929050565b60805160a0516131456100ca5f395f818161036d015281816119980152611ac801525f818161051b015261180b01526131455ff3fe608060405234801561000f575f5ffd5b50600436106101dc575f3560e01c80639f3ccf6511610109578063c8294c561161009e578063f2be94ae1161006e578063f2be94ae1461053d578063f851e19814610550578063fa28c62714610563578063ff694a7714610576575f5ffd5b8063c8294c56146104c8578063d5eccc05146104db578063dd9846b9146104ee578063df5cf72314610516575f5ffd5b8063bc9a40c3116100d9578063bc9a40c314610467578063bd29b8cd1461047a578063c46778a51461048d578063c601527d146104b5575f5ffd5b80639f3ccf65146103e1578063ac6bfb03146103f4578063adc804da14610414578063b6904b7814610454575f5ffd5b80634bd26e091161017f57806366acfefe1161014f57806366acfefe1461033d5780636d14a987146103685780637c172347146103a757806381c07502146103c1575f5ffd5b80634bd26e09146102d95780635401ed27146103085780635e5a67751461031b5780635f1f2d771461032a575f5ffd5b806320b66298116101ba57806320b662981461026157806325504777146102765780632cd95940146102975780633ca5a5f5146102b7575f5ffd5b80630491b41c146101e057806308732461146102155780631f9b74e014610236575b5f5ffd5b6102026101ee366004612714565b60ff165f9081526001602052604090205490565b6040519081526020015b60405180910390f35b61022861022336600461272d565b610589565b60405161020c929190612755565b61024961024436600461278b565b6105ce565b6040516001600160601b03909116815260200161020c565b61027461026f366004612800565b6105f0565b005b6102896102843660046128bb565b61083f565b60405161020c929190612955565b6102aa6102a5366004612979565b610a42565b60405161020c91906129a3565b6102026102c5366004612714565b60ff165f9081526003602052604090205490565b6102026102e7366004612979565b5f91825260026020908152604080842060ff93909316845291905290205490565b610249610316366004612979565b610adf565b610202670de0b6b3a764000081565b610274610338366004612aaa565b610af7565b61035061034b3660046128bb565b610e25565b6040516001600160c01b03909116815260200161020c565b61038f7f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200161020c565b6103af602081565b60405160ff909116815260200161020c565b6103d46103cf366004612b65565b610ec1565b60405161020c9190612bb3565b61038f6103ef36600461272d565b6110e4565b610407610402366004612bf0565b611118565b60405161020c9190612c20565b61042761042236600461272d565b6111ae565b6040805182516001600160a01b031681526020928301516001600160601b0316928101929092520161020c565b61040761046236600461272d565b611225565b610274610475366004612c70565b6112b2565b610274610488366004612c98565b6112d3565b61024961049b366004612714565b5f602081905290815260409020546001600160601b031681565b6102746104c3366004612d5b565b611336565b6102496104d6366004612da5565b611352565b6102496104e9366004612714565b6113ce565b6105016104fc366004612ddf565b61141f565b60405163ffffffff909116815260200161020c565b61038f7f000000000000000000000000000000000000000000000000000000000000000081565b61024961054b366004612e18565b611433565b61040761055e366004612979565b6114c6565b610249610571366004612ddf565b6115ac565b610274610584366004612e57565b61160b565b6003602052815f5260405f2081815481106105a2575f80fd5b5f918252602090912001546001600160a01b0381169250600160a01b90046001600160601b0316905082565b5f826105d981611734565b5f6105e485856117af565b509250505b5092915050565b6105f8611996565b8461060281611734565b838061067d576040805162461bcd60e51b81526020600482015260248101919091527f5374616b6552656769737472792e6d6f6469667953747261746567795061726160448201527f6d733a206e6f20737472617465677920696e64696365732070726f766964656460648201526084015b60405180910390fd5b8281146106f25760405162461bcd60e51b815260206004820152603960248201527f5374616b6552656769737472792e6d6f6469667953747261746567795061726160448201527f6d733a20696e707574206c656e677468206d69736d61746368000000000000006064820152608401610674565b60ff87165f908152600360205260408120905b828110156108345785858281811061071f5761071f612eb0565b90506020020160208101906107349190612ec4565b8289898481811061074757610747612eb0565b905060200201358154811061075e5761075e612eb0565b905f5260205f20015f0160146101000a8154816001600160601b0302191690836001600160601b031602179055508860ff167f11a5641322da1dff56a4b66eaac31ffa465295ece907cd163437793b4d009a75838a8a858181106107c4576107c4612eb0565b90506020020135815481106107db576107db612eb0565b5f918252602090912001546001600160a01b031688888581811061080157610801612eb0565b90506020020160208101906108169190612ec4565b604051610824929190612755565b60405180910390a2600101610705565b505050505050505050565b60608061084a611abd565b5f836001600160401b0381111561086357610863612a1c565b60405190808252806020026020018201604052801561088c578160200160208202803683370190505b5090505f846001600160401b038111156108a8576108a8612a1c565b6040519080825280602002602001820160405280156108d1578160200160208202803683370190505b5090505f5b85811015610a34575f8787838181106108f1576108f1612eb0565b919091013560f81c9150610906905081611734565b5f5f610912838d6117af565b91509150806109af5760405162461bcd60e51b815260206004820152605b60248201527f5374616b6552656769737472792e72656769737465724f70657261746f723a2060448201527f4f70657261746f7220646f6573206e6f74206d656574206d696e696d756d207360648201527f74616b6520726571756972656d656e7420666f722071756f72756d0000000000608482015260a401610674565b5f6109bb8c8585611b70565b9050828786815181106109d0576109d0612eb0565b60200260200101906001600160601b031690816001600160601b0316815250506109fa8482611de9565b868681518110610a0c57610a0c612eb0565b6001600160601b03909216602092830291909101909101525050600190920191506108d69050565b509097909650945050505050565b5f82815260026020908152604080832060ff851684528252808320805482518185028101850190935280835260609492939192909184015b82821015610ad2575f848152602090819020604080516060810182529185015463ffffffff8082168452600160201b82041683850152600160401b90046001600160601b031690820152825260019092019101610a7a565b5050505090505b92915050565b5f5f610aeb84846114c6565b60400151949350505050565b610aff611996565b81610b0981611734565b815180610b7e5760405162461bcd60e51b815260206004820152603d60248201527f5374616b6552656769737472792e72656d6f7665537472617465676965733a2060448201527f6e6f20696e646963657320746f2072656d6f76652070726f76696465640000006064820152608401610674565b60ff84165f9081526003602090815260408083206004909252822090915b83811015610e1c578660ff167f31fa2e2cd280c9375e13ffcf3d81e2378100186e4058f8d3ddb690b82dcd31f784888481518110610bdc57610bdc612eb0565b602002602001015181548110610bf457610bf4612eb0565b5f91825260209182902001546040516001600160a01b0390911681520160405180910390a28660ff167f11a5641322da1dff56a4b66eaac31ffa465295ece907cd163437793b4d009a7584888481518110610c5157610c51612eb0565b602002602001015181548110610c6957610c69612eb0565b5f91825260208083209190910154604080516001600160a01b039092168252918101929092520160405180910390a282548390610ca890600190612ef1565b81548110610cb857610cb8612eb0565b905f5260205f200183878381518110610cd357610cd3612eb0565b602002602001015181548110610ceb57610ceb612eb0565b5f91825260209091208254910180546001600160a01b0319166001600160a01b03909216918217815591546001600160601b03600160a01b9182900416021790558254839080610d3d57610d3d612f04565b5f8281526020812082015f199081019190915501905581548290610d6390600190612ef1565b81548110610d7357610d73612eb0565b905f5260205f20015f9054906101000a90046001600160a01b031682878381518110610da157610da1612eb0565b602002602001015181548110610db957610db9612eb0565b905f5260205f20015f6101000a8154816001600160a01b0302191690836001600160a01b0316021790555081805480610df457610df4612f04565b5f8281526020902081015f1990810180546001600160a01b0319169055019055600101610b9c565b50505050505050565b5f610e2e611abd565b5f805b83811015610eb7575f858583818110610e4c57610e4c612eb0565b919091013560f81c9150610e61905081611734565b5f5f610e6d838b6117af565b9150915080610e8e575f9150600160ff84161b6001600160c01b0386161794505b5f610e9a8a8585611b70565b9050610ea68482611de9565b505060019093019250610e31915050565b5095945050505050565b60605f826001600160401b03811115610edc57610edc612a1c565b604051908082528060200260200182016040528015610f05578160200160208202803683370190505b5090505f5b838110156110d9575f858583818110610f2557610f25612eb0565b919091013560f81c9150610f3a905081611734565b60ff81165f908152600160205260408120805463ffffffff8a169290610f6257610f62612eb0565b5f9182526020909120015463ffffffff16111561100d5760405162461bcd60e51b815260206004820152605b60248201527f5374616b6552656769737472792e676574546f74616c5374616b65496e64696360448201527f65734174426c6f636b4e756d6265723a2071756f72756d20686173206e6f207360648201527f74616b6520686973746f727920617420626c6f636b4e756d6265720000000000608482015260a401610674565b60ff81165f90815260016020526040812054905b818110156110ce5760ff83165f90815260016020819052604090912063ffffffff8b169161104f8486612ef1565b6110599190612ef1565b8154811061106957611069612eb0565b5f9182526020909120015463ffffffff16116110c657600161108b8284612ef1565b6110959190612ef1565b8585815181106110a7576110a7612eb0565b602002602001019063ffffffff16908163ffffffff16815250506110ce565b600101611021565b505050600101610f0a565b5090505b9392505050565b6004602052815f5260405f2081815481106110fd575f80fd5b5f918252602090912001546001600160a01b03169150829050565b604080516060810182525f80825260208083018290528284018290528582526002815283822060ff8816835290529190912080548390811061115c5761115c612eb0565b5f91825260209182902060408051606081018252929091015463ffffffff8082168452600160201b82041693830193909352600160401b9092046001600160601b031691810191909152949350505050565b604080518082019091525f808252602082015260ff83165f9081526003602052604090208054839081106111e4576111e4612eb0565b5f918252602091829020604080518082019091529101546001600160a01b0381168252600160a01b90046001600160601b0316918101919091529392505050565b604080516060810182525f808252602080830182905282840182905260ff86168252600190529190912080548390811061126157611261612eb0565b5f91825260209182902060408051606081018252929091015463ffffffff8082168452600160201b82041693830193909352600160401b9092046001600160601b0316918101919091529392505050565b6112ba611996565b816112c481611734565b6112ce8383611f5a565b505050565b6112db611abd565b5f5b81811015611330575f8383838181106112f8576112f8612eb0565b919091013560f81c915061130d905081611734565b5f61131986835f611b70565b90506113258282611de9565b5050506001016112dd565b50505050565b61133e611996565b8161134881611734565b6112ce8383611fc2565b60ff83165f90815260016020526040812080548291908490811061137857611378612eb0565b5f91825260209182902060408051606081018252919092015463ffffffff8082168352600160201b820416938201939093526001600160601b03600160401b90930492909216908201529050610aeb81856123df565b60ff81165f9081526001602081905260408220805490916113ee91612ef1565b815481106113fe576113fe612eb0565b5f91825260209091200154600160401b90046001600160601b031692915050565b5f61142b848484612558565b949350505050565b5f82815260026020908152604080832060ff88168452909152812080548291908490811061146357611463612eb0565b5f91825260209182902060408051606081018252919092015463ffffffff8082168352600160201b820416938201939093526001600160601b03600160401b909304929092169082015290506114b981866123df565b6040015195945050505050565b60408051606080820183525f80835260208084018290528385018290528682526002815284822060ff8716835281528482205485519384018652828452908301829052938201819052919291829003611522579150610ad99050565b5f85815260026020908152604080832060ff881684529091529020611548600184612ef1565b8154811061155857611558612eb0565b5f91825260209182902060408051606081018252919092015463ffffffff8082168352600160201b820416938201939093526001600160601b03600160401b90930492909216908201529250610ad9915050565b5f83815260026020908152604080832060ff8616845290915281206115d2858585612558565b63ffffffff16815481106115e8576115e8612eb0565b5f91825260209091200154600160401b90046001600160601b0316949350505050565b611613611abd565b60ff83165f90815260016020526040902054156116905760405162461bcd60e51b815260206004820152603560248201527f5374616b6552656769737472792e696e697469616c697a6551756f72756d3a2060448201527471756f72756d20616c72656164792065786973747360581b6064820152608401610674565b61169a8382611fc2565b6116a48383611f5a565b505060ff165f908152600160208181526040808420815160608101835263ffffffff438116825281850187815293820187815283549687018455928752939095209451949093018054915193516001600160601b0316600160401b02600160401b600160a01b0319948416600160201b0267ffffffffffffffff1990931695909316949094171791909116179055565b60ff81165f908152600160205260409020546117ac5760405162461bcd60e51b815260206004820152603160248201527f5374616b6552656769737472792e71756f72756d4578697374733a2071756f726044820152701d5b48191bd95cc81b9bdd08195e1a5cdd607a1b6064820152608401610674565b50565b5f5f5f5f6117cb8660ff165f9081526003602052604090205490565b604080518082019091525f808252602082015290915060ff87165f9081526004602081905260408083209051639004134760e01b81526001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000169263900413479261183e928c9201612f18565b5f60405180830381865afa158015611858573d5f5f3e3d5ffd5b505050506040513d5f823e601f3d908101601f1916820160405261187f9190810190612f79565b90505f5b838110156119635760ff89165f9081526003602052604090208054829081106118ae576118ae612eb0565b5f9182526020808320604080518082019091529201546001600160a01b0381168352600160a01b90046001600160601b03169082015283519094508390839081106118fb576118fb612eb0565b6020026020010151111561195b57670de0b6b3a764000083602001516001600160601b031683838151811061193257611932612eb0565b60200260200101516119449190612fff565b61194e9190613016565b6119589086613035565b94505b600101611883565b50505060ff86165f90815260208190526040902054919350506001600160601b03908116908316101590505b9250929050565b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316638da5cb5b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156119f2573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611a169190613054565b6001600160a01b0316336001600160a01b031614611abb5760405162461bcd60e51b815260206004820152605660248201527f5374616b6552656769737472792e6f6e6c79436f6f7264696e61746f724f776e60448201527f65723a2063616c6c6572206973206e6f7420746865206f776e6572206f6620746064820152753432903932b3b4b9ba393ca1b7b7b93234b730ba37b960511b608482015260a401610674565b565b336001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001614611abb5760405162461bcd60e51b815260206004820152604c60248201527f5374616b6552656769737472792e6f6e6c795265676973747279436f6f72646960448201527f6e61746f723a2063616c6c6572206973206e6f7420746865205265676973747260648201526b3ca1b7b7b93234b730ba37b960a11b608482015260a401610674565b5f83815260026020908152604080832060ff861684529091528120548190808203611c34575f86815260026020908152604080832060ff891684528252808320815160608101835263ffffffff43811682528185018681526001600160601b03808c16958401958652845460018101865594885295909620915191909201805495519351909416600160401b02600160401b600160a01b0319938316600160201b0267ffffffffffffffff1990961691909216179390931716919091179055611d8f565b5f86815260026020908152604080832060ff891684529091528120611c5a600184612ef1565b81548110611c6a57611c6a612eb0565b5f91825260209091200180546001600160601b03600160401b9091048116945090915085168303611ca0575f93505050506110dd565b805463ffffffff438116911603611cd8578054600160401b600160a01b031916600160401b6001600160601b03871602178155611d8d565b805467ffffffff000000001916600160201b4363ffffffff9081168281029390931784555f8a815260026020908152604080832060ff8d168452825280832081516060810183529687528683018481526001600160601b038d81169389019384528254600181018455928652939094209651960180549351915196851667ffffffffffffffff1990941693909317931690930291909117600160401b600160a01b031916600160401b93909216929092021790555b505b6040805160ff871681526001600160601b038616602082015287917f2f527d527e95d8fe40aec55377743bb779087da3f6d0d08f12e36444da62327d910160405180910390a2611ddf82856126bb565b9695505050505050565b60ff82165f9081526001602081905260408220805491839190611e0c9084612ef1565b81548110611e1c57611e1c612eb0565b905f5260205f20019050835f03611e475754600160401b90046001600160601b03169150610ad99050565b80545f90611e6590600160401b90046001600160601b0316866126d2565b825490915063ffffffff438116911603611ea0578154600160401b600160a01b031916600160401b6001600160601b03831602178255611f51565b815463ffffffff438116600160201b81810267ffffffff000000001990941693909317855560ff89165f90815260016020818152604080842081516060810183529586528583018581526001600160601b03808b169388019384528254958601835591865292909420945194909201805491519251909316600160401b02600160401b600160a01b031992861690960267ffffffffffffffff19909116939094169290921792909217169190911790555b95945050505050565b60ff82165f818152602081815260409182902080546bffffffffffffffffffffffff19166001600160601b03861690811790915591519182527f26eecff2b70b0a71104ff4d940ba7162d23a95c248771fc487a7be17a596b3cf910160405180910390a25050565b5f8151116120255760405162461bcd60e51b815260206004820152603860248201525f5160206130f05f395f51905f5260448201527f3a206e6f20737472617465676965732070726f766964656400000000000000006064820152608401610674565b805160ff83165f9081526003602090815260409091205490612047838361306f565b11156120b65760405162461bcd60e51b815260206004820152604560248201525f5160206130f05f395f51905f5260448201527f3a20657863656564204d41585f5745494748494e475f46554e4354494f4e5f4c60648201526408a9c8ea8960db1b608482015260a401610674565b5f5b828110156123d8575f5b6120cc828461306f565b81101561219d578482815181106120e5576120e5612eb0565b60200260200101515f01516001600160a01b031660035f8860ff1660ff1681526020019081526020015f20828154811061212157612121612eb0565b5f918252602090912001546001600160a01b0316036121955760405162461bcd60e51b815260206004820152603d60248201525f5160206130f05f395f51905f5260448201527f3a2063616e6e6f74206164642073616d652073747261746567792032780000006064820152608401610674565b6001016120c2565b505f8482815181106121b1576121b1612eb0565b6020026020010151602001516001600160601b0316116122355760405162461bcd60e51b815260206004820152604660248201525f5160206130f05f395f51905f5260448201527f3a2063616e6e6f74206164642073747261746567792077697468207a65726f206064820152651dd95a59da1d60d21b608482015260a401610674565b60ff85165f908152600360205260409020845185908390811061225a5761225a612eb0565b60209081029190910181015182546001810184555f9384528284208251928401516001600160601b0316600160a01b026001600160a01b039093169290921791015560ff87168252600490526040902084518590839081106122be576122be612eb0565b6020908102919091018101515182546001810184555f938452919092200180546001600160a01b0319166001600160a01b03909216919091179055835160ff8616907f10565e56cacbf32eca267945f054fec02e59750032d113d3302182ad967f54049086908490811061233457612334612eb0565b602090810291909101810151516040516001600160a01b0390911681520160405180910390a28460ff167f11a5641322da1dff56a4b66eaac31ffa465295ece907cd163437793b4d009a7585838151811061239157612391612eb0565b60200260200101515f01518684815181106123ae576123ae612eb0565b6020026020010151602001516040516123c8929190612755565b60405180910390a26001016120b8565b5050505050565b815f015163ffffffff168163ffffffff1610156124835760405162461bcd60e51b815260206004820152605660248201527f5374616b6552656769737472792e5f76616c69646174655374616b655570646160448201527f74654174426c6f636b4e756d6265723a207374616b6555706461746520697320606482015275333937b69030b33a32b910313637b1b5a73ab6b132b960511b608482015260a401610674565b602082015163ffffffff1615806124a95750816020015163ffffffff168163ffffffff16105b6125545760405162461bcd60e51b815260206004820152606a60248201527f5374616b6552656769737472792e5f76616c69646174655374616b655570646160448201527f74654174426c6f636b4e756d6265723a2074686572652069732061206e65776560648201527f72207374616b6555706461746520617661696c61626c65206265666f726520626084820152693637b1b5a73ab6b132b960b11b60a482015260c401610674565b5050565b5f83815260026020908152604080832060ff86168452909152812054805b80156125f6575f86815260026020908152604080832060ff89168452909152902063ffffffff8516906125aa600184612ef1565b815481106125ba576125ba612eb0565b5f9182526020909120015463ffffffff16116125e4576125db600182612ef1565b925050506110dd565b806125ee81613082565b915050612576565b5060405162461bcd60e51b815260206004820152608160248201527f5374616b6552656769737472792e5f6765745374616b65557064617465496e6460448201527f6578466f724f70657261746f724174426c6f636b4e756d6265723a206e6f207360648201527f74616b652075706461746520666f756e6420666f72206f70657261746f72496460848201527f20616e642071756f72756d4e756d62657220617420626c6f636b206e756d626560a4820152603960f91b60c482015260e401610674565b5f6110dd6001600160601b03808516908416613097565b5f5f8212156126f5576126e4826130b6565b6126ee90846130d0565b9050610ad9565b6126ee8284613035565b803560ff8116811461270f575f5ffd5b919050565b5f60208284031215612724575f5ffd5b6110dd826126ff565b5f5f6040838503121561273e575f5ffd5b612747836126ff565b946020939093013593505050565b6001600160a01b039290921682526001600160601b0316602082015260400190565b6001600160a01b03811681146117ac575f5ffd5b5f5f6040838503121561279c575f5ffd5b6127a5836126ff565b915060208301356127b581612777565b809150509250929050565b5f5f83601f8401126127d0575f5ffd5b5081356001600160401b038111156127e6575f5ffd5b6020830191508360208260051b850101111561198f575f5ffd5b5f5f5f5f5f60608688031215612814575f5ffd5b61281d866126ff565b945060208601356001600160401b03811115612837575f5ffd5b612843888289016127c0565b90955093505060408601356001600160401b03811115612861575f5ffd5b61286d888289016127c0565b969995985093965092949392505050565b5f5f83601f84011261288e575f5ffd5b5081356001600160401b038111156128a4575f5ffd5b60208301915083602082850101111561198f575f5ffd5b5f5f5f5f606085870312156128ce575f5ffd5b84356128d981612777565b93506020850135925060408501356001600160401b038111156128fa575f5ffd5b6129068782880161287e565b95989497509550505050565b5f8151808452602084019350602083015f5b8281101561294b5781516001600160601b0316865260209586019590910190600101612924565b5093949350505050565b604081525f6129676040830185612912565b8281036020840152611f518185612912565b5f5f6040838503121561298a575f5ffd5b8235915061299a602084016126ff565b90509250929050565b602080825282518282018190525f918401906040840190835b81811015612a11576129fb83855163ffffffff815116825263ffffffff60208201511660208301526001600160601b0360408201511660408301525050565b60209390930192606092909201916001016129bc565b509095945050505050565b634e487b7160e01b5f52604160045260245ffd5b604080519081016001600160401b0381118282101715612a5257612a52612a1c565b60405290565b604051601f8201601f191681016001600160401b0381118282101715612a8057612a80612a1c565b604052919050565b5f6001600160401b03821115612aa057612aa0612a1c565b5060051b60200190565b5f5f60408385031215612abb575f5ffd5b612ac4836126ff565b915060208301356001600160401b03811115612ade575f5ffd5b8301601f81018513612aee575f5ffd5b8035612b01612afc82612a88565b612a58565b8082825260208201915060208360051b850101925087831115612b22575f5ffd5b6020840193505b82841015612b44578335825260209384019390910190612b29565b809450505050509250929050565b803563ffffffff8116811461270f575f5ffd5b5f5f5f60408486031215612b77575f5ffd5b612b8084612b52565b925060208401356001600160401b03811115612b9a575f5ffd5b612ba68682870161287e565b9497909650939450505050565b602080825282518282018190525f918401906040840190835b81811015612a1157835163ffffffff16835260209384019390920191600101612bcc565b5f5f5f60608486031215612c02575f5ffd5b612c0b846126ff565b95602085013595506040909401359392505050565b60608101610ad9828463ffffffff815116825263ffffffff60208201511660208301526001600160601b0360408201511660408301525050565b80356001600160601b038116811461270f575f5ffd5b5f5f60408385031215612c81575f5ffd5b612c8a836126ff565b915061299a60208401612c5a565b5f5f5f60408486031215612caa575f5ffd5b8335925060208401356001600160401b03811115612b9a575f5ffd5b5f82601f830112612cd5575f5ffd5b8135612ce3612afc82612a88565b8082825260208201915060208360061b860101925085831115612d04575f5ffd5b602085015b83811015610eb75760408188031215612d20575f5ffd5b612d28612a30565b8135612d3381612777565b8152612d4160208301612c5a565b602082015280845250602083019250604081019050612d09565b5f5f60408385031215612d6c575f5ffd5b612d75836126ff565b915060208301356001600160401b03811115612d8f575f5ffd5b612d9b85828601612cc6565b9150509250929050565b5f5f5f60608486031215612db7575f5ffd5b612dc0846126ff565b9250612dce60208501612b52565b929592945050506040919091013590565b5f5f5f60608486031215612df1575f5ffd5b83359250612e01602085016126ff565b9150612e0f60408501612b52565b90509250925092565b5f5f5f5f60808587031215612e2b575f5ffd5b612e34856126ff565b9350612e4260208601612b52565b93969395505050506040820135916060013590565b5f5f5f60608486031215612e69575f5ffd5b612e72846126ff565b9250612e8060208501612c5a565b915060408401356001600160401b03811115612e9a575f5ffd5b612ea686828701612cc6565b9150509250925092565b634e487b7160e01b5f52603260045260245ffd5b5f60208284031215612ed4575f5ffd5b6110dd82612c5a565b634e487b7160e01b5f52601160045260245ffd5b81810381811115610ad957610ad9612edd565b634e487b7160e01b5f52603160045260245ffd5b6001600160a01b03831681526040602080830182905283549183018290525f84815290812090916060840190835b81811015612f6d5783546001600160a01b0316835260019384019360209093019201612f46565b50909695505050505050565b5f60208284031215612f89575f5ffd5b81516001600160401b03811115612f9e575f5ffd5b8201601f81018413612fae575f5ffd5b8051612fbc612afc82612a88565b8082825260208201915060208360051b850101925086831115612fdd575f5ffd5b6020840193505b82841015611ddf578351825260209384019390910190612fe4565b8082028115828204841417610ad957610ad9612edd565b5f8261303057634e487b7160e01b5f52601260045260245ffd5b500490565b6001600160601b038181168382160190811115610ad957610ad9612edd565b5f60208284031215613064575f5ffd5b81516110dd81612777565b80820180821115610ad957610ad9612edd565b5f8161309057613090612edd565b505f190190565b8181035f8312801583831316838312821617156105e9576105e9612edd565b5f600160ff1b82016130ca576130ca612edd565b505f0390565b6001600160601b038281168282160390811115610ad957610ad9612edd56fe5374616b6552656769737472792e5f6164645374726174656779506172616d73a2646970667358221220d1ff4dd09cb1cafa28be0d1c0d7df7021c3707f58f7114c85bb85fb10e03503a64736f6c634300081d0033",
+    "sourceMap": "960:30773:56:-:0;;;1345:171;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;2240:51:57;;;;;2301:31;;;960:30773:56;;14:153:246;-1:-1:-1;;;;;111:31:246;;101:42;;91:70;;157:1;154;147:12;91:70;14:153;:::o;172:486::-;308:6;316;369:2;357:9;348:7;344:23;340:32;337:52;;;385:1;382;375:12;337:52;417:9;411:16;436:53;483:5;436:53;:::i;:::-;558:2;543:18;;537:25;508:5;;-1:-1:-1;571:55:246;537:25;571:55;:::i;:::-;645:7;635:17;;;172:486;;;;;:::o;:::-;960:30773:56;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561000f575f5ffd5b50600436106101dc575f3560e01c80639f3ccf6511610109578063c8294c561161009e578063f2be94ae1161006e578063f2be94ae1461053d578063f851e19814610550578063fa28c62714610563578063ff694a7714610576575f5ffd5b8063c8294c56146104c8578063d5eccc05146104db578063dd9846b9146104ee578063df5cf72314610516575f5ffd5b8063bc9a40c3116100d9578063bc9a40c314610467578063bd29b8cd1461047a578063c46778a51461048d578063c601527d146104b5575f5ffd5b80639f3ccf65146103e1578063ac6bfb03146103f4578063adc804da14610414578063b6904b7814610454575f5ffd5b80634bd26e091161017f57806366acfefe1161014f57806366acfefe1461033d5780636d14a987146103685780637c172347146103a757806381c07502146103c1575f5ffd5b80634bd26e09146102d95780635401ed27146103085780635e5a67751461031b5780635f1f2d771461032a575f5ffd5b806320b66298116101ba57806320b662981461026157806325504777146102765780632cd95940146102975780633ca5a5f5146102b7575f5ffd5b80630491b41c146101e057806308732461146102155780631f9b74e014610236575b5f5ffd5b6102026101ee366004612714565b60ff165f9081526001602052604090205490565b6040519081526020015b60405180910390f35b61022861022336600461272d565b610589565b60405161020c929190612755565b61024961024436600461278b565b6105ce565b6040516001600160601b03909116815260200161020c565b61027461026f366004612800565b6105f0565b005b6102896102843660046128bb565b61083f565b60405161020c929190612955565b6102aa6102a5366004612979565b610a42565b60405161020c91906129a3565b6102026102c5366004612714565b60ff165f9081526003602052604090205490565b6102026102e7366004612979565b5f91825260026020908152604080842060ff93909316845291905290205490565b610249610316366004612979565b610adf565b610202670de0b6b3a764000081565b610274610338366004612aaa565b610af7565b61035061034b3660046128bb565b610e25565b6040516001600160c01b03909116815260200161020c565b61038f7f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b03909116815260200161020c565b6103af602081565b60405160ff909116815260200161020c565b6103d46103cf366004612b65565b610ec1565b60405161020c9190612bb3565b61038f6103ef36600461272d565b6110e4565b610407610402366004612bf0565b611118565b60405161020c9190612c20565b61042761042236600461272d565b6111ae565b6040805182516001600160a01b031681526020928301516001600160601b0316928101929092520161020c565b61040761046236600461272d565b611225565b610274610475366004612c70565b6112b2565b610274610488366004612c98565b6112d3565b61024961049b366004612714565b5f602081905290815260409020546001600160601b031681565b6102746104c3366004612d5b565b611336565b6102496104d6366004612da5565b611352565b6102496104e9366004612714565b6113ce565b6105016104fc366004612ddf565b61141f565b60405163ffffffff909116815260200161020c565b61038f7f000000000000000000000000000000000000000000000000000000000000000081565b61024961054b366004612e18565b611433565b61040761055e366004612979565b6114c6565b610249610571366004612ddf565b6115ac565b610274610584366004612e57565b61160b565b6003602052815f5260405f2081815481106105a2575f80fd5b5f918252602090912001546001600160a01b0381169250600160a01b90046001600160601b0316905082565b5f826105d981611734565b5f6105e485856117af565b509250505b5092915050565b6105f8611996565b8461060281611734565b838061067d576040805162461bcd60e51b81526020600482015260248101919091527f5374616b6552656769737472792e6d6f6469667953747261746567795061726160448201527f6d733a206e6f20737472617465677920696e64696365732070726f766964656460648201526084015b60405180910390fd5b8281146106f25760405162461bcd60e51b815260206004820152603960248201527f5374616b6552656769737472792e6d6f6469667953747261746567795061726160448201527f6d733a20696e707574206c656e677468206d69736d61746368000000000000006064820152608401610674565b60ff87165f908152600360205260408120905b828110156108345785858281811061071f5761071f612eb0565b90506020020160208101906107349190612ec4565b8289898481811061074757610747612eb0565b905060200201358154811061075e5761075e612eb0565b905f5260205f20015f0160146101000a8154816001600160601b0302191690836001600160601b031602179055508860ff167f11a5641322da1dff56a4b66eaac31ffa465295ece907cd163437793b4d009a75838a8a858181106107c4576107c4612eb0565b90506020020135815481106107db576107db612eb0565b5f918252602090912001546001600160a01b031688888581811061080157610801612eb0565b90506020020160208101906108169190612ec4565b604051610824929190612755565b60405180910390a2600101610705565b505050505050505050565b60608061084a611abd565b5f836001600160401b0381111561086357610863612a1c565b60405190808252806020026020018201604052801561088c578160200160208202803683370190505b5090505f846001600160401b038111156108a8576108a8612a1c565b6040519080825280602002602001820160405280156108d1578160200160208202803683370190505b5090505f5b85811015610a34575f8787838181106108f1576108f1612eb0565b919091013560f81c9150610906905081611734565b5f5f610912838d6117af565b91509150806109af5760405162461bcd60e51b815260206004820152605b60248201527f5374616b6552656769737472792e72656769737465724f70657261746f723a2060448201527f4f70657261746f7220646f6573206e6f74206d656574206d696e696d756d207360648201527f74616b6520726571756972656d656e7420666f722071756f72756d0000000000608482015260a401610674565b5f6109bb8c8585611b70565b9050828786815181106109d0576109d0612eb0565b60200260200101906001600160601b031690816001600160601b0316815250506109fa8482611de9565b868681518110610a0c57610a0c612eb0565b6001600160601b03909216602092830291909101909101525050600190920191506108d69050565b509097909650945050505050565b5f82815260026020908152604080832060ff851684528252808320805482518185028101850190935280835260609492939192909184015b82821015610ad2575f848152602090819020604080516060810182529185015463ffffffff8082168452600160201b82041683850152600160401b90046001600160601b031690820152825260019092019101610a7a565b5050505090505b92915050565b5f5f610aeb84846114c6565b60400151949350505050565b610aff611996565b81610b0981611734565b815180610b7e5760405162461bcd60e51b815260206004820152603d60248201527f5374616b6552656769737472792e72656d6f7665537472617465676965733a2060448201527f6e6f20696e646963657320746f2072656d6f76652070726f76696465640000006064820152608401610674565b60ff84165f9081526003602090815260408083206004909252822090915b83811015610e1c578660ff167f31fa2e2cd280c9375e13ffcf3d81e2378100186e4058f8d3ddb690b82dcd31f784888481518110610bdc57610bdc612eb0565b602002602001015181548110610bf457610bf4612eb0565b5f91825260209182902001546040516001600160a01b0390911681520160405180910390a28660ff167f11a5641322da1dff56a4b66eaac31ffa465295ece907cd163437793b4d009a7584888481518110610c5157610c51612eb0565b602002602001015181548110610c6957610c69612eb0565b5f91825260208083209190910154604080516001600160a01b039092168252918101929092520160405180910390a282548390610ca890600190612ef1565b81548110610cb857610cb8612eb0565b905f5260205f200183878381518110610cd357610cd3612eb0565b602002602001015181548110610ceb57610ceb612eb0565b5f91825260209091208254910180546001600160a01b0319166001600160a01b03909216918217815591546001600160601b03600160a01b9182900416021790558254839080610d3d57610d3d612f04565b5f8281526020812082015f199081019190915501905581548290610d6390600190612ef1565b81548110610d7357610d73612eb0565b905f5260205f20015f9054906101000a90046001600160a01b031682878381518110610da157610da1612eb0565b602002602001015181548110610db957610db9612eb0565b905f5260205f20015f6101000a8154816001600160a01b0302191690836001600160a01b0316021790555081805480610df457610df4612f04565b5f8281526020902081015f1990810180546001600160a01b0319169055019055600101610b9c565b50505050505050565b5f610e2e611abd565b5f805b83811015610eb7575f858583818110610e4c57610e4c612eb0565b919091013560f81c9150610e61905081611734565b5f5f610e6d838b6117af565b9150915080610e8e575f9150600160ff84161b6001600160c01b0386161794505b5f610e9a8a8585611b70565b9050610ea68482611de9565b505060019093019250610e31915050565b5095945050505050565b60605f826001600160401b03811115610edc57610edc612a1c565b604051908082528060200260200182016040528015610f05578160200160208202803683370190505b5090505f5b838110156110d9575f858583818110610f2557610f25612eb0565b919091013560f81c9150610f3a905081611734565b60ff81165f908152600160205260408120805463ffffffff8a169290610f6257610f62612eb0565b5f9182526020909120015463ffffffff16111561100d5760405162461bcd60e51b815260206004820152605b60248201527f5374616b6552656769737472792e676574546f74616c5374616b65496e64696360448201527f65734174426c6f636b4e756d6265723a2071756f72756d20686173206e6f207360648201527f74616b6520686973746f727920617420626c6f636b4e756d6265720000000000608482015260a401610674565b60ff81165f90815260016020526040812054905b818110156110ce5760ff83165f90815260016020819052604090912063ffffffff8b169161104f8486612ef1565b6110599190612ef1565b8154811061106957611069612eb0565b5f9182526020909120015463ffffffff16116110c657600161108b8284612ef1565b6110959190612ef1565b8585815181106110a7576110a7612eb0565b602002602001019063ffffffff16908163ffffffff16815250506110ce565b600101611021565b505050600101610f0a565b5090505b9392505050565b6004602052815f5260405f2081815481106110fd575f80fd5b5f918252602090912001546001600160a01b03169150829050565b604080516060810182525f80825260208083018290528284018290528582526002815283822060ff8816835290529190912080548390811061115c5761115c612eb0565b5f91825260209182902060408051606081018252929091015463ffffffff8082168452600160201b82041693830193909352600160401b9092046001600160601b031691810191909152949350505050565b604080518082019091525f808252602082015260ff83165f9081526003602052604090208054839081106111e4576111e4612eb0565b5f918252602091829020604080518082019091529101546001600160a01b0381168252600160a01b90046001600160601b0316918101919091529392505050565b604080516060810182525f808252602080830182905282840182905260ff86168252600190529190912080548390811061126157611261612eb0565b5f91825260209182902060408051606081018252929091015463ffffffff8082168452600160201b82041693830193909352600160401b9092046001600160601b0316918101919091529392505050565b6112ba611996565b816112c481611734565b6112ce8383611f5a565b505050565b6112db611abd565b5f5b81811015611330575f8383838181106112f8576112f8612eb0565b919091013560f81c915061130d905081611734565b5f61131986835f611b70565b90506113258282611de9565b5050506001016112dd565b50505050565b61133e611996565b8161134881611734565b6112ce8383611fc2565b60ff83165f90815260016020526040812080548291908490811061137857611378612eb0565b5f91825260209182902060408051606081018252919092015463ffffffff8082168352600160201b820416938201939093526001600160601b03600160401b90930492909216908201529050610aeb81856123df565b60ff81165f9081526001602081905260408220805490916113ee91612ef1565b815481106113fe576113fe612eb0565b5f91825260209091200154600160401b90046001600160601b031692915050565b5f61142b848484612558565b949350505050565b5f82815260026020908152604080832060ff88168452909152812080548291908490811061146357611463612eb0565b5f91825260209182902060408051606081018252919092015463ffffffff8082168352600160201b820416938201939093526001600160601b03600160401b909304929092169082015290506114b981866123df565b6040015195945050505050565b60408051606080820183525f80835260208084018290528385018290528682526002815284822060ff8716835281528482205485519384018652828452908301829052938201819052919291829003611522579150610ad99050565b5f85815260026020908152604080832060ff881684529091529020611548600184612ef1565b8154811061155857611558612eb0565b5f91825260209182902060408051606081018252919092015463ffffffff8082168352600160201b820416938201939093526001600160601b03600160401b90930492909216908201529250610ad9915050565b5f83815260026020908152604080832060ff8616845290915281206115d2858585612558565b63ffffffff16815481106115e8576115e8612eb0565b5f91825260209091200154600160401b90046001600160601b0316949350505050565b611613611abd565b60ff83165f90815260016020526040902054156116905760405162461bcd60e51b815260206004820152603560248201527f5374616b6552656769737472792e696e697469616c697a6551756f72756d3a2060448201527471756f72756d20616c72656164792065786973747360581b6064820152608401610674565b61169a8382611fc2565b6116a48383611f5a565b505060ff165f908152600160208181526040808420815160608101835263ffffffff438116825281850187815293820187815283549687018455928752939095209451949093018054915193516001600160601b0316600160401b02600160401b600160a01b0319948416600160201b0267ffffffffffffffff1990931695909316949094171791909116179055565b60ff81165f908152600160205260409020546117ac5760405162461bcd60e51b815260206004820152603160248201527f5374616b6552656769737472792e71756f72756d4578697374733a2071756f726044820152701d5b48191bd95cc81b9bdd08195e1a5cdd607a1b6064820152608401610674565b50565b5f5f5f5f6117cb8660ff165f9081526003602052604090205490565b604080518082019091525f808252602082015290915060ff87165f9081526004602081905260408083209051639004134760e01b81526001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000169263900413479261183e928c9201612f18565b5f60405180830381865afa158015611858573d5f5f3e3d5ffd5b505050506040513d5f823e601f3d908101601f1916820160405261187f9190810190612f79565b90505f5b838110156119635760ff89165f9081526003602052604090208054829081106118ae576118ae612eb0565b5f9182526020808320604080518082019091529201546001600160a01b0381168352600160a01b90046001600160601b03169082015283519094508390839081106118fb576118fb612eb0565b6020026020010151111561195b57670de0b6b3a764000083602001516001600160601b031683838151811061193257611932612eb0565b60200260200101516119449190612fff565b61194e9190613016565b6119589086613035565b94505b600101611883565b50505060ff86165f90815260208190526040902054919350506001600160601b03908116908316101590505b9250929050565b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316638da5cb5b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156119f2573d5f5f3e3d5ffd5b505050506040513d601f19601f82011682018060405250810190611a169190613054565b6001600160a01b0316336001600160a01b031614611abb5760405162461bcd60e51b815260206004820152605660248201527f5374616b6552656769737472792e6f6e6c79436f6f7264696e61746f724f776e60448201527f65723a2063616c6c6572206973206e6f7420746865206f776e6572206f6620746064820152753432903932b3b4b9ba393ca1b7b7b93234b730ba37b960511b608482015260a401610674565b565b336001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001614611abb5760405162461bcd60e51b815260206004820152604c60248201527f5374616b6552656769737472792e6f6e6c795265676973747279436f6f72646960448201527f6e61746f723a2063616c6c6572206973206e6f7420746865205265676973747260648201526b3ca1b7b7b93234b730ba37b960a11b608482015260a401610674565b5f83815260026020908152604080832060ff861684529091528120548190808203611c34575f86815260026020908152604080832060ff891684528252808320815160608101835263ffffffff43811682528185018681526001600160601b03808c16958401958652845460018101865594885295909620915191909201805495519351909416600160401b02600160401b600160a01b0319938316600160201b0267ffffffffffffffff1990961691909216179390931716919091179055611d8f565b5f86815260026020908152604080832060ff891684529091528120611c5a600184612ef1565b81548110611c6a57611c6a612eb0565b5f91825260209091200180546001600160601b03600160401b9091048116945090915085168303611ca0575f93505050506110dd565b805463ffffffff438116911603611cd8578054600160401b600160a01b031916600160401b6001600160601b03871602178155611d8d565b805467ffffffff000000001916600160201b4363ffffffff9081168281029390931784555f8a815260026020908152604080832060ff8d168452825280832081516060810183529687528683018481526001600160601b038d81169389019384528254600181018455928652939094209651960180549351915196851667ffffffffffffffff1990941693909317931690930291909117600160401b600160a01b031916600160401b93909216929092021790555b505b6040805160ff871681526001600160601b038616602082015287917f2f527d527e95d8fe40aec55377743bb779087da3f6d0d08f12e36444da62327d910160405180910390a2611ddf82856126bb565b9695505050505050565b60ff82165f9081526001602081905260408220805491839190611e0c9084612ef1565b81548110611e1c57611e1c612eb0565b905f5260205f20019050835f03611e475754600160401b90046001600160601b03169150610ad99050565b80545f90611e6590600160401b90046001600160601b0316866126d2565b825490915063ffffffff438116911603611ea0578154600160401b600160a01b031916600160401b6001600160601b03831602178255611f51565b815463ffffffff438116600160201b81810267ffffffff000000001990941693909317855560ff89165f90815260016020818152604080842081516060810183529586528583018581526001600160601b03808b169388019384528254958601835591865292909420945194909201805491519251909316600160401b02600160401b600160a01b031992861690960267ffffffffffffffff19909116939094169290921792909217169190911790555b95945050505050565b60ff82165f818152602081815260409182902080546bffffffffffffffffffffffff19166001600160601b03861690811790915591519182527f26eecff2b70b0a71104ff4d940ba7162d23a95c248771fc487a7be17a596b3cf910160405180910390a25050565b5f8151116120255760405162461bcd60e51b815260206004820152603860248201525f5160206130f05f395f51905f5260448201527f3a206e6f20737472617465676965732070726f766964656400000000000000006064820152608401610674565b805160ff83165f9081526003602090815260409091205490612047838361306f565b11156120b65760405162461bcd60e51b815260206004820152604560248201525f5160206130f05f395f51905f5260448201527f3a20657863656564204d41585f5745494748494e475f46554e4354494f4e5f4c60648201526408a9c8ea8960db1b608482015260a401610674565b5f5b828110156123d8575f5b6120cc828461306f565b81101561219d578482815181106120e5576120e5612eb0565b60200260200101515f01516001600160a01b031660035f8860ff1660ff1681526020019081526020015f20828154811061212157612121612eb0565b5f918252602090912001546001600160a01b0316036121955760405162461bcd60e51b815260206004820152603d60248201525f5160206130f05f395f51905f5260448201527f3a2063616e6e6f74206164642073616d652073747261746567792032780000006064820152608401610674565b6001016120c2565b505f8482815181106121b1576121b1612eb0565b6020026020010151602001516001600160601b0316116122355760405162461bcd60e51b815260206004820152604660248201525f5160206130f05f395f51905f5260448201527f3a2063616e6e6f74206164642073747261746567792077697468207a65726f206064820152651dd95a59da1d60d21b608482015260a401610674565b60ff85165f908152600360205260409020845185908390811061225a5761225a612eb0565b60209081029190910181015182546001810184555f9384528284208251928401516001600160601b0316600160a01b026001600160a01b039093169290921791015560ff87168252600490526040902084518590839081106122be576122be612eb0565b6020908102919091018101515182546001810184555f938452919092200180546001600160a01b0319166001600160a01b03909216919091179055835160ff8616907f10565e56cacbf32eca267945f054fec02e59750032d113d3302182ad967f54049086908490811061233457612334612eb0565b602090810291909101810151516040516001600160a01b0390911681520160405180910390a28460ff167f11a5641322da1dff56a4b66eaac31ffa465295ece907cd163437793b4d009a7585838151811061239157612391612eb0565b60200260200101515f01518684815181106123ae576123ae612eb0565b6020026020010151602001516040516123c8929190612755565b60405180910390a26001016120b8565b5050505050565b815f015163ffffffff168163ffffffff1610156124835760405162461bcd60e51b815260206004820152605660248201527f5374616b6552656769737472792e5f76616c69646174655374616b655570646160448201527f74654174426c6f636b4e756d6265723a207374616b6555706461746520697320606482015275333937b69030b33a32b910313637b1b5a73ab6b132b960511b608482015260a401610674565b602082015163ffffffff1615806124a95750816020015163ffffffff168163ffffffff16105b6125545760405162461bcd60e51b815260206004820152606a60248201527f5374616b6552656769737472792e5f76616c69646174655374616b655570646160448201527f74654174426c6f636b4e756d6265723a2074686572652069732061206e65776560648201527f72207374616b6555706461746520617661696c61626c65206265666f726520626084820152693637b1b5a73ab6b132b960b11b60a482015260c401610674565b5050565b5f83815260026020908152604080832060ff86168452909152812054805b80156125f6575f86815260026020908152604080832060ff89168452909152902063ffffffff8516906125aa600184612ef1565b815481106125ba576125ba612eb0565b5f9182526020909120015463ffffffff16116125e4576125db600182612ef1565b925050506110dd565b806125ee81613082565b915050612576565b5060405162461bcd60e51b815260206004820152608160248201527f5374616b6552656769737472792e5f6765745374616b65557064617465496e6460448201527f6578466f724f70657261746f724174426c6f636b4e756d6265723a206e6f207360648201527f74616b652075706461746520666f756e6420666f72206f70657261746f72496460848201527f20616e642071756f72756d4e756d62657220617420626c6f636b206e756d626560a4820152603960f91b60c482015260e401610674565b5f6110dd6001600160601b03808516908416613097565b5f5f8212156126f5576126e4826130b6565b6126ee90846130d0565b9050610ad9565b6126ee8284613035565b803560ff8116811461270f575f5ffd5b919050565b5f60208284031215612724575f5ffd5b6110dd826126ff565b5f5f6040838503121561273e575f5ffd5b612747836126ff565b946020939093013593505050565b6001600160a01b039290921682526001600160601b0316602082015260400190565b6001600160a01b03811681146117ac575f5ffd5b5f5f6040838503121561279c575f5ffd5b6127a5836126ff565b915060208301356127b581612777565b809150509250929050565b5f5f83601f8401126127d0575f5ffd5b5081356001600160401b038111156127e6575f5ffd5b6020830191508360208260051b850101111561198f575f5ffd5b5f5f5f5f5f60608688031215612814575f5ffd5b61281d866126ff565b945060208601356001600160401b03811115612837575f5ffd5b612843888289016127c0565b90955093505060408601356001600160401b03811115612861575f5ffd5b61286d888289016127c0565b969995985093965092949392505050565b5f5f83601f84011261288e575f5ffd5b5081356001600160401b038111156128a4575f5ffd5b60208301915083602082850101111561198f575f5ffd5b5f5f5f5f606085870312156128ce575f5ffd5b84356128d981612777565b93506020850135925060408501356001600160401b038111156128fa575f5ffd5b6129068782880161287e565b95989497509550505050565b5f8151808452602084019350602083015f5b8281101561294b5781516001600160601b0316865260209586019590910190600101612924565b5093949350505050565b604081525f6129676040830185612912565b8281036020840152611f518185612912565b5f5f6040838503121561298a575f5ffd5b8235915061299a602084016126ff565b90509250929050565b602080825282518282018190525f918401906040840190835b81811015612a11576129fb83855163ffffffff815116825263ffffffff60208201511660208301526001600160601b0360408201511660408301525050565b60209390930192606092909201916001016129bc565b509095945050505050565b634e487b7160e01b5f52604160045260245ffd5b604080519081016001600160401b0381118282101715612a5257612a52612a1c565b60405290565b604051601f8201601f191681016001600160401b0381118282101715612a8057612a80612a1c565b604052919050565b5f6001600160401b03821115612aa057612aa0612a1c565b5060051b60200190565b5f5f60408385031215612abb575f5ffd5b612ac4836126ff565b915060208301356001600160401b03811115612ade575f5ffd5b8301601f81018513612aee575f5ffd5b8035612b01612afc82612a88565b612a58565b8082825260208201915060208360051b850101925087831115612b22575f5ffd5b6020840193505b82841015612b44578335825260209384019390910190612b29565b809450505050509250929050565b803563ffffffff8116811461270f575f5ffd5b5f5f5f60408486031215612b77575f5ffd5b612b8084612b52565b925060208401356001600160401b03811115612b9a575f5ffd5b612ba68682870161287e565b9497909650939450505050565b602080825282518282018190525f918401906040840190835b81811015612a1157835163ffffffff16835260209384019390920191600101612bcc565b5f5f5f60608486031215612c02575f5ffd5b612c0b846126ff565b95602085013595506040909401359392505050565b60608101610ad9828463ffffffff815116825263ffffffff60208201511660208301526001600160601b0360408201511660408301525050565b80356001600160601b038116811461270f575f5ffd5b5f5f60408385031215612c81575f5ffd5b612c8a836126ff565b915061299a60208401612c5a565b5f5f5f60408486031215612caa575f5ffd5b8335925060208401356001600160401b03811115612b9a575f5ffd5b5f82601f830112612cd5575f5ffd5b8135612ce3612afc82612a88565b8082825260208201915060208360061b860101925085831115612d04575f5ffd5b602085015b83811015610eb75760408188031215612d20575f5ffd5b612d28612a30565b8135612d3381612777565b8152612d4160208301612c5a565b602082015280845250602083019250604081019050612d09565b5f5f60408385031215612d6c575f5ffd5b612d75836126ff565b915060208301356001600160401b03811115612d8f575f5ffd5b612d9b85828601612cc6565b9150509250929050565b5f5f5f60608486031215612db7575f5ffd5b612dc0846126ff565b9250612dce60208501612b52565b929592945050506040919091013590565b5f5f5f60608486031215612df1575f5ffd5b83359250612e01602085016126ff565b9150612e0f60408501612b52565b90509250925092565b5f5f5f5f60808587031215612e2b575f5ffd5b612e34856126ff565b9350612e4260208601612b52565b93969395505050506040820135916060013590565b5f5f5f60608486031215612e69575f5ffd5b612e72846126ff565b9250612e8060208501612c5a565b915060408401356001600160401b03811115612e9a575f5ffd5b612ea686828701612cc6565b9150509250925092565b634e487b7160e01b5f52603260045260245ffd5b5f60208284031215612ed4575f5ffd5b6110dd82612c5a565b634e487b7160e01b5f52601160045260245ffd5b81810381811115610ad957610ad9612edd565b634e487b7160e01b5f52603160045260245ffd5b6001600160a01b03831681526040602080830182905283549183018290525f84815290812090916060840190835b81811015612f6d5783546001600160a01b0316835260019384019360209093019201612f46565b50909695505050505050565b5f60208284031215612f89575f5ffd5b81516001600160401b03811115612f9e575f5ffd5b8201601f81018413612fae575f5ffd5b8051612fbc612afc82612a88565b8082825260208201915060208360051b850101925086831115612fdd575f5ffd5b6020840193505b82841015611ddf578351825260209384019390910190612fe4565b8082028115828204841417610ad957610ad9612edd565b5f8261303057634e487b7160e01b5f52601260045260245ffd5b500490565b6001600160601b038181168382160190811115610ad957610ad9612edd565b5f60208284031215613064575f5ffd5b81516110dd81612777565b80820180821115610ad957610ad9612edd565b5f8161309057613090612edd565b505f190190565b8181035f8312801583831316838312821617156105e9576105e9612edd565b5f600160ff1b82016130ca576130ca612edd565b505f0390565b6001600160601b038281168282160390811115610ad957610ad9612edd56fe5374616b6552656769737472792e5f6164645374726174656779506172616d73a2646970667358221220d1ff4dd09cb1cafa28be0d1c0d7df7021c3707f58f7114c85bb85fb10e03503a64736f6c634300081d0033",
+    "sourceMap": "960:30773:56:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;27710:151;;;;;;:::i;:::-;27815:32;;27789:7;27815:32;;;:18;:32;;;;;:39;;27710:151;;;;508:25:246;;;496:2;481:18;27710:151:56;;;;;;;;2011:56:57;;;;;;:::i;:::-;;:::i;:::-;;;;;;;;:::i;22097:288:56:-;;;;;;:::i;:::-;;:::i;:::-;;;-1:-1:-1;;;;;1793:39:246;;;1775:58;;1763:2;1748:18;22097:288:56;1631:208:246;11208:921:56;;;;;;:::i;:::-;;:::i;:::-;;2436:1422;;;;;;:::i;:::-;;:::i;:::-;;;;;;;;:::i;23543:180::-;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;22489:139::-;;;;;;:::i;:::-;22586:28;;22560:7;22586:28;;;:14;:28;;;;;:35;;22489:139;23123:180;;;;;;:::i;:::-;23217:7;23243:32;;;:20;:32;;;;;;;;:46;;;;;;;;;;;;:53;;23123:180;23941:242;;;;;;:::i;:::-;;:::i;742:48:57:-;;786:4;742:48;;9715:1165:56;;;;;;:::i;:::-;;:::i;5942:1762::-;;;;;;:::i;:::-;;:::i;:::-;;;-1:-1:-1;;;;;8323:32:246;;;8305:51;;8293:2;8278:18;5942:1762:56;8159:203:246;1265:44:57;;;;;;;;-1:-1:-1;;;;;8531:32:246;;;8513:51;;8501:2;8486:18;1265:44:57;8367:203:246;878:55:57;;931:2;878:55;;;;;8747:4:246;8735:17;;;8717:36;;8705:2;8690:18;878:55:57;8575:184:246;30032:1011:56;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;2073:56:57:-;;;;;;:::i;:::-;;:::i;25367:234:56:-;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;22750:169::-;;;;;;:::i;:::-;;:::i;:::-;;;;11195:13:246;;-1:-1:-1;;;;;11191:39:246;11173:58;;11291:4;11279:17;;;11273:24;-1:-1:-1;;;;;11269:57:246;11247:20;;;11240:87;;;;11146:18;22750:169:56;10961:372:246;28579:177:56;;;;;;:::i;:::-;;:::i;8360:244::-;;;;;;:::i;:::-;;:::i;4629:877::-;;;;;;:::i;:::-;;:::i;1485:53:57:-;;;;;;:::i;:::-;;;;;;;;;;;;;-1:-1:-1;;;;;1485:53:57;;;9132:249:56;;;;;;:::i;:::-;;:::i;29292:366::-;;;;;;:::i;:::-;;:::i;28068:188::-;;;;;;:::i;:::-;;:::i;26173:268::-;;;;;;:::i;:::-;;:::i;:::-;;;14678:10:246;14666:23;;;14648:42;;14636:2;14621:18;26173:268:56;14504:192:246;1133:46:57;;;;;27108:403:56;;;;;;:::i;:::-;;:::i;24434:495::-;;;;;;:::i;:::-;;:::i;25716:333::-;;;;;;:::i;:::-;;:::i;7784:570::-;;;;;;:::i;:::-;;:::i;2011:56:57:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2011:56:57;;;-1:-1:-1;;;;2011:56:57;;-1:-1:-1;;;;;2011:56:57;;-1:-1:-1;2011:56:57;:::o;22097:288:56:-;22266:6;22235:12;1289:32;1308:12;1289:18;:32::i;:::-;22289:12:::1;22306:50;22333:12;22347:8;22306:26;:50::i;:::-;-1:-1:-1::0;22288:68:56;-1:-1:-1;;1331:1:56::1;22097:288:::0;;;;;:::o;11208:921::-;1181:32;:30;:32::i;:::-;11407:12:::1;1289:32;1308:12;1289:18;:32::i;:::-;11451:15:::0;11491:13;11483:90:::2;;;::::0;;-1:-1:-1;;;11483:90:56;;16174:2:246;11483:90:56::2;::::0;::::2;16156:21:246::0;16193:18;;;16186:30;;;;16252:34;16232:18;;;16225:62;16323:34;16303:18;;;16296:62;16375:19;;11483:90:56::2;;;;;;;;;11591:34:::0;;::::2;11583:104;;;::::0;-1:-1:-1;;;11583:104:56;;16607:2:246;11583:104:56::2;::::0;::::2;16589:21:246::0;16646:2;16626:18;;;16619:30;16685:34;16665:18;;;16658:62;16756:27;16736:18;;;16729:55;16801:19;;11583:104:56::2;16405:421:246::0;11583:104:56::2;11741:28;::::0;::::2;11698:40;11741:28:::0;;;:14:::2;:28;::::0;;;;;11780:343:::2;11804:9;11800:1;:13;11780:343;;;11942:14;;11957:1;11942:17;;;;;;;:::i;:::-;;;;;;;;;;;;;;:::i;:::-;11893:15;11909;;11925:1;11909:18;;;;;;;:::i;:::-;;;;;;;11893:35;;;;;;;;:::i;:::-;;;;;;;;:46;;;:66;;;;;-1:-1:-1::0;;;;;11893:66:56::2;;;;;-1:-1:-1::0;;;;;11893:66:56::2;;;;;;12021:12;11978:134;;;12035:15;12051;;12067:1;12051:18;;;;;;;:::i;:::-;;;;;;;12035:35;;;;;;;;:::i;:::-;;::::0;;;::::2;::::0;;;::::2;:44:::0;-1:-1:-1;;;;;12035:44:56::2;12081:14:::0;;12096:1;12081:17;;::::2;;;;;:::i;:::-;;;;;;;;;;;;;;:::i;:::-;11978:134;;;;;;;:::i;:::-;;;;;;;;11815:3;;11780:343;;;;11421:708;;1223:1:::1;11208:921:::0;;;;;:::o;2436:1422::-;2610:15;2627;1088:27;:25;:27::i;:::-;2658:29:::1;2703:13:::0;-1:-1:-1;;;;;2690:34:56;::::1;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;-1:-1:-1;2690:34:56::1;-1:-1:-1::0;2658:66:56;-1:-1:-1;2734:27:56::1;2777:13:::0;-1:-1:-1;;;;;2764:34:56;::::1;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;-1:-1:-1;2764:34:56::1;-1:-1:-1::0;2734:64:56;-1:-1:-1;2813:9:56::1;2808:998;2828:24:::0;;::::1;2808:998;;;2873:18;2900:13;;2914:1;2900:16;;;;;;;:::i;:::-;::::0;;;::::1;;;;::::0;-1:-1:-1;2931:32:56::1;::::0;-1:-1:-1;2900:16:56;2931:18:::1;:32::i;:::-;3116:19;3137:20;3161:50;3188:12;3202:8;3161:26;:50::i;:::-;3115:96;;;;3250:15;3225:165;;;::::0;-1:-1:-1;;;3225:165:56;;17683:2:246;3225:165:56::1;::::0;::::1;17665:21:246::0;17722:2;17702:18;;;17695:30;17761:34;17741:18;;;17734:62;17832:34;17812:18;;;17805:62;17904:29;17883:19;;;17876:58;17951:19;;3225:165:56::1;17481:495:246::0;3225:165:56::1;3448:17;3484:104;3524:10;3550:12;3574;3484:26;:104::i;:::-;3448:140;;3703:12;3684:13;3698:1;3684:16;;;;;;;;:::i;:::-;;;;;;:31;-1:-1:-1::0;;;;;3684:31:56::1;;;-1:-1:-1::0;;;;;3684:31:56::1;;;::::0;::::1;3746:49;3770:12;3784:10;3746:23;:49::i;:::-;3729:11;3741:1;3729:14;;;;;;;;:::i;:::-;-1:-1:-1::0;;;;;3729:66:56;;::::1;:14;::::0;;::::1;::::0;;;;;;;:66;-1:-1:-1;;2854:3:56::1;::::0;;::::1;::::0;-1:-1:-1;2808:998:56::1;::::0;-1:-1:-1;2808:998:56::1;;-1:-1:-1::0;3824:13:56;;;;-1:-1:-1;2436:1422:56;-1:-1:-1;;;;;2436:1422:56:o;23543:180::-;23670:32;;;;:20;:32;;;;;;;;:46;;;;;;;;;;23663:53;;;;;;;;;;;;;;;;;23631:20;;23663:53;;23670:46;;23663:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;23663:53:56;;;;;;;-1:-1:-1;;;23663:53:56;;-1:-1:-1;;;;;23663:53:56;;;;;;;;;;;;;;;;;;;;;;23543:180;;;;;:::o;23941:242::-;24029:6;24047:38;24088:46;24109:10;24121:12;24088:20;:46::i;:::-;24151:25;;;;23941:242;-1:-1:-1;;;;23941:242:56:o;9715:1165::-;1181:32;:30;:32::i;:::-;9876:12:::1;1289:32;1308:12;1289:18;:32::i;:::-;9929:22:::0;;9969:18;9961:92:::2;;;::::0;-1:-1:-1;;;9961:92:56;;18183:2:246;9961:92:56::2;::::0;::::2;18165:21:246::0;18222:2;18202:18;;;18195:30;18261:34;18241:18;;;18234:62;18332:31;18312:18;;;18305:59;18381:19;;9961:92:56::2;17981:425:246::0;9961:92:56::2;10107:28;::::0;::::2;10064:40;10107:28:::0;;;:14:::2;:28;::::0;;;;;;;10188:19:::2;:33:::0;;;;;10107:28;;10232:642:::2;10256:14;10252:1;:18;10232:642;;;10322:12;10296:85;;;10336:15;10352;10368:1;10352:18;;;;;;;;:::i;:::-;;;;;;;10336:35;;;;;;;;:::i;:::-;;::::0;;;::::2;::::0;;;;::::2;:44:::0;10296:85:::2;::::0;-1:-1:-1;;;;;10336:44:56;;::::2;8513:51:246::0;;8486:18;10296:85:56::2;;;;;;;10426:12;10400:88;;;10440:15;10456;10472:1;10456:18;;;;;;;;:::i;:::-;;;;;;;10440:35;;;;;;;;:::i;:::-;;::::0;;;::::2;::::0;;;;;;::::2;:44:::0;10400:88:::2;::::0;;-1:-1:-1;;;;;10440:44:56;;::::2;18611:51:246::0;;18678:18;;;18671:34;;;;18584:18;10400:88:56::2;;;;;;;10651:22:::0;;10635:15;;10651:26:::2;::::0;10676:1:::2;::::0;10651:26:::2;:::i;:::-;10635:43;;;;;;;;:::i;:::-;;;;;;;;10597:15;10613;10629:1;10613:18;;;;;;;;:::i;:::-;;;;;;;10597:35;;;;;;;;:::i;:::-;;::::0;;;::::2;::::0;;;:81;;:35;::::2;:81:::0;;-1:-1:-1;;;;;;10597:81:56::2;-1:-1:-1::0;;;;;10597:81:56;;::::2;::::0;;::::2;::::0;;;;-1:-1:-1;;;;;;;;10597:81:56;;;::::2;;;;::::0;;10692:21;;:15;;:21;::::2;;;;:::i;:::-;;::::0;;;::::2;::::0;;;;-1:-1:-1;;10692:21:56;;;;;;;;;;10791:27;;10770:20;;10791:31:::2;::::0;10692:21:::2;::::0;10791:31:::2;:::i;:::-;10770:53;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;-1:-1:-1::0;;;;;10770:53:56::2;10727:20;10748:15;10764:1;10748:18;;;;;;;;:::i;:::-;;;;;;;10727:40;;;;;;;;:::i;:::-;;;;;;;;;:96;;;;;-1:-1:-1::0;;;;;10727:96:56::2;;;;;-1:-1:-1::0;;;;;10727:96:56::2;;;;;;10837:20;:26;;;;;;;:::i;:::-;;::::0;;;::::2;::::0;;;;-1:-1:-1;;10837:26:56;;;;;-1:-1:-1;;;;;;10837:26:56::2;::::0;;;;;::::2;10272:3;10232:642;;;;9894:986;;;1223:1:::1;9715:1165:::0;;:::o;5942:1762::-;6105:7;1088:27;:25;:27::i;:::-;6128:23:::1;::::0;6532:1133:::1;6552:24:::0;;::::1;6532:1133;;;6597:18;6624:13;;6638:1;6624:16;;;;;;;:::i;:::-;::::0;;;::::1;;;;::::0;-1:-1:-1;6655:32:56::1;::::0;-1:-1:-1;6624:16:56;6655:18:::1;:32::i;:::-;6867:18;6887:20;6911:50;6938:12;6952:8;6911:26;:50::i;:::-;6866:95;;;;7097:15;7092:151;;7146:1;::::0;-1:-1:-1;7846:1:69;:8;;;;-1:-1:-1;;;;;7191:22:56;::::1;7836:19:69::0;7165:63:56::1;;7092:151;7392:17;7428:103;7468:10;7494:12;7518:11;7428:26;:103::i;:::-;7392:139;;7605:49;7629:12;7643:10;7605:23;:49::i;:::-;-1:-1:-1::0;;6578:3:56::1;::::0;;::::1;::::0;-1:-1:-1;6532:1133:56::1;::::0;-1:-1:-1;;6532:1133:56::1;;-1:-1:-1::0;7682:15:56;5942:1762;-1:-1:-1;;;;;5942:1762:56:o;30032:1011::-;30172:15;30203:23;30242:13;-1:-1:-1;;;;;30229:34:56;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;30229:34:56;-1:-1:-1;30203:60:56;-1:-1:-1;30278:9:56;30273:740;30293:24;;;30273:740;;;30338:18;30365:13;;30379:1;30365:16;;;;;;;:::i;:::-;;;;;;;;;-1:-1:-1;30396:32:56;;-1:-1:-1;30365:16:56;30396:18;:32::i;:::-;30467;;;;;;;:18;:32;;;;;:35;;:68;;;;:32;:35;;;;:::i;:::-;;;;;;;;;;:53;;;:68;;30442:218;;;;-1:-1:-1;;;30442:218:56;;19315:2:246;30442:218:56;;;19297:21:246;19354:2;19334:18;;;19327:30;19393:34;19373:18;;;19366:62;19464:34;19444:18;;;19437:62;19536:29;19515:19;;;19508:58;19583:19;;30442:218:56;19113:495:246;30442:218:56;30691:32;;;30674:14;30691:32;;;:18;:32;;;;;:39;;30744:259;30768:6;30764:1;:10;30744:259;;;30803:32;;;;;;;:18;:32;;;;;;;;:81;;;;30836:10;30845:1;30836:6;:10;:::i;:::-;:14;;;;:::i;:::-;30803:48;;;;;;;;:::i;:::-;;;;;;;;;;:66;;;:81;30799:190;;30941:1;30928:10;30937:1;30928:6;:10;:::i;:::-;:14;;;;:::i;:::-;30908:7;30916:1;30908:10;;;;;;;;:::i;:::-;;;;;;:35;;;;;;;;;;;30965:5;;30799:190;30776:3;;30744:259;;;-1:-1:-1;;;30319:3:56;;30273:740;;;-1:-1:-1;31029:7:56;-1:-1:-1;30032:1011:56;;;;;;:::o;2073:56:57:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2073:56:57;;-1:-1:-1;2073:56:57;;-1:-1:-1;2073:56:57:o;25367:234:56:-;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;25541:32:56;;;:20;:32;;;;;:46;;;;;;;;;;;:53;;25588:5;;25541:53;;;;;;:::i;:::-;;;;;;;;;;25534:60;;;;;;;;25541:53;;;;25534:60;;;;;;;-1:-1:-1;;;25534:60:56;;;;;;;;;;-1:-1:-1;;;25534:60:56;;;-1:-1:-1;;;;;25534:60:56;;;;;;;;;25367:234;-1:-1:-1;;;;25367:234:56:o;22750:169::-;-1:-1:-1;;;;;;;;;;;;;;;;;22877:28:56;;;;;;;:14;:28;;;;;:35;;22906:5;;22877:35;;;;;;:::i;:::-;;;;;;;;;;22870:42;;;;;;;;;22877:35;;22870:42;-1:-1:-1;;;;;22870:42:56;;;;-1:-1:-1;;;22870:42:56;;-1:-1:-1;;;;;22870:42:56;;;;;;;;;22750:169;-1:-1:-1;;;22750:169:56:o;28579:177::-;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;28710:32:56;;;;;:18;:32;;;;;;:39;;28743:5;;28710:39;;;;;;:::i;:::-;;;;;;;;;;28703:46;;;;;;;;28710:39;;;;28703:46;;;;;;;-1:-1:-1;;;28703:46:56;;;;;;;;;;-1:-1:-1;;;28703:46:56;;;-1:-1:-1;;;;;28703:46:56;;;;;;;;;28579:177;-1:-1:-1;;;28579:177:56:o;8360:244::-;1181:32;:30;:32::i;:::-;8516:12:::1;1289:32;1308:12;1289:18;:32::i;:::-;8544:53:::2;8570:12;8584;8544:25;:53::i;:::-;1223:1:::1;8360:244:::0;;:::o;4629:877::-;1088:27;:25;:27::i;:::-;4958:9:::1;4953:547;4973:24:::0;;::::1;4953:547;;;5018:18;5045:13;;5059:1;5045:16;;;;;;;:::i;:::-;::::0;;;::::1;;;;::::0;-1:-1:-1;5076:32:56::1;::::0;-1:-1:-1;5045:16:56;5076:18:::1;:32::i;:::-;5213:17;5249:93;5289:10;5315:12;5339:1;5249:26;:93::i;:::-;5213:129;;5440:49;5464:12;5478:10;5440:23;:49::i;:::-;-1:-1:-1::0;;;4999:3:56::1;;4953:547;;;;4629:877:::0;;;:::o;9132:249::-;1181:32;:30;:32::i;:::-;9297:12:::1;1289:32;1308:12;1289:18;:32::i;:::-;9325:49:::2;9344:12;9358:15;9325:18;:49::i;29292:366::-:0;29499:32;;;29439:6;29499:32;;;:18;:32;;;;;:39;;29439:6;;29499:32;29532:5;;29499:39;;;;;;:::i;:::-;;;;;;;;;;29461:77;;;;;;;;29499:39;;;;29461:77;;;;;;;-1:-1:-1;;;29461:77:56;;;;;;;;;;-1:-1:-1;;;;;;;;29461:77:56;;;;;;;;;;;;-1:-1:-1;29548:64:56;29461:77;29600:11;29548:33;:64::i;28068:188::-;28166:32;;;28141:6;28166:32;;;:18;:32;;;;;;;28199:39;;28166:32;;28199:43;;;:::i;:::-;28166:77;;;;;;;;:::i;:::-;;;;;;;;;;:83;-1:-1:-1;;;28166:83:56;;-1:-1:-1;;;;;28166:83:56;;;-1:-1:-1;;28068:188:56:o;26173:268::-;26322:6;26351:83;26396:10;26408:12;26422:11;26351:44;:83::i;:::-;26344:90;26173:268;-1:-1:-1;;;;26173:268:56:o;27108:403::-;27269:6;27332:32;;;:20;:32;;;;;;;;:46;;;;;;;;;;:53;;27269:6;;27332:46;27379:5;;27332:53;;;;;;:::i;:::-;;;;;;;;;;27291:94;;;;;;;;27332:53;;;;27291:94;;;;;;;-1:-1:-1;;;27291:94:56;;;;;;;;;;-1:-1:-1;;;;;;;;27291:94:56;;;;;;;;;;;;-1:-1:-1;27395:67:56;27291:94;27450:11;27395:33;:67::i;:::-;27479:25;;;;27108:403;-1:-1:-1;;;;;27108:403:56:o;24434:495::-;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;24579:32:56;;;:20;:32;;;;;:46;;;;;;;;;;:53;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;24579:53:56;24694:18;;;24690:233;;24735:19;-1:-1:-1;24728:26:56;;-1:-1:-1;24728:26:56;24690:233;24807:32;;;;:20;:32;;;;;;;;:46;;;;;;;;;;24854:17;24870:1;24854:13;:17;:::i;:::-;24807:65;;;;;;;;:::i;:::-;;;;;;;;;;24785:87;;;;;;;;24807:65;;;;24785:87;;;;;;;-1:-1:-1;;;24785:87:56;;;;;;;;;;-1:-1:-1;;;;;;;;24785:87:56;;;;;;;;;;;;-1:-1:-1;24886:26:56;;-1:-1:-1;;24886:26:56;25716:333;25854:6;25883:32;;;:20;:32;;;;;;;;:46;;;;;;;;;;25930:105;25904:10;25916:12;26014:11;25930:44;:105::i;:::-;25883:153;;;;;;;;;;:::i;:::-;;;;;;;;;;:159;-1:-1:-1;;;25883:159:56;;-1:-1:-1;;;;;25883:159:56;;25716:333;-1:-1:-1;;;;25716:333:56:o;7784:570::-;1088:27;:25;:27::i;:::-;21785:32;;;21762:4;21785:32;;;:18;:32;;;;;:39;:44;7969:94:::1;;;::::0;-1:-1:-1;;;7969:94:56;;19815:2:246;7969:94:56::1;::::0;::::1;19797:21:246::0;19854:2;19834:18;;;19827:30;19893:34;19873:18;;;19866:62;-1:-1:-1;;;19944:18:246;;;19937:51;20005:19;;7969:94:56::1;19613:417:246::0;7969:94:56::1;8073:49;8092:12;8106:15;8073:18;:49::i;:::-;8132:53;8158:12;8172;8132:25;:53::i;:::-;-1:-1:-1::0;;8196:32:56::1;;;::::0;;;:18:::1;:32;::::0;;;;;;;8247:90;;::::1;::::0;::::1;::::0;;::::1;8286:12;8247:90:::0;::::1;::::0;;;;::::1;::::0;;;;;;;;;8196:151;;;;::::1;::::0;;;;;;;;;;;;;;::::1;::::0;;;;;;-1:-1:-1;;;;;8196:151:56::1;-1:-1:-1::0;;;8196:151:56::1;-1:-1:-1::0;;;;;;;;8196:151:56;;::::1;-1:-1:-1::0;;;8196:151:56::1;-1:-1:-1::0;;8196:151:56;;;;;;::::1;::::0;;;;::::1;::::0;;;::::1;;::::0;;7784:570::o;31563:168::-;21785:32;;;21762:4;21785:32;;;:18;:32;;;;;:39;31635:89;;;;-1:-1:-1;;;31635:89:56;;20237:2:246;31635:89:56;;;20219:21:246;20276:2;20256:18;;;20249:30;20315:34;20295:18;;;20288:62;-1:-1:-1;;;20366:18:246;;;20359:47;20423:19;;31635:89:56;20035:413:246;31635:89:56;31563:168;:::o;20537:1087::-;20674:6;20682:4;20702:13;20725:20;20748:34;20769:12;22586:28;;22560:7;22586:28;;;:14;:28;;;;;:35;;22489:139;20748:34;-1:-1:-1;;;;;;;;;;;;;;;;;20725:57:56;;-1:-1:-1;20919:33:56;;;20846:31;20919:33;;;:19;:33;;;;;;;;20880:73;;-1:-1:-1;;;20880:73:56;;-1:-1:-1;;;;;20880:10:56;:28;;;;:73;;20909:8;;20880:73;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;20880:73:56;;;;;;;;;;;;:::i;:::-;20846:107;-1:-1:-1;20968:9:56;20963:444;20987:12;20983:1;:16;20963:444;;;21117:28;;;;;;;:14;:28;;;;;:31;;21146:1;;21117:31;;;;;;:::i;:::-;;;;;;;;;21093:55;;;;;;;;;21117:31;;21093:55;-1:-1:-1;;;;;21093:55:56;;;;-1:-1:-1;;;21093:55:56;;-1:-1:-1;;;;;21093:55:56;;;;;21251:17;;21093:55;;-1:-1:-1;21251:17:56;;21266:1;;21251:17;;;;;;:::i;:::-;;;;;;;:21;21247:150;;;786:4:57;21329:21:56;:32;;;-1:-1:-1;;;;;21309:52:56;:14;21324:1;21309:17;;;;;;;;:::i;:::-;;;;;;;:52;;;;:::i;:::-;:72;;;;:::i;:::-;21292:90;;;;:::i;:::-;;;21247:150;21001:3;;20963:444;;;-1:-1:-1;;;21540:35:56;;;21507:20;21540:35;;;;;;;;;;;21530:6;;-1:-1:-1;;;;;;;21540:35:56;;;21530:45;;;;;;-1:-1:-1;20537:1087:56;;;;;;:::o;31288:269::-;31410:19;-1:-1:-1;;;;;31389:47:56;;:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;31375:63:56;:10;-1:-1:-1;;;;;31375:63:56;;31354:196;;;;-1:-1:-1;;;31354:196:56;;23187:2:246;31354:196:56;;;23169:21:246;23226:2;23206:18;;;23199:30;23265:34;23245:18;;;23238:62;23336:34;23316:18;;;23309:62;-1:-1:-1;;;23387:19:246;;;23380:53;23450:19;;31354:196:56;22985:490:246;31354:196:56;31288:269::o;31049:233::-;31131:10;-1:-1:-1;;;;;31153:19:56;31131:42;;31110:165;;;;-1:-1:-1;;;31110:165:56;;23682:2:246;31110:165:56;;;23664:21:246;23721:2;23701:18;;;23694:30;23760:34;23740:18;;;23733:62;23831:34;23811:18;;;23804:62;-1:-1:-1;;;23882:19:246;;;23875:43;23935:19;;31110:165:56;23480:480:246;13456:1772:56;13583:6;13655:32;;;:20;:32;;;;;;;;:46;;;;;;;;;;:53;13583:6;;13723:18;;;13719:1321;;13818:32;;;;:20;:32;;;;;;;;:46;;;;;;;;;;13887:97;;;;;;;;13926:12;13887:97;;;;;;;;;;-1:-1:-1;;;;;13887:97:56;;;;;;;;;13818:180;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;13818:180:56;-1:-1:-1;;;;;;;;13818:180:56;;;-1:-1:-1;;;13818:180:56;-1:-1:-1;;13818:180:56;;;;;;;;;;;;;;;;;;;13719:1321;;;14104:30;14137:32;;;:20;:32;;;;;;;;:46;;;;;;;;;;14184:17;14200:1;14184:13;:17;:::i;:::-;14137:65;;;;;;;;:::i;:::-;;;;;;;;;;14228:16;;-1:-1:-1;;;;;;;;14228:16:56;;;;;;-1:-1:-1;14137:65:56;;-1:-1:-1;14327:21:56;;;;14323:68;;14375:1;14368:8;;;;;;;14323:68;14616:28;;:52;14655:12;14616:52;;:28;;:52;14612:418;;14688:27;;-1:-1:-1;;;;;;;;14688:27:56;-1:-1:-1;;;;;;;;14688:27:56;;;;;;14612:418;;;14754:55;;-1:-1:-1;;14754:55:56;-1:-1:-1;;;14796:12:56;14754:55;;;;;;;;;;;;;-1:-1:-1;14827:32:56;;;:20;:32;;;;;;;;:46;;;;;;;;;;14900:97;;;;;;;;;;;;;;;;-1:-1:-1;;;;;14900:97:56;;;;;;;;;14827:188;;-1:-1:-1;14827:188:56;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;14827:188:56;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;14827:188:56;-1:-1:-1;;;14827:188:56;;;;;;;;;;;14612:418;14015:1025;13719:1321;15100:55;;;24163:4:246;24151:17;;24133:36;;-1:-1:-1;;;;;24205:39:246;;24200:2;24185:18;;24178:67;15120:10:56;;15100:55;;24106:18:246;15100:55:56;;;;;;;15172:49;15195:9;15211:8;15172:15;:49::i;:::-;15165:56;13456:1772;-1:-1:-1;;;;;;13456:1772:56:o;15372:1232::-;15550:32;;;15462:6;15550:32;;;:18;:32;;;;;;;:39;;;15462:6;;15550:32;15670:17;;15550:39;15670:17;:::i;:::-;15637:51;;;;;;;;:::i;:::-;;;;;;;;15599:89;;15750:10;15764:1;15750:15;15746:74;;15788:21;-1:-1:-1;;;15788:21:56;;-1:-1:-1;;;;;15788:21:56;;-1:-1:-1;15781:28:56;;-1:-1:-1;15781:28:56;15746:74;15945:21;;15915:15;;15933:46;;-1:-1:-1;;;15945:21:56;;-1:-1:-1;;;;;15945:21:56;15968:10;15933:11;:46::i;:::-;16185:33;;15915:64;;-1:-1:-1;16185:57:56;16229:12;16185:57;;:33;;:57;16181:391;;16258:32;;-1:-1:-1;;;;;;;;16258:32:56;-1:-1:-1;;;;;;;;16258:32:56;;;;;;16181:391;;;16321:60;;;16368:12;16321:60;;-1:-1:-1;;;16321:60:56;;;-1:-1:-1;;16321:60:56;;;;;;;;;16395:32;;;16321:37;16395:32;;;-1:-1:-1;16395:32:56;;;;;;;;16450:97;;;;;;;;;;;;;;;;-1:-1:-1;;;;;16450:97:56;;;;;;;;;16395:166;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;16395:166:56;-1:-1:-1;;;;;;;;16395:166:56;;;;;;-1:-1:-1;;16395:166:56;;;;;;;;;;;;;;;;;;;;;;16181:391;16589:8;15372:1232;-1:-1:-1;;;;;15372:1232:56:o;13048:223::-;13143:35;;;:21;:35;;;;;;;;;;;;:50;;-1:-1:-1;;13143:50:56;-1:-1:-1;;;;;13143:50:56;;;;;;;;13208:56;;1775:58:246;;;13208:56:56;;1748:18:246;13208:56:56;;;;;;;13048:223;;:::o;17146:1544::-;17287:1;17262:15;:22;:26;17254:95;;;;-1:-1:-1;;;17254:95:56;;24458:2:246;17254:95:56;;;24440:21:246;24497:2;24477:18;;;24470:30;-1:-1:-1;;;;;;;;;;;24516:18:246;;;24509:62;24607:26;24587:18;;;24580:54;24651:19;;17254:95:56;24256:420:246;17254:95:56;17384:22;;17444:28;;;17359:22;17444:28;;;:14;:28;;;;;;;;:35;;17510:34;17384:22;17444:35;17510:34;:::i;:::-;:66;;17489:182;;;;-1:-1:-1;;;17489:182:56;;25013:2:246;17489:182:56;;;24995:21:246;25052:2;25032:18;;;25025:30;-1:-1:-1;;;;;;;;;;;25071:18:246;;;25064:62;25162:34;25142:18;;;25135:62;-1:-1:-1;;;25213:19:246;;;25206:36;25259:19;;17489:182:56;24811:473:246;17489:182:56;17686:9;17681:1003;17705:14;17701:1;:18;17681:1003;;;17864:9;17859:290;17884:21;17904:1;17884:17;:21;:::i;:::-;17879:1;:27;17859:290;;;18004:15;18020:1;18004:18;;;;;;;;:::i;:::-;;;;;;;:27;;;-1:-1:-1;;;;;17960:71:56;:14;:28;17975:12;17960:28;;;;;;;;;;;;;;;17989:1;17960:31;;;;;;;;:::i;:::-;;;;;;;;;;:40;-1:-1:-1;;;;;17960:40:56;:71;17931:203;;;;-1:-1:-1;;;17931:203:56;;25491:2:246;17931:203:56;;;25473:21:246;25530:2;25510:18;;;25503:30;-1:-1:-1;;;;;;;;;;;25549:18:246;;;25542:62;25640:31;25620:18;;;25613:59;25689:19;;17931:203:56;25289:425:246;17931:203:56;17908:3;;17859:290;;;;18219:1;18187:15;18203:1;18187:18;;;;;;;;:::i;:::-;;;;;;;:29;;;-1:-1:-1;;;;;18187:33:56;;18162:162;;;;-1:-1:-1;;;18162:162:56;;25921:2:246;18162:162:56;;;25903:21:246;25960:2;25940:18;;;25933:30;-1:-1:-1;;;;;;;;;;;25979:18:246;;;25972:62;26070:34;26050:18;;;26043:62;-1:-1:-1;;;26121:19:246;;;26114:37;26168:19;;18162:162:56;25719:474:246;18162:162:56;18338:28;;;;;;;:14;:28;;;;;18372:18;;:15;;18388:1;;18372:18;;;;;;:::i;:::-;;;;;;;;;;;;18338:53;;;;;;;-1:-1:-1;18338:53:56;;;;;;;;;;;;-1:-1:-1;;;;;18338:53:56;-1:-1:-1;;;18338:53:56;-1:-1:-1;;;;;18338:53:56;;;;;;;;;;18405:33;;;;;:19;:33;;;;;18444:18;;:15;;18460:1;;18444:18;;;;;;:::i;:::-;;;;;;;;;;;;:27;18405:67;;;;;;;-1:-1:-1;18405:67:56;;;;;;;;;;-1:-1:-1;;;;;;18405:67:56;-1:-1:-1;;;;;18405:67:56;;;;;;;;;18527:18;;18491:64;;;;;;18527:18;;18543:1;;18527:18;;;;;;:::i;:::-;;;;;;;;;;;;:27;18491:64;;-1:-1:-1;;;;;8531:32:246;;;8513:51;;8486:18;18491:64:56;;;;;;;18600:12;18574:99;;;18614:15;18630:1;18614:18;;;;;;;;:::i;:::-;;;;;;;:27;;;18643:15;18659:1;18643:18;;;;;;;;:::i;:::-;;;;;;;:29;;;18574:99;;;;;;;:::i;:::-;;;;;;;;17721:3;;17681:1003;;;;17244:1446;;17146:1544;;:::o;19344:808::-;19752:11;:29;;;19737:44;;:11;:44;;;;19716:177;;;;-1:-1:-1;;;19716:177:56;;26400:2:246;19716:177:56;;;26382:21:246;26439:2;26419:18;;;26412:30;26478:34;26458:18;;;26451:62;26549:34;26529:18;;;26522:62;-1:-1:-1;;;26600:19:246;;;26593:53;26663:19;;19716:177:56;26198:490:246;19716:177:56;19924:33;;;;:38;;;;:89;;;19980:11;:33;;;19966:47;;:11;:47;;;19924:89;19903:242;;;;-1:-1:-1;;;19903:242:56;;26895:2:246;19903:242:56;;;26877:21:246;26934:3;26914:18;;;26907:31;26974:34;26954:18;;;26947:62;27045:34;27025:18;;;27018:62;27117:34;27096:19;;;27089:63;-1:-1:-1;;;27168:19:246;;;27161:41;27219:19;;19903:242:56;26693:551:246;19903:242:56;19344:808;;:::o;12215:827::-;12376:6;12415:32;;;:20;:32;;;;;;;;:46;;;;;;;;;;:53;;12587:206;12612:5;;12587:206;;12642:32;;;;:20;:32;;;;;;;;:46;;;;;;;;;;:86;;;;12689:5;12693:1;12689;:5;:::i;:::-;12642:53;;;;;;;;:::i;:::-;;;;;;;;;;:71;;;:86;12638:145;;12762:5;12766:1;12762;:5;:::i;:::-;12748:20;;;;;;12638:145;12619:3;;;;:::i;:::-;;;;12587:206;;;-1:-1:-1;12874:161:56;;-1:-1:-1;;;12874:161:56;;27592:2:246;12874:161:56;;;27574:21:246;27631:3;27611:18;;;27604:31;27671:34;27651:18;;;27644:62;27742:34;27722:18;;;27715:62;27814:34;27793:19;;;27786:63;27886:34;27865:19;;;27858:63;-1:-1:-1;;;27937:19:246;;;27930:32;27979:19;;12874:161:56;27390:614:246;18784:149:56;18857:6;18882:44;-1:-1:-1;;;;;18912:13:56;;;;18889:12;;18882:44;:::i;19013:242::-;19085:6;19115:1;19107:5;:9;19103:146;;;19162:6;19163:5;19162:6;:::i;:::-;19139:31;;:5;:31;:::i;:::-;19132:38;;;;19103:146;19208:30;19231:5;19208;:30;:::i;14:156:246:-;80:20;;140:4;129:16;;119:27;;109:55;;160:1;157;150:12;109:55;14:156;;;:::o;175:182::-;232:6;285:2;273:9;264:7;260:23;256:32;253:52;;;301:1;298;291:12;253:52;324:27;341:9;324:27;:::i;544:296::-;610:6;618;671:2;659:9;650:7;646:23;642:32;639:52;;;687:1;684;677:12;639:52;710:27;727:9;710:27;:::i;:::-;700:37;806:2;791:18;;;;778:32;;-1:-1:-1;;;544:296:246:o;845:323::-;-1:-1:-1;;;;;1053:32:246;;;;1035:51;;-1:-1:-1;;;;;1122:39:246;1117:2;1102:18;;1095:67;1023:2;1008:18;;845:323::o;1173:131::-;-1:-1:-1;;;;;1248:31:246;;1238:42;;1228:70;;1294:1;1291;1284:12;1309:317;1375:6;1383;1436:2;1424:9;1415:7;1411:23;1407:32;1404:52;;;1452:1;1449;1442:12;1404:52;1475:27;1492:9;1475:27;:::i;:::-;1465:37;;1552:2;1541:9;1537:18;1524:32;1565:31;1590:5;1565:31;:::i;:::-;1615:5;1605:15;;;1309:317;;;;;:::o;1844:367::-;1907:8;1917:6;1971:3;1964:4;1956:6;1952:17;1948:27;1938:55;;1989:1;1986;1979:12;1938:55;-1:-1:-1;2012:20:246;;-1:-1:-1;;;;;2044:30:246;;2041:50;;;2087:1;2084;2077:12;2041:50;2124:4;2116:6;2112:17;2100:29;;2184:3;2177:4;2167:6;2164:1;2160:14;2152:6;2148:27;2144:38;2141:47;2138:67;;;2201:1;2198;2191:12;2216:837;2344:6;2352;2360;2368;2376;2429:2;2417:9;2408:7;2404:23;2400:32;2397:52;;;2445:1;2442;2435:12;2397:52;2468:27;2485:9;2468:27;:::i;:::-;2458:37;;2546:2;2535:9;2531:18;2518:32;-1:-1:-1;;;;;2565:6:246;2562:30;2559:50;;;2605:1;2602;2595:12;2559:50;2644:70;2706:7;2697:6;2686:9;2682:22;2644:70;:::i;:::-;2733:8;;-1:-1:-1;2618:96:246;-1:-1:-1;;2821:2:246;2806:18;;2793:32;-1:-1:-1;;;;;2837:32:246;;2834:52;;;2882:1;2879;2872:12;2834:52;2921:72;2985:7;2974:8;2963:9;2959:24;2921:72;:::i;:::-;2216:837;;;;-1:-1:-1;2216:837:246;;-1:-1:-1;3012:8:246;;2895:98;2216:837;-1:-1:-1;;;2216:837:246:o;3058:347::-;3109:8;3119:6;3173:3;3166:4;3158:6;3154:17;3150:27;3140:55;;3191:1;3188;3181:12;3140:55;-1:-1:-1;3214:20:246;;-1:-1:-1;;;;;3246:30:246;;3243:50;;;3289:1;3286;3279:12;3243:50;3326:4;3318:6;3314:17;3302:29;;3378:3;3371:4;3362:6;3354;3350:19;3346:30;3343:39;3340:59;;;3395:1;3392;3385:12;3410:664;3498:6;3506;3514;3522;3575:2;3563:9;3554:7;3550:23;3546:32;3543:52;;;3591:1;3588;3581:12;3543:52;3630:9;3617:23;3649:31;3674:5;3649:31;:::i;:::-;3699:5;-1:-1:-1;3777:2:246;3762:18;;3749:32;;-1:-1:-1;3858:2:246;3843:18;;3830:32;-1:-1:-1;;;;;3874:30:246;;3871:50;;;3917:1;3914;3907:12;3871:50;3956:58;4006:7;3997:6;3986:9;3982:22;3956:58;:::i;:::-;3410:664;;;;-1:-1:-1;4033:8:246;-1:-1:-1;;;;3410:664:246:o;4079:452::-;4131:3;4169:5;4163:12;4196:6;4191:3;4184:19;4228:4;4223:3;4219:14;4212:21;;4267:4;4260:5;4256:16;4290:1;4300:206;4314:6;4311:1;4308:13;4300:206;;;4379:13;;-1:-1:-1;;;;;4375:46:246;4363:59;;4451:4;4442:14;;;;4479:17;;;;4336:1;4329:9;4300:206;;;-1:-1:-1;4522:3:246;;4079:452;-1:-1:-1;;;;4079:452:246:o;4536:459::-;4789:2;4778:9;4771:21;4752:4;4815:55;4866:2;4855:9;4851:18;4843:6;4815:55;:::i;:::-;4918:9;4910:6;4906:22;4901:2;4890:9;4886:18;4879:50;4946:43;4982:6;4974;4946:43;:::i;5000:296::-;5066:6;5074;5127:2;5115:9;5106:7;5102:23;5098:32;5095:52;;;5143:1;5140;5133:12;5095:52;5188:23;;;-1:-1:-1;5254:36:246;5286:2;5271:18;;5254:36;:::i;:::-;5244:46;;5000:296;;;;;:::o;5581:696::-;5831:2;5843:21;;;5913:13;;5816:18;;;5935:22;;;5783:4;;6014:15;;;5988:2;5973:18;;;5783:4;6057:194;6071:6;6068:1;6065:13;6057:194;;;6120:49;6165:3;6156:6;6150:13;5396:10;5388:5;5382:12;5378:29;5373:3;5366:42;5469:10;5461:4;5454:5;5450:16;5444:23;5440:40;5433:4;5428:3;5424:14;5417:64;-1:-1:-1;;;;;5534:4:246;5527:5;5523:16;5517:23;5513:56;5506:4;5501:3;5497:14;5490:80;;;5301:275;6120:49;6238:2;6226:15;;;;;6198:4;6189:14;;;;;6093:1;6086:9;6057:194;;;-1:-1:-1;6268:3:246;;5581:696;-1:-1:-1;;;;;5581:696:246:o;6282:127::-;6343:10;6338:3;6334:20;6331:1;6324:31;6374:4;6371:1;6364:15;6398:4;6395:1;6388:15;6414:257;6486:4;6480:11;;;6518:17;;-1:-1:-1;;;;;6550:34:246;;6586:22;;;6547:62;6544:88;;;6612:18;;:::i;:::-;6648:4;6641:24;6414:257;:::o;6676:275::-;6747:2;6741:9;6812:2;6793:13;;-1:-1:-1;;6789:27:246;6777:40;;-1:-1:-1;;;;;6832:34:246;;6868:22;;;6829:62;6826:88;;;6894:18;;:::i;:::-;6930:2;6923:22;6676:275;;-1:-1:-1;6676:275:246:o;6956:183::-;7016:4;-1:-1:-1;;;;;7041:6:246;7038:30;7035:56;;;7071:18;;:::i;:::-;-1:-1:-1;7116:1:246;7112:14;7128:4;7108:25;;6956:183::o;7144:1010::-;7235:6;7243;7296:2;7284:9;7275:7;7271:23;7267:32;7264:52;;;7312:1;7309;7302:12;7264:52;7335:27;7352:9;7335:27;:::i;:::-;7325:37;;7413:2;7402:9;7398:18;7385:32;-1:-1:-1;;;;;7432:6:246;7429:30;7426:50;;;7472:1;7469;7462:12;7426:50;7495:22;;7548:4;7540:13;;7536:27;-1:-1:-1;7526:55:246;;7577:1;7574;7567:12;7526:55;7617:2;7604:16;7640:64;7656:47;7696:6;7656:47;:::i;:::-;7640:64;:::i;:::-;7726:3;7750:6;7745:3;7738:19;7782:2;7777:3;7773:12;7766:19;;7837:2;7827:6;7824:1;7820:14;7816:2;7812:23;7808:32;7794:46;;7863:7;7855:6;7852:19;7849:39;;;7884:1;7881;7874:12;7849:39;7916:2;7912;7908:11;7897:22;;7928:196;7944:6;7939:3;7936:15;7928:196;;;8034:17;;8064:18;;8111:2;7961:12;;;;8102;;;;7928:196;;;8143:5;8133:15;;;;;;7144:1010;;;;;:::o;8764:163::-;8831:20;;8891:10;8880:22;;8870:33;;8860:61;;8917:1;8914;8907:12;8932:481;9010:6;9018;9026;9079:2;9067:9;9058:7;9054:23;9050:32;9047:52;;;9095:1;9092;9085:12;9047:52;9118:28;9136:9;9118:28;:::i;:::-;9108:38;;9197:2;9186:9;9182:18;9169:32;-1:-1:-1;;;;;9216:6:246;9213:30;9210:50;;;9256:1;9253;9246:12;9210:50;9295:58;9345:7;9336:6;9325:9;9321:22;9295:58;:::i;:::-;8932:481;;9372:8;;-1:-1:-1;9269:84:246;;-1:-1:-1;;;;8932:481:246:o;9418:626::-;9606:2;9618:21;;;9688:13;;9591:18;;;9710:22;;;9558:4;;9789:15;;;9763:2;9748:18;;;9558:4;9832:186;9846:6;9843:1;9840:13;9832:186;;;9911:13;;9926:10;9907:30;9895:43;;9967:2;9993:15;;;;9958:12;;;;9868:1;9861:9;9832:186;;10275:416;10350:6;10358;10366;10419:2;10407:9;10398:7;10394:23;10390:32;10387:52;;;10435:1;10432;10425:12;10387:52;10458:27;10475:9;10458:27;:::i;:::-;10448:37;10554:2;10539:18;;10526:32;;-1:-1:-1;10655:2:246;10640:18;;;10627:32;;10275:416;-1:-1:-1;;;10275:416:246:o;10696:260::-;10890:2;10875:18;;10902:48;10879:9;10932:6;5396:10;5388:5;5382:12;5378:29;5373:3;5366:42;5469:10;5461:4;5454:5;5450:16;5444:23;5440:40;5433:4;5428:3;5424:14;5417:64;-1:-1:-1;;;;;5534:4:246;5527:5;5523:16;5517:23;5513:56;5506:4;5501:3;5497:14;5490:80;;;5301:275;11338:179;11405:20;;-1:-1:-1;;;;;11454:38:246;;11444:49;;11434:77;;11507:1;11504;11497:12;11522:254;11587:6;11595;11648:2;11636:9;11627:7;11623:23;11619:32;11616:52;;;11664:1;11661;11654:12;11616:52;11687:27;11704:9;11687:27;:::i;:::-;11677:37;;11733;11766:2;11755:9;11751:18;11733:37;:::i;11781:523::-;11860:6;11868;11876;11929:2;11917:9;11908:7;11904:23;11900:32;11897:52;;;11945:1;11942;11935:12;11897:52;11990:23;;;-1:-1:-1;12088:2:246;12073:18;;12060:32;-1:-1:-1;;;;;12104:30:246;;12101:50;;;12147:1;12144;12137:12;12309:974;12377:5;12430:3;12423:4;12415:6;12411:17;12407:27;12397:55;;12448:1;12445;12438:12;12397:55;12488:6;12475:20;12515:64;12531:47;12571:6;12531:47;:::i;12515:64::-;12603:3;12627:6;12622:3;12615:19;12659:4;12654:3;12650:14;12643:21;;12720:4;12710:6;12707:1;12703:14;12695:6;12691:27;12687:38;12673:52;;12748:3;12740:6;12737:15;12734:35;;;12765:1;12762;12755:12;12734:35;12801:4;12793:6;12789:17;12815:437;12831:6;12826:3;12823:15;12815:437;;;12909:4;12903:3;12898;12894:13;12890:24;12887:44;;;12927:1;12924;12917:12;12887:44;12957:22;;:::i;:::-;13020:3;13007:17;13037:33;13062:7;13037:33;:::i;:::-;13083:22;;13143:33;13170:4;13161:14;;13143:33;:::i;:::-;13136:4;13129:5;13125:16;13118:59;13202:5;13197:3;13190:18;;13237:4;13232:3;13228:14;13221:21;;12857:4;12852:3;12848:14;12841:21;;12815:437;;13288:465;13412:6;13420;13473:2;13461:9;13452:7;13448:23;13444:32;13441:52;;;13489:1;13486;13479:12;13441:52;13512:27;13529:9;13512:27;:::i;:::-;13502:37;;13590:2;13579:9;13575:18;13562:32;-1:-1:-1;;;;;13609:6:246;13606:30;13603:50;;;13649:1;13646;13639:12;13603:50;13672:75;13739:7;13730:6;13719:9;13715:22;13672:75;:::i;:::-;13662:85;;;13288:465;;;;;:::o;13758:368::-;13832:6;13840;13848;13901:2;13889:9;13880:7;13876:23;13872:32;13869:52;;;13917:1;13914;13907:12;13869:52;13940:27;13957:9;13940:27;:::i;:::-;13930:37;;13986;14019:2;14008:9;14004:18;13986:37;:::i;:::-;13758:368;;13976:47;;-1:-1:-1;;;14092:2:246;14077:18;;;;14064:32;;13758:368::o;14131:::-;14205:6;14213;14221;14274:2;14262:9;14253:7;14249:23;14245:32;14242:52;;;14290:1;14287;14280:12;14242:52;14335:23;;;-1:-1:-1;14401:36:246;14433:2;14418:18;;14401:36;:::i;:::-;14391:46;;14456:37;14489:2;14478:9;14474:18;14456:37;:::i;:::-;14446:47;;14131:368;;;;;:::o;14936:489::-;15019:6;15027;15035;15043;15096:3;15084:9;15075:7;15071:23;15067:33;15064:53;;;15113:1;15110;15103:12;15064:53;15136:27;15153:9;15136:27;:::i;:::-;15126:37;;15182;15215:2;15204:9;15200:18;15182:37;:::i;:::-;14936:489;;15172:47;;-1:-1:-1;;;;15288:2:246;15273:18;;15260:32;;15389:2;15374:18;15361:32;;14936:489::o;15430:537::-;15562:6;15570;15578;15631:2;15619:9;15610:7;15606:23;15602:32;15599:52;;;15647:1;15644;15637:12;15599:52;15670:27;15687:9;15670:27;:::i;:::-;15660:37;;15716;15749:2;15738:9;15734:18;15716:37;:::i;:::-;15706:47;;15804:2;15793:9;15789:18;15776:32;-1:-1:-1;;;;;15823:6:246;15820:30;15817:50;;;15863:1;15860;15853:12;15817:50;15886:75;15953:7;15944:6;15933:9;15929:22;15886:75;:::i;:::-;15876:85;;;15430:537;;;;;:::o;16831:127::-;16892:10;16887:3;16883:20;16880:1;16873:31;16923:4;16920:1;16913:15;16947:4;16944:1;16937:15;16963:184;17021:6;17074:2;17062:9;17053:7;17049:23;17045:32;17042:52;;;17090:1;17087;17080:12;17042:52;17113:28;17131:9;17113:28;:::i;18716:127::-;18777:10;18772:3;18768:20;18765:1;18758:31;18808:4;18805:1;18798:15;18832:4;18829:1;18822:15;18848:128;18915:9;;;18936:11;;;18933:37;;;18950:18;;:::i;18981:127::-;19042:10;19037:3;19033:20;19030:1;19023:31;19073:4;19070:1;19063:15;19097:4;19094:1;19087:15;20453:775;-1:-1:-1;;;;;20716:32:246;;20698:51;;20686:2;20780;20765:18;;;20758:30;;;20837:13;;20671:18;;;20859:22;;;20638:4;20924:17;;;20964:16;;;20638:4;;20912:2;20897:18;;;20638:4;21008:194;21022:6;21019:1;21016:13;21008:194;;;21087:13;;-1:-1:-1;;;;;21083:39:246;21071:52;;21119:1;21178:14;;;;21152:2;21143:12;;;;21037:9;21008:194;;;-1:-1:-1;21219:3:246;;20453:775;-1:-1:-1;;;;;;20453:775:246:o;21233:876::-;21328:6;21381:2;21369:9;21360:7;21356:23;21352:32;21349:52;;;21397:1;21394;21387:12;21349:52;21430:9;21424:16;-1:-1:-1;;;;;21455:6:246;21452:30;21449:50;;;21495:1;21492;21485:12;21449:50;21518:22;;21571:4;21563:13;;21559:27;-1:-1:-1;21549:55:246;;21600:1;21597;21590:12;21549:55;21633:2;21627:9;21656:64;21672:47;21712:6;21672:47;:::i;21656:64::-;21742:3;21766:6;21761:3;21754:19;21798:2;21793:3;21789:12;21782:19;;21853:2;21843:6;21840:1;21836:14;21832:2;21828:23;21824:32;21810:46;;21879:7;21871:6;21868:19;21865:39;;;21900:1;21897;21890:12;21865:39;21932:2;21928;21924:11;21913:22;;21944:135;21960:6;21955:3;21952:15;21944:135;;;22026:10;;22014:23;;22066:2;21977:12;;;;22057;;;;21944:135;;22114:168;22187:9;;;22218;;22235:15;;;22229:22;;22215:37;22205:71;;22256:18;;:::i;22287:217::-;22327:1;22353;22343:132;;22397:10;22392:3;22388:20;22385:1;22378:31;22432:4;22429:1;22422:15;22460:4;22457:1;22450:15;22343:132;-1:-1:-1;22489:9:246;;22287:217::o;22509:215::-;-1:-1:-1;;;;;22577:34:246;;;22613;;;22573:75;;22660:35;;22657:61;;;22698:18;;:::i;22729:251::-;22799:6;22852:2;22840:9;22831:7;22827:23;22823:32;22820:52;;;22868:1;22865;22858:12;22820:52;22900:9;22894:16;22919:31;22944:5;22919:31;:::i;24681:125::-;24746:9;;;24767:10;;;24764:36;;;24780:18;;:::i;27249:136::-;27288:3;27316:5;27306:39;;27325:18;;:::i;:::-;-1:-1:-1;;;27361:18:246;;27249:136::o;28009:200::-;28075:9;;;28048:4;28103:9;;28131:10;;28143:12;;;28127:29;28166:12;;;28158:21;;28124:56;28121:82;;;28183:18;;:::i;28214:136::-;28249:3;-1:-1:-1;;;28270:22:246;;28267:48;;28295:18;;:::i;:::-;-1:-1:-1;28335:1:246;28331:13;;28214:136::o;28355:218::-;-1:-1:-1;;;;;28461:34:246;;;28425;;;28421:75;;28508:36;;28505:62;;;28547:18;;:::i",
+    "linkReferences": {},
+    "immutableReferences": {
+      "22874": [
+        {
+          "start": 1307,
+          "length": 32
+        },
+        {
+          "start": 6155,
+          "length": 32
+        }
+      ],
+      "22877": [
+        {
+          "start": 877,
+          "length": 32
+        },
+        {
+          "start": 6552,
+          "length": 32
+        },
+        {
+          "start": 6856,
+          "length": 32
+        }
+      ]
+    }
+  },
+  "methodIdentifiers": {
+    "MAX_WEIGHING_FUNCTION_LENGTH()": "7c172347",
+    "WEIGHTING_DIVISOR()": "5e5a6775",
+    "addStrategies(uint8,(address,uint96)[])": "c601527d",
+    "delegation()": "df5cf723",
+    "deregisterOperator(bytes32,bytes)": "bd29b8cd",
+    "getCurrentStake(bytes32,uint8)": "5401ed27",
+    "getCurrentTotalStake(uint8)": "d5eccc05",
+    "getLatestStakeUpdate(bytes32,uint8)": "f851e198",
+    "getStakeAtBlockNumber(bytes32,uint8,uint32)": "fa28c627",
+    "getStakeAtBlockNumberAndIndex(uint8,uint32,bytes32,uint256)": "f2be94ae",
+    "getStakeHistory(bytes32,uint8)": "2cd95940",
+    "getStakeHistoryLength(bytes32,uint8)": "4bd26e09",
+    "getStakeUpdateAtIndex(uint8,bytes32,uint256)": "ac6bfb03",
+    "getStakeUpdateIndexAtBlockNumber(bytes32,uint8,uint32)": "dd9846b9",
+    "getTotalStakeAtBlockNumberFromIndex(uint8,uint32,uint256)": "c8294c56",
+    "getTotalStakeHistoryLength(uint8)": "0491b41c",
+    "getTotalStakeIndicesAtBlockNumber(uint32,bytes)": "81c07502",
+    "getTotalStakeUpdateAtIndex(uint8,uint256)": "b6904b78",
+    "initializeQuorum(uint8,uint96,(address,uint96)[])": "ff694a77",
+    "minimumStakeForQuorum(uint8)": "c46778a5",
+    "modifyStrategyParams(uint8,uint256[],uint96[])": "20b66298",
+    "registerOperator(address,bytes32,bytes)": "25504777",
+    "registryCoordinator()": "6d14a987",
+    "removeStrategies(uint8,uint256[])": "5f1f2d77",
+    "setMinimumStakeForQuorum(uint8,uint96)": "bc9a40c3",
+    "strategiesPerQuorum(uint8,uint256)": "9f3ccf65",
+    "strategyParams(uint8,uint256)": "08732461",
+    "strategyParamsByIndex(uint8,uint256)": "adc804da",
+    "strategyParamsLength(uint8)": "3ca5a5f5",
+    "updateOperatorStake(address,bytes32,bytes)": "66acfefe",
+    "weightOfOperatorForQuorum(uint8,address)": "1f9b74e0"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.29+commit.ab55807c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IRegistryCoordinator\",\"name\":\"_registryCoordinator\",\"type\":\"address\"},{\"internalType\":\"contract IDelegationManager\",\"name\":\"_delegationManager\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint96\",\"name\":\"minimumStake\",\"type\":\"uint96\"}],\"name\":\"MinimumStakeForQuorumUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"uint96\",\"name\":\"stake\",\"type\":\"uint96\"}],\"name\":\"OperatorStakeUpdate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"QuorumCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"}],\"name\":\"StrategyAddedToQuorum\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"multiplier\",\"type\":\"uint256\"}],\"name\":\"StrategyMultiplierUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"indexed\":false,\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"}],\"name\":\"StrategyRemovedFromQuorum\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"MAX_WEIGHING_FUNCTION_LENGTH\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"WEIGHTING_DIVISOR\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"components\":[{\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"multiplier\",\"type\":\"uint96\"}],\"internalType\":\"struct IStakeRegistry.StrategyParams[]\",\"name\":\"_strategyParams\",\"type\":\"tuple[]\"}],\"name\":\"addStrategies\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"delegation\",\"outputs\":[{\"internalType\":\"contract IDelegationManager\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"deregisterOperator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"getCurrentStake\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"getCurrentTotalStake\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"getLatestStakeUpdate\",\"outputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"updateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"nextUpdateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint96\",\"name\":\"stake\",\"type\":\"uint96\"}],\"internalType\":\"struct IStakeRegistry.StakeUpdate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"blockNumber\",\"type\":\"uint32\"}],\"name\":\"getStakeAtBlockNumber\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"blockNumber\",\"type\":\"uint32\"},{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getStakeAtBlockNumberAndIndex\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"getStakeHistory\",\"outputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"updateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"nextUpdateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint96\",\"name\":\"stake\",\"type\":\"uint96\"}],\"internalType\":\"struct IStakeRegistry.StakeUpdate[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"getStakeHistoryLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getStakeUpdateAtIndex\",\"outputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"updateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"nextUpdateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint96\",\"name\":\"stake\",\"type\":\"uint96\"}],\"internalType\":\"struct IStakeRegistry.StakeUpdate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"blockNumber\",\"type\":\"uint32\"}],\"name\":\"getStakeUpdateIndexAtBlockNumber\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint32\",\"name\":\"blockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getTotalStakeAtBlockNumberFromIndex\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"getTotalStakeHistoryLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"blockNumber\",\"type\":\"uint32\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"getTotalStakeIndicesAtBlockNumber\",\"outputs\":[{\"internalType\":\"uint32[]\",\"name\":\"\",\"type\":\"uint32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"getTotalStakeUpdateAtIndex\",\"outputs\":[{\"components\":[{\"internalType\":\"uint32\",\"name\":\"updateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"nextUpdateBlockNumber\",\"type\":\"uint32\"},{\"internalType\":\"uint96\",\"name\":\"stake\",\"type\":\"uint96\"}],\"internalType\":\"struct IStakeRegistry.StakeUpdate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint96\",\"name\":\"minimumStake\",\"type\":\"uint96\"},{\"components\":[{\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"multiplier\",\"type\":\"uint96\"}],\"internalType\":\"struct IStakeRegistry.StrategyParams[]\",\"name\":\"_strategyParams\",\"type\":\"tuple[]\"}],\"name\":\"initializeQuorum\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"name\":\"minimumStakeForQuorum\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint256[]\",\"name\":\"strategyIndices\",\"type\":\"uint256[]\"},{\"internalType\":\"uint96[]\",\"name\":\"newMultipliers\",\"type\":\"uint96[]\"}],\"name\":\"modifyStrategyParams\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"registerOperator\",\"outputs\":[{\"internalType\":\"uint96[]\",\"name\":\"\",\"type\":\"uint96[]\"},{\"internalType\":\"uint96[]\",\"name\":\"\",\"type\":\"uint96[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"registryCoordinator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint256[]\",\"name\":\"indicesToRemove\",\"type\":\"uint256[]\"}],\"name\":\"removeStrategies\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint96\",\"name\":\"minimumStake\",\"type\":\"uint96\"}],\"name\":\"setMinimumStakeForQuorum\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"strategiesPerQuorum\",\"outputs\":[{\"internalType\":\"contract IStrategy\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"strategyParams\",\"outputs\":[{\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"multiplier\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"strategyParamsByIndex\",\"outputs\":[{\"components\":[{\"internalType\":\"contract IStrategy\",\"name\":\"strategy\",\"type\":\"address\"},{\"internalType\":\"uint96\",\"name\":\"multiplier\",\"type\":\"uint96\"}],\"internalType\":\"struct IStakeRegistry.StrategyParams\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"}],\"name\":\"strategyParamsLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"operatorId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"quorumNumbers\",\"type\":\"bytes\"}],\"name\":\"updateOperatorStake\",\"outputs\":[{\"internalType\":\"uint192\",\"name\":\"\",\"type\":\"uint192\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"quorumNumber\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"weightOfOperatorForQuorum\",\"outputs\":[{\"internalType\":\"uint96\",\"name\":\"\",\"type\":\"uint96\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Layr Labs, Inc.\",\"kind\":\"dev\",\"methods\":{\"addStrategies(uint8,(address,uint96)[])\":{\"details\":\"Checks to make sure that the *same* strategy cannot be added multiple times (checks against both against existing and new strategies).This function has no check to make sure that the strategies for a single quorum have the same underlying asset. This is a concious choice, since a middleware may want, e.g., a stablecoin quorum that accepts USDC, USDT, DAI, etc. as underlying assets and trades them as \\\"equivalent\\\".\"},\"deregisterOperator(bytes32,bytes)\":{\"details\":\"access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already deregistered         5) `quorumNumbers` is a subset of the quorumNumbers that the operator is registered for\",\"params\":{\"operatorId\":\"The id of the operator to deregister.\",\"quorumNumbers\":\"The quorum numbers the operator is deregistering from, where each byte is an 8 bit integer quorumNumber.\"}},\"getCurrentStake(bytes32,uint8)\":{\"details\":\"Function returns weight of **0** in the event that the operator has no stake history\"},\"getCurrentTotalStake(uint8)\":{\"details\":\"Will revert if `_totalStakeHistory[quorumNumber]` is empty.\"},\"getLatestStakeUpdate(bytes32,uint8)\":{\"details\":\"Function returns an StakeUpdate struct with **every entry equal to 0** in the event that the operator has no stake history\"},\"getStakeAtBlockNumberAndIndex(uint8,uint32,bytes32,uint256)\":{\"details\":\"Function will revert if `index` is out-of-bounds.\",\"params\":{\"blockNumber\":\"Block number to make sure the stake is from.\",\"index\":\"Array index for lookup, within the dynamic array `operatorStakeHistory[operatorId][quorumNumber]`.\",\"operatorId\":\"The id of the operator of interest.\",\"quorumNumber\":\"The quorum number to get the stake for.\"}},\"getStakeHistory(bytes32,uint8)\":{\"params\":{\"operatorId\":\"The id of the operator of interest.\",\"quorumNumber\":\"The quorum number to get the stake for.\"}},\"getStakeUpdateAtIndex(uint8,bytes32,uint256)\":{\"details\":\"Function will revert if `index` is out-of-bounds.\",\"params\":{\"index\":\"Array index for lookup, within the dynamic array `operatorStakeHistory[operatorId][quorumNumber]`.\",\"operatorId\":\"The id of the operator of interest.\",\"quorumNumber\":\"The quorum number to get the stake for.\"}},\"getTotalStakeAtBlockNumberFromIndex(uint8,uint32,uint256)\":{\"details\":\"Function will revert if `index` is out-of-bounds.\",\"params\":{\"blockNumber\":\"Block number to make sure the stake is from.\",\"index\":\"Array index for lookup, within the dynamic array `_totalStakeHistory[quorumNumber]`.\",\"quorumNumber\":\"The quorum number to get the stake for.\"}},\"getTotalStakeIndicesAtBlockNumber(uint32,bytes)\":{\"details\":\"Function will revert if there are no indices for the given `blockNumber`\",\"params\":{\"blockNumber\":\"Block number to retrieve the stake indices from.\",\"quorumNumbers\":\"The quorum numbers to get the stake indices for.\"}},\"getTotalStakeUpdateAtIndex(uint8,uint256)\":{\"params\":{\"index\":\"Array index for lookup, within the dynamic array `_totalStakeHistory[quorumNumber]`.\",\"quorumNumber\":\"The quorum number to get the stake for.\"}},\"modifyStrategyParams(uint8,uint256[],uint96[])\":{\"params\":{\"newMultipliers\":\"are the new multipliers for the strategies\",\"quorumNumber\":\"is the quorum number to which the strategies belong\",\"strategyIndices\":\"are the indices of the strategies to change\"}},\"registerOperator(address,bytes32,bytes)\":{\"details\":\"access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already registered\",\"params\":{\"operator\":\"The address of the operator to register.\",\"operatorId\":\"The id of the operator to register.\",\"quorumNumbers\":\"The quorum numbers the operator is registering for, where each byte is an 8 bit integer quorumNumber.\"},\"returns\":{\"_0\":\"The operator's current stake for each quorum, and the total stake for each quorum\"}},\"removeStrategies(uint8,uint256[])\":{\"details\":\"higher indices should be *first* in the list of @param indicesToRemove, since otherwise the removal of lower index entries will cause a shift in the indices of the other strategies to remove\"},\"updateOperatorStake(address,bytes32,bytes)\":{\"returns\":{\"_0\":\"A bitmap of quorums where the operator no longer meets the minimum stake and should be deregistered.\"}},\"weightOfOperatorForQuorum(uint8,address)\":{\"details\":\"reverts if the quorum does not exist\"}},\"title\":\"A `Registry` that keeps track of stakes of operators for up to 256 quorums. Specifically, it keeps track of      1) The stake of each operator in all the quorums they are a part of for block ranges      2) The total stake of all operators in each quorum for block ranges      3) The minimum stake required to register for each quorum It allows an additional functionality (in addition to registering and deregistering) to update the stake of an operator.\",\"version\":1},\"userdoc\":{\"events\":{\"MinimumStakeForQuorumUpdated(uint8,uint96)\":{\"notice\":\"emitted when the minimum stake for a quorum is updated\"},\"OperatorStakeUpdate(bytes32,uint8,uint96)\":{\"notice\":\"emitted whenever the stake of `operator` is updated\"},\"QuorumCreated(uint8)\":{\"notice\":\"emitted when a new quorum is created\"},\"StrategyAddedToQuorum(uint8,address)\":{\"notice\":\"emitted when `strategy` has been added to the array at `strategyParams[quorumNumber]`\"},\"StrategyMultiplierUpdated(uint8,address,uint256)\":{\"notice\":\"emitted when `strategy` has its `multiplier` updated in the array at `strategyParams[quorumNumber]`\"},\"StrategyRemovedFromQuorum(uint8,address)\":{\"notice\":\"emitted when `strategy` has removed from the array at `strategyParams[quorumNumber]`\"}},\"kind\":\"user\",\"methods\":{\"MAX_WEIGHING_FUNCTION_LENGTH()\":{\"notice\":\"Maximum length of dynamic arrays in the `strategyParams` mapping.\"},\"WEIGHTING_DIVISOR()\":{\"notice\":\"Constant used as a divisor in calculating weights.\"},\"addStrategies(uint8,(address,uint96)[])\":{\"notice\":\"Adds strategies and weights to the quorum\"},\"delegation()\":{\"notice\":\"The address of the Delegation contract for EigenLayer.\"},\"deregisterOperator(bytes32,bytes)\":{\"notice\":\"Deregisters the operator with `operatorId` for the specified `quorumNumbers`.\"},\"getCurrentStake(bytes32,uint8)\":{\"notice\":\"Returns the most recent stake weight for the `operatorId` for quorum `quorumNumber`\"},\"getCurrentTotalStake(uint8)\":{\"notice\":\"Returns the stake weight from the latest entry in `_totalStakeHistory` for quorum `quorumNumber`.\"},\"getLatestStakeUpdate(bytes32,uint8)\":{\"notice\":\"Returns the most recent stake weight for the `operatorId` for a certain quorum\"},\"getStakeAtBlockNumber(bytes32,uint8,uint32)\":{\"notice\":\"Returns the stake of the operator for the provided `quorumNumber` at the given `blockNumber`\"},\"getStakeAtBlockNumberAndIndex(uint8,uint32,bytes32,uint256)\":{\"notice\":\"Returns the stake weight corresponding to `operatorId` for quorum `quorumNumber`, at the `index`-th entry in the `operatorStakeHistory[operatorId][quorumNumber]` array if it was the operator's stake at `blockNumber`. Reverts otherwise.\"},\"getStakeHistory(bytes32,uint8)\":{\"notice\":\"Returns the entire `operatorStakeHistory[operatorId][quorumNumber]` array.\"},\"getStakeHistoryLength(bytes32,uint8)\":{\"notice\":\"Returns the length of an operator's stake history for the given quorum\"},\"getStakeUpdateAtIndex(uint8,bytes32,uint256)\":{\"notice\":\"Returns the `index`-th entry in the `operatorStakeHistory[operatorId][quorumNumber]` array.\"},\"getStakeUpdateIndexAtBlockNumber(bytes32,uint8,uint32)\":{\"notice\":\"Returns the indices of the operator stakes for the provided `quorumNumber` at the given `blockNumber`\"},\"getTotalStakeAtBlockNumberFromIndex(uint8,uint32,uint256)\":{\"notice\":\"Returns the total stake weight for quorum `quorumNumber`, at the `index`-th entry in the `_totalStakeHistory[quorumNumber]` array if it was the stake at `blockNumber`. Reverts otherwise.\"},\"getTotalStakeHistoryLength(uint8)\":{\"notice\":\"Returns the length of the total stake history for the given quorum\"},\"getTotalStakeIndicesAtBlockNumber(uint32,bytes)\":{\"notice\":\"Returns the indices of the total stakes for the provided `quorumNumbers` at the given `blockNumber`\"},\"getTotalStakeUpdateAtIndex(uint8,uint256)\":{\"notice\":\"Returns the `index`-th entry in the dynamic array of total stake, `_totalStakeHistory` for quorum `quorumNumber`.\"},\"initializeQuorum(uint8,uint96,(address,uint96)[])\":{\"notice\":\"Initialize a new quorum and push its first history update\"},\"minimumStakeForQuorum(uint8)\":{\"notice\":\"In order to register for a quorum i, an operator must have at least `minimumStakeForQuorum[i]` evaluated by this contract's 'VoteWeigher' logic.\"},\"modifyStrategyParams(uint8,uint256[],uint96[])\":{\"notice\":\"Modifies the weights of existing strategies for a specific quorum\"},\"registerOperator(address,bytes32,bytes)\":{\"notice\":\"Registers the `operator` with `operatorId` for the specified `quorumNumbers`.\"},\"registryCoordinator()\":{\"notice\":\"the coordinator contract that this registry is associated with\"},\"removeStrategies(uint8,uint256[])\":{\"notice\":\"Remove strategies and their associated weights from the quorum's considered strategies\"},\"strategyParams(uint8,uint256)\":{\"notice\":\"mapping from quorum number to the list of strategies considered and their corresponding multipliers for that specific quorum\"},\"strategyParamsByIndex(uint8,uint256)\":{\"notice\":\"Returns the strategy and weight multiplier for the `index`'th strategy in the quorum `quorumNumber`\"},\"strategyParamsLength(uint8)\":{\"notice\":\"Returns the length of the dynamic array stored in `strategyParams[quorumNumber]`.\"},\"updateOperatorStake(address,bytes32,bytes)\":{\"notice\":\"Called by the registry coordinator to update an operator's stake for one or more quorums. If the operator no longer has the minimum stake required for a quorum, they are added to the `quorumsToRemove`, which is returned to the registry coordinator\"},\"weightOfOperatorForQuorum(uint8,address)\":{\"notice\":\"This function computes the total weight of the @param operator in the quorum @param quorumNumber.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/eigenlayer-middleware/src/StakeRegistry.sol\":\"StakeRegistry\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin-upgrades-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/\",\":@openzeppelin-upgrades/=lib/eigenlayer-middleware/lib/openzeppelin-contracts-upgradeable/\",\":@openzeppelin-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/\",\":@openzeppelin/=node_modules/@openzeppelin/\",\":ds-test/=lib/eigenlayer-middleware/lib/ds-test/src/\",\":eigenlayer-contracts/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/\",\":eigenlayer-middleware/=lib/eigenlayer-middleware/\",\":erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":halmos-cheatcodes/=lib/openzeppelin-contracts-upgradeable/lib/halmos-cheatcodes/src/\",\":openzeppelin-contracts-upgradeable-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/\",\":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/\",\":openzeppelin-contracts-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/contracts/\",\":zeus-templates/=lib/zeus-templates/src/\"]},\"sources\":{\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol\":{\"keccak256\":\"0xe81ddde979612b77f32ff93d18118326304f8606671abc22b491d005aa4ca924\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://0ade6ec99eaed94cee212880292abe32d24d2d7cd2babbc0d971dd2d8b8fc3e3\",\"dweb:/ipfs/QmWs5JE1JfDB1KvrGU3XAhnopa9sdMwTGW6AQJPGQMvuaT\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol\":{\"keccak256\":\"0x2e60e5f4b0da0a0a4e2a07c63141120998559970c21deac743ea0c64a60a880c\",\"license\":\"CC0-1.0\",\"urls\":[\"bzz-raw://e635c346bde5b7ade9bcf35bc733081520cb86015be4fbc6e761e6e9482c4c91\",\"dweb:/ipfs/QmRoeazEnbFn5SPSWAkoFK2gSN9DMp3hJAnrLWuL2sKutz\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol\":{\"keccak256\":\"0xdb3ff2be72047b89ead3fc98b52cdd514b243ed78cee7f6a48d672bc4cf0fd34\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://d16a23a041559f6aaee6dc8342208beb3c3e98b1c23e46ab334243927f4ecc0b\",\"dweb:/ipfs/QmVbyRYgm6zHMFqmZXgsGhHAUxtmvyioc58VuMoJ9x8Eaj\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol\":{\"keccak256\":\"0x37cf51dde7316da0b95f1870504f2c1e5ed5c90faf7efec17dae3ba3d36cba93\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://03c4775b648612314d81278095cf17ad4f15fb850307eaf81d986107d5f664fc\",\"dweb:/ipfs/QmW5vuanTbTFz1kWUUAPBWLu4NhjwrMuye2sT272rC2X7d\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol\":{\"keccak256\":\"0x33a935182f77cfd508fc57ec8e45afc8dc3748e1e9b764d36bf90ae6466f257b\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://d3981b5bbf435cda04e2ed2f348f886ebf1500c18dd4bbf67b1f1bc0272e2d3f\",\"dweb:/ipfs/QmYHDzQx29ataM2ejRCXFcPxaPdxWqX8v7uwUAYoG9572w\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol\":{\"keccak256\":\"0xffafae142d5337a5c204519e8f82fe3a5fae137286ebf597fa50699cf12c2474\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://b577a12f7788095b230fd069b36ba9b3cdb376a0b7c3d8ae71588e5bf0c2f574\",\"dweb:/ipfs/QmXd1cDzYpxecyFEwowLiBKKjzRHgV8cs1qvLwypdEbVYy\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol\":{\"keccak256\":\"0x3b62ea6ee304cbab976ff206bcf55268f18a3291708021557f93f899f99862e4\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://b59a96fbf9940a7795d9a5fcb9e03939a87216317fb67872b7017285bf7eb49b\",\"dweb:/ipfs/QmdiH5AfYBvuTpzxTqfhorLG25t2dhSTKWh1cvBbYxGDJH\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/ISlasher.sol\":{\"keccak256\":\"0x7655919fae553e75ff196b31c9244079ff222e34ff43f36c41429ee826cfad9b\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://d5d35a784a9511b351826cb70b00d92c3d374474f256b01af05cd1acb1ce6c10\",\"dweb:/ipfs/QmZog3BrpLa213wj5qxVYMQv7jdrkf5AAufLCVaMZsL7Gs\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol\":{\"keccak256\":\"0x816aaa02d489535da4f4103a5df5444307487d3121eda4be0a1bd8e7c0f7cdf9\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://54f58369f286eaa6d2ab3c6b8250774b1de46c9935d4af09518bbdeec08a906e\",\"dweb:/ipfs/QmZPmSTAu4fmR7TeBijDTYNM2bsv5DHh9H8gtyP7Ap1DwE\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol\":{\"keccak256\":\"0xfb25e5f240254ed71f62b5ec622a14846c10861d77cca55c8f838a28b455ea87\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://93744359e00d692cbdfbbfd1adf4bdaf6b784ef9d3c804e161acdbbec1c5d0b1\",\"dweb:/ipfs/QmVX7X9bhaeZzMr4WLx1PmVCv4GTmtjWC68FxokTPAPCuo\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/libraries/BeaconChainProofs.sol\":{\"keccak256\":\"0x0bb92e390e73d450282108dd84f1cf7922de6e1a7e810ad5351b8708785ba659\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://b03baa849b9e0b17ce4f5e35905b73ec83429e464ec3dbe229574333261ea460\",\"dweb:/ipfs/Qmd1FviY3CbqBzpYoTxCeEpS2R53vT9MijZ6qv71S2QEzo\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/libraries/Endian.sol\":{\"keccak256\":\"0x098850d09b65bb7dbad5ea0513eacb77f2701e135d9727b3627e13f303b2ff41\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://3519f5a415b99d196f3cecef3f48ea116f2f3a2b381efcc96a5d7eff6934c2f3\",\"dweb:/ipfs/QmbCcFWgmFjXeZrvfEFQ17AgEueW9wS17HhvjkxMi5x3H8\"]},\"lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/libraries/Merkle.sol\":{\"keccak256\":\"0x6e82a559dc583bf4b15867654e82f3aca9a862589209abac1c4356142a3b2211\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8a1a4819b95c7da710e11efb279bd4b596139dc12c96c45a366d8e1893018eb1\",\"dweb:/ipfs/QmZBHPLKoYepZmA7AL9ECJFkbBhujSNvvc8pJmNC9MnRni\"]},\"lib/eigenlayer-middleware/src/StakeRegistry.sol\":{\"keccak256\":\"0x5b0d17f02374a0a57380fac9cab9caf61db584b2ba3b2bc4c895f966f8bcc046\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://3983ffc83cb50cf5ea6e4c690a03c68da17119d2303c684246ac8e9ae08a98e3\",\"dweb:/ipfs/QmeQHyxJYa8om6NxUDREhkG7pXMdayBRZtWbTrR9DKSHHN\"]},\"lib/eigenlayer-middleware/src/StakeRegistryStorage.sol\":{\"keccak256\":\"0x24c60f20f5275f2d18ea6ad390e42d003ef4a3508fcfc43d971a94905857901e\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://9b1e0414bf03a43a28ee6e8d46484744b01f3ef4273d4b2cf11d51ffea280e41\",\"dweb:/ipfs/QmbbEvx2QswHnpwTeD7dqrrh93yvVJyqjrDNYTqmggehTD\"]},\"lib/eigenlayer-middleware/src/interfaces/IBLSApkRegistry.sol\":{\"keccak256\":\"0x13d6e05624af5da6e8171e4b4541109d65fa3719e92f2608f3bf740944ba8f44\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://db268f1418341ab8145d1f9c4de5dd7592288b5024f317f227a8bca64c4ddc2e\",\"dweb:/ipfs/QmRGHtHj5BE38BAXFB5dWZvrAawAz1LGVdMtL13tvn95wE\"]},\"lib/eigenlayer-middleware/src/interfaces/IIndexRegistry.sol\":{\"keccak256\":\"0x9273b91572ec3fdb4c1d7a712c4d8725adf31d5ac3f062f279aa1dfd3b0436ab\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://cab02cf821685c93bdf1b62046b8c71c652dcd7d5c0226318e2fd071bace3ee2\",\"dweb:/ipfs/QmTfUP1VCJW8TPU3GYhm1x9WDXKMibbDVwmg8wBxNBU5N5\"]},\"lib/eigenlayer-middleware/src/interfaces/IRegistry.sol\":{\"keccak256\":\"0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25\",\"dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY\"]},\"lib/eigenlayer-middleware/src/interfaces/IRegistryCoordinator.sol\":{\"keccak256\":\"0xd70b3a401a0204235ebac75f1fb14bb409f26f1cb1b8d59085a1bfe7137b75ae\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://0100864ae58973b26c7f07853bd5f81d01f5c912a39e75fd325748f779626496\",\"dweb:/ipfs/QmRzdiYeNfKdooaFBGHGYsZ8mN8z79EDuhMfnRj2xrdqPk\"]},\"lib/eigenlayer-middleware/src/interfaces/ISocketRegistry.sol\":{\"keccak256\":\"0x6c7c92f1daa9cb5d9424ea14d373e9a66e1322d083d994f82038272d76aae527\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://38bedebda68f51312f90174dbf680b4584fa0eb462452cd98eebac499ca875fc\",\"dweb:/ipfs/QmbdwVnE42EcAkV4dUPBnkV89Jytb5Y5cV3DkvSsjLasEb\"]},\"lib/eigenlayer-middleware/src/interfaces/IStakeRegistry.sol\":{\"keccak256\":\"0xb83920fda2546a4428a2114b7099f46449c3f5e0477ac49145ffac0ccede7175\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://99db2479c3d959ea4e23120cc7b73a2ad48d599348f5311ad385a99a91984ff0\",\"dweb:/ipfs/Qma9kNLndk6FJSBure46f54tzcZL4zbgeeWCTkxBf9iq6v\"]},\"lib/eigenlayer-middleware/src/libraries/BN254.sol\":{\"keccak256\":\"0x5d0d87e77625c1ba945d3e835431ca5d02cd6b5ec684b34979cf0a6804e34620\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://700341f6f902d993832b5db975a4ce0cec484ad2b7569d3a6b9cddaf00e9f1a0\",\"dweb:/ipfs/QmUybAB2ssPVt7ABmKytKCJ9oGwnUNeoS5PBvimh8mJsSZ\"]},\"lib/eigenlayer-middleware/src/libraries/BitmapUtils.sol\":{\"keccak256\":\"0xc59388a68fd166d70c9742fdf7b79b5bc7932aed50bb889ebbe775f2885081ee\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3b9c7159b8f832f5ff17e5824421d1a0336129f449f8ae4b3d184c8507e8147e\",\"dweb:/ipfs/QmaPrPa8n4PAa6ZabCg3WG5ZASNSX2j61BuZLxV5paVccV\"]},\"node_modules/@openzeppelin/contracts/proxy/beacon/IBeacon.sol\":{\"keccak256\":\"0xd50a3421ac379ccb1be435fa646d66a65c986b4924f0849839f08692f39dde61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ada1e030c0231db8d143b44ce92b4d1158eedb087880cad6d8cc7bd7ebe7b354\",\"dweb:/ipfs/QmWZ2NHZweRpz1U9GF6R1h65ri76dnX7fNxLBeM2t5N5Ce\"]},\"node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1\",\"dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.29+commit.ab55807c"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IRegistryCoordinator",
+              "name": "_registryCoordinator",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IDelegationManager",
+              "name": "_delegationManager",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            },
+            {
+              "internalType": "uint96",
+              "name": "minimumStake",
+              "type": "uint96",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "MinimumStakeForQuorumUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": false
+            },
+            {
+              "internalType": "uint96",
+              "name": "stake",
+              "type": "uint96",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "OperatorStakeUpdate",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "QuorumCreated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IStrategy",
+              "name": "strategy",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StrategyAddedToQuorum",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IStrategy",
+              "name": "strategy",
+              "type": "address",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "multiplier",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StrategyMultiplierUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8",
+              "indexed": true
+            },
+            {
+              "internalType": "contract IStrategy",
+              "name": "strategy",
+              "type": "address",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "StrategyRemovedFromQuorum",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "MAX_WEIGHING_FUNCTION_LENGTH",
+          "outputs": [
+            {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "WEIGHTING_DIVISOR",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "struct IStakeRegistry.StrategyParams[]",
+              "name": "_strategyParams",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "contract IStrategy",
+                  "name": "strategy",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "multiplier",
+                  "type": "uint96"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "addStrategies"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "delegation",
+          "outputs": [
+            {
+              "internalType": "contract IDelegationManager",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "deregisterOperator"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getCurrentStake",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getCurrentTotalStake",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getLatestStakeUpdate",
+          "outputs": [
+            {
+              "internalType": "struct IStakeRegistry.StakeUpdate",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "updateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "nextUpdateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "stake",
+                  "type": "uint96"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockNumber",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getStakeAtBlockNumber",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getStakeAtBlockNumberAndIndex",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getStakeHistory",
+          "outputs": [
+            {
+              "internalType": "struct IStakeRegistry.StakeUpdate[]",
+              "name": "",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "updateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "nextUpdateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "stake",
+                  "type": "uint96"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getStakeHistoryLength",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getStakeUpdateAtIndex",
+          "outputs": [
+            {
+              "internalType": "struct IStakeRegistry.StakeUpdate",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "updateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "nextUpdateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "stake",
+                  "type": "uint96"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockNumber",
+              "type": "uint32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getStakeUpdateIndexAtBlockNumber",
+          "outputs": [
+            {
+              "internalType": "uint32",
+              "name": "",
+              "type": "uint32"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint32",
+              "name": "blockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getTotalStakeAtBlockNumberFromIndex",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getTotalStakeHistoryLength",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint32",
+              "name": "blockNumber",
+              "type": "uint32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getTotalStakeIndicesAtBlockNumber",
+          "outputs": [
+            {
+              "internalType": "uint32[]",
+              "name": "",
+              "type": "uint32[]"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getTotalStakeUpdateAtIndex",
+          "outputs": [
+            {
+              "internalType": "struct IStakeRegistry.StakeUpdate",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "uint32",
+                  "name": "updateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint32",
+                  "name": "nextUpdateBlockNumber",
+                  "type": "uint32"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "stake",
+                  "type": "uint96"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint96",
+              "name": "minimumStake",
+              "type": "uint96"
+            },
+            {
+              "internalType": "struct IStakeRegistry.StrategyParams[]",
+              "name": "_strategyParams",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "contract IStrategy",
+                  "name": "strategy",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "multiplier",
+                  "type": "uint96"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "initializeQuorum"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "minimumStakeForQuorum",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "strategyIndices",
+              "type": "uint256[]"
+            },
+            {
+              "internalType": "uint96[]",
+              "name": "newMultipliers",
+              "type": "uint96[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "modifyStrategyParams"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "registerOperator",
+          "outputs": [
+            {
+              "internalType": "uint96[]",
+              "name": "",
+              "type": "uint96[]"
+            },
+            {
+              "internalType": "uint96[]",
+              "name": "",
+              "type": "uint96[]"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "registryCoordinator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "indicesToRemove",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "removeStrategies"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint96",
+              "name": "minimumStake",
+              "type": "uint96"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "setMinimumStakeForQuorum"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "strategiesPerQuorum",
+          "outputs": [
+            {
+              "internalType": "contract IStrategy",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "strategyParams",
+          "outputs": [
+            {
+              "internalType": "contract IStrategy",
+              "name": "strategy",
+              "type": "address"
+            },
+            {
+              "internalType": "uint96",
+              "name": "multiplier",
+              "type": "uint96"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "strategyParamsByIndex",
+          "outputs": [
+            {
+              "internalType": "struct IStakeRegistry.StrategyParams",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "contract IStrategy",
+                  "name": "strategy",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "multiplier",
+                  "type": "uint96"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "strategyParamsLength",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "operatorId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "quorumNumbers",
+              "type": "bytes"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateOperatorStake",
+          "outputs": [
+            {
+              "internalType": "uint192",
+              "name": "",
+              "type": "uint192"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "quorumNumber",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "weightOfOperatorForQuorum",
+          "outputs": [
+            {
+              "internalType": "uint96",
+              "name": "",
+              "type": "uint96"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "addStrategies(uint8,(address,uint96)[])": {
+            "details": "Checks to make sure that the *same* strategy cannot be added multiple times (checks against both against existing and new strategies).This function has no check to make sure that the strategies for a single quorum have the same underlying asset. This is a concious choice, since a middleware may want, e.g., a stablecoin quorum that accepts USDC, USDT, DAI, etc. as underlying assets and trades them as \"equivalent\"."
+          },
+          "deregisterOperator(bytes32,bytes)": {
+            "details": "access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already deregistered         5) `quorumNumbers` is a subset of the quorumNumbers that the operator is registered for",
+            "params": {
+              "operatorId": "The id of the operator to deregister.",
+              "quorumNumbers": "The quorum numbers the operator is deregistering from, where each byte is an 8 bit integer quorumNumber."
+            }
+          },
+          "getCurrentStake(bytes32,uint8)": {
+            "details": "Function returns weight of **0** in the event that the operator has no stake history"
+          },
+          "getCurrentTotalStake(uint8)": {
+            "details": "Will revert if `_totalStakeHistory[quorumNumber]` is empty."
+          },
+          "getLatestStakeUpdate(bytes32,uint8)": {
+            "details": "Function returns an StakeUpdate struct with **every entry equal to 0** in the event that the operator has no stake history"
+          },
+          "getStakeAtBlockNumberAndIndex(uint8,uint32,bytes32,uint256)": {
+            "details": "Function will revert if `index` is out-of-bounds.",
+            "params": {
+              "blockNumber": "Block number to make sure the stake is from.",
+              "index": "Array index for lookup, within the dynamic array `operatorStakeHistory[operatorId][quorumNumber]`.",
+              "operatorId": "The id of the operator of interest.",
+              "quorumNumber": "The quorum number to get the stake for."
+            }
+          },
+          "getStakeHistory(bytes32,uint8)": {
+            "params": {
+              "operatorId": "The id of the operator of interest.",
+              "quorumNumber": "The quorum number to get the stake for."
+            }
+          },
+          "getStakeUpdateAtIndex(uint8,bytes32,uint256)": {
+            "details": "Function will revert if `index` is out-of-bounds.",
+            "params": {
+              "index": "Array index for lookup, within the dynamic array `operatorStakeHistory[operatorId][quorumNumber]`.",
+              "operatorId": "The id of the operator of interest.",
+              "quorumNumber": "The quorum number to get the stake for."
+            }
+          },
+          "getTotalStakeAtBlockNumberFromIndex(uint8,uint32,uint256)": {
+            "details": "Function will revert if `index` is out-of-bounds.",
+            "params": {
+              "blockNumber": "Block number to make sure the stake is from.",
+              "index": "Array index for lookup, within the dynamic array `_totalStakeHistory[quorumNumber]`.",
+              "quorumNumber": "The quorum number to get the stake for."
+            }
+          },
+          "getTotalStakeIndicesAtBlockNumber(uint32,bytes)": {
+            "details": "Function will revert if there are no indices for the given `blockNumber`",
+            "params": {
+              "blockNumber": "Block number to retrieve the stake indices from.",
+              "quorumNumbers": "The quorum numbers to get the stake indices for."
+            }
+          },
+          "getTotalStakeUpdateAtIndex(uint8,uint256)": {
+            "params": {
+              "index": "Array index for lookup, within the dynamic array `_totalStakeHistory[quorumNumber]`.",
+              "quorumNumber": "The quorum number to get the stake for."
+            }
+          },
+          "modifyStrategyParams(uint8,uint256[],uint96[])": {
+            "params": {
+              "newMultipliers": "are the new multipliers for the strategies",
+              "quorumNumber": "is the quorum number to which the strategies belong",
+              "strategyIndices": "are the indices of the strategies to change"
+            }
+          },
+          "registerOperator(address,bytes32,bytes)": {
+            "details": "access restricted to the RegistryCoordinatorPreconditions (these are assumed, not validated in this contract):         1) `quorumNumbers` has no duplicates         2) `quorumNumbers.length` != 0         3) `quorumNumbers` is ordered in ascending order         4) the operator is not already registered",
+            "params": {
+              "operator": "The address of the operator to register.",
+              "operatorId": "The id of the operator to register.",
+              "quorumNumbers": "The quorum numbers the operator is registering for, where each byte is an 8 bit integer quorumNumber."
+            },
+            "returns": {
+              "_0": "The operator's current stake for each quorum, and the total stake for each quorum"
+            }
+          },
+          "removeStrategies(uint8,uint256[])": {
+            "details": "higher indices should be *first* in the list of @param indicesToRemove, since otherwise the removal of lower index entries will cause a shift in the indices of the other strategies to remove"
+          },
+          "updateOperatorStake(address,bytes32,bytes)": {
+            "returns": {
+              "_0": "A bitmap of quorums where the operator no longer meets the minimum stake and should be deregistered."
+            }
+          },
+          "weightOfOperatorForQuorum(uint8,address)": {
+            "details": "reverts if the quorum does not exist"
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "MAX_WEIGHING_FUNCTION_LENGTH()": {
+            "notice": "Maximum length of dynamic arrays in the `strategyParams` mapping."
+          },
+          "WEIGHTING_DIVISOR()": {
+            "notice": "Constant used as a divisor in calculating weights."
+          },
+          "addStrategies(uint8,(address,uint96)[])": {
+            "notice": "Adds strategies and weights to the quorum"
+          },
+          "delegation()": {
+            "notice": "The address of the Delegation contract for EigenLayer."
+          },
+          "deregisterOperator(bytes32,bytes)": {
+            "notice": "Deregisters the operator with `operatorId` for the specified `quorumNumbers`."
+          },
+          "getCurrentStake(bytes32,uint8)": {
+            "notice": "Returns the most recent stake weight for the `operatorId` for quorum `quorumNumber`"
+          },
+          "getCurrentTotalStake(uint8)": {
+            "notice": "Returns the stake weight from the latest entry in `_totalStakeHistory` for quorum `quorumNumber`."
+          },
+          "getLatestStakeUpdate(bytes32,uint8)": {
+            "notice": "Returns the most recent stake weight for the `operatorId` for a certain quorum"
+          },
+          "getStakeAtBlockNumber(bytes32,uint8,uint32)": {
+            "notice": "Returns the stake of the operator for the provided `quorumNumber` at the given `blockNumber`"
+          },
+          "getStakeAtBlockNumberAndIndex(uint8,uint32,bytes32,uint256)": {
+            "notice": "Returns the stake weight corresponding to `operatorId` for quorum `quorumNumber`, at the `index`-th entry in the `operatorStakeHistory[operatorId][quorumNumber]` array if it was the operator's stake at `blockNumber`. Reverts otherwise."
+          },
+          "getStakeHistory(bytes32,uint8)": {
+            "notice": "Returns the entire `operatorStakeHistory[operatorId][quorumNumber]` array."
+          },
+          "getStakeHistoryLength(bytes32,uint8)": {
+            "notice": "Returns the length of an operator's stake history for the given quorum"
+          },
+          "getStakeUpdateAtIndex(uint8,bytes32,uint256)": {
+            "notice": "Returns the `index`-th entry in the `operatorStakeHistory[operatorId][quorumNumber]` array."
+          },
+          "getStakeUpdateIndexAtBlockNumber(bytes32,uint8,uint32)": {
+            "notice": "Returns the indices of the operator stakes for the provided `quorumNumber` at the given `blockNumber`"
+          },
+          "getTotalStakeAtBlockNumberFromIndex(uint8,uint32,uint256)": {
+            "notice": "Returns the total stake weight for quorum `quorumNumber`, at the `index`-th entry in the `_totalStakeHistory[quorumNumber]` array if it was the stake at `blockNumber`. Reverts otherwise."
+          },
+          "getTotalStakeHistoryLength(uint8)": {
+            "notice": "Returns the length of the total stake history for the given quorum"
+          },
+          "getTotalStakeIndicesAtBlockNumber(uint32,bytes)": {
+            "notice": "Returns the indices of the total stakes for the provided `quorumNumbers` at the given `blockNumber`"
+          },
+          "getTotalStakeUpdateAtIndex(uint8,uint256)": {
+            "notice": "Returns the `index`-th entry in the dynamic array of total stake, `_totalStakeHistory` for quorum `quorumNumber`."
+          },
+          "initializeQuorum(uint8,uint96,(address,uint96)[])": {
+            "notice": "Initialize a new quorum and push its first history update"
+          },
+          "minimumStakeForQuorum(uint8)": {
+            "notice": "In order to register for a quorum i, an operator must have at least `minimumStakeForQuorum[i]` evaluated by this contract's 'VoteWeigher' logic."
+          },
+          "modifyStrategyParams(uint8,uint256[],uint96[])": {
+            "notice": "Modifies the weights of existing strategies for a specific quorum"
+          },
+          "registerOperator(address,bytes32,bytes)": {
+            "notice": "Registers the `operator` with `operatorId` for the specified `quorumNumbers`."
+          },
+          "registryCoordinator()": {
+            "notice": "the coordinator contract that this registry is associated with"
+          },
+          "removeStrategies(uint8,uint256[])": {
+            "notice": "Remove strategies and their associated weights from the quorum's considered strategies"
+          },
+          "strategyParams(uint8,uint256)": {
+            "notice": "mapping from quorum number to the list of strategies considered and their corresponding multipliers for that specific quorum"
+          },
+          "strategyParamsByIndex(uint8,uint256)": {
+            "notice": "Returns the strategy and weight multiplier for the `index`'th strategy in the quorum `quorumNumber`"
+          },
+          "strategyParamsLength(uint8)": {
+            "notice": "Returns the length of the dynamic array stored in `strategyParams[quorumNumber]`."
+          },
+          "updateOperatorStake(address,bytes32,bytes)": {
+            "notice": "Called by the registry coordinator to update an operator's stake for one or more quorums. If the operator no longer has the minimum stake required for a quorum, they are added to the `quorumsToRemove`, which is returned to the registry coordinator"
+          },
+          "weightOfOperatorForQuorum(uint8,address)": {
+            "notice": "This function computes the total weight of the @param operator in the quorum @param quorumNumber."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin-upgrades-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/",
+        "@openzeppelin-upgrades/=lib/eigenlayer-middleware/lib/openzeppelin-contracts-upgradeable/",
+        "@openzeppelin-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/",
+        "@openzeppelin/=node_modules/@openzeppelin/",
+        "ds-test/=lib/eigenlayer-middleware/lib/ds-test/src/",
+        "eigenlayer-contracts/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/",
+        "eigenlayer-middleware/=lib/eigenlayer-middleware/",
+        "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "halmos-cheatcodes/=lib/openzeppelin-contracts-upgradeable/lib/halmos-cheatcodes/src/",
+        "openzeppelin-contracts-upgradeable-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/",
+        "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+        "openzeppelin-contracts-v4.9.0/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-v4.9.0/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "openzeppelin/=lib/eigenlayer-middleware/lib/eigenlayer-contracts/lib/openzeppelin-contracts-upgradeable-v4.9.0/contracts/",
+        "zeus-templates/=lib/zeus-templates/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/eigenlayer-middleware/src/StakeRegistry.sol": "StakeRegistry"
+      },
+      "evmVersion": "prague",
+      "libraries": {}
+    },
+    "sources": {
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IDelegationManager.sol": {
+        "keccak256": "0xe81ddde979612b77f32ff93d18118326304f8606671abc22b491d005aa4ca924",
+        "urls": [
+          "bzz-raw://0ade6ec99eaed94cee212880292abe32d24d2d7cd2babbc0d971dd2d8b8fc3e3",
+          "dweb:/ipfs/QmWs5JE1JfDB1KvrGU3XAhnopa9sdMwTGW6AQJPGQMvuaT"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IETHPOSDeposit.sol": {
+        "keccak256": "0x2e60e5f4b0da0a0a4e2a07c63141120998559970c21deac743ea0c64a60a880c",
+        "urls": [
+          "bzz-raw://e635c346bde5b7ade9bcf35bc733081520cb86015be4fbc6e761e6e9482c4c91",
+          "dweb:/ipfs/QmRoeazEnbFn5SPSWAkoFK2gSN9DMp3hJAnrLWuL2sKutz"
+        ],
+        "license": "CC0-1.0"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPod.sol": {
+        "keccak256": "0xdb3ff2be72047b89ead3fc98b52cdd514b243ed78cee7f6a48d672bc4cf0fd34",
+        "urls": [
+          "bzz-raw://d16a23a041559f6aaee6dc8342208beb3c3e98b1c23e46ab334243927f4ecc0b",
+          "dweb:/ipfs/QmVbyRYgm6zHMFqmZXgsGhHAUxtmvyioc58VuMoJ9x8Eaj"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IEigenPodManager.sol": {
+        "keccak256": "0x37cf51dde7316da0b95f1870504f2c1e5ed5c90faf7efec17dae3ba3d36cba93",
+        "urls": [
+          "bzz-raw://03c4775b648612314d81278095cf17ad4f15fb850307eaf81d986107d5f664fc",
+          "dweb:/ipfs/QmW5vuanTbTFz1kWUUAPBWLu4NhjwrMuye2sT272rC2X7d"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IPausable.sol": {
+        "keccak256": "0x33a935182f77cfd508fc57ec8e45afc8dc3748e1e9b764d36bf90ae6466f257b",
+        "urls": [
+          "bzz-raw://d3981b5bbf435cda04e2ed2f348f886ebf1500c18dd4bbf67b1f1bc0272e2d3f",
+          "dweb:/ipfs/QmYHDzQx29ataM2ejRCXFcPxaPdxWqX8v7uwUAYoG9572w"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IPauserRegistry.sol": {
+        "keccak256": "0xffafae142d5337a5c204519e8f82fe3a5fae137286ebf597fa50699cf12c2474",
+        "urls": [
+          "bzz-raw://b577a12f7788095b230fd069b36ba9b3cdb376a0b7c3d8ae71588e5bf0c2f574",
+          "dweb:/ipfs/QmXd1cDzYpxecyFEwowLiBKKjzRHgV8cs1qvLwypdEbVYy"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/ISignatureUtils.sol": {
+        "keccak256": "0x3b62ea6ee304cbab976ff206bcf55268f18a3291708021557f93f899f99862e4",
+        "urls": [
+          "bzz-raw://b59a96fbf9940a7795d9a5fcb9e03939a87216317fb67872b7017285bf7eb49b",
+          "dweb:/ipfs/QmdiH5AfYBvuTpzxTqfhorLG25t2dhSTKWh1cvBbYxGDJH"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/ISlasher.sol": {
+        "keccak256": "0x7655919fae553e75ff196b31c9244079ff222e34ff43f36c41429ee826cfad9b",
+        "urls": [
+          "bzz-raw://d5d35a784a9511b351826cb70b00d92c3d374474f256b01af05cd1acb1ce6c10",
+          "dweb:/ipfs/QmZog3BrpLa213wj5qxVYMQv7jdrkf5AAufLCVaMZsL7Gs"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IStrategy.sol": {
+        "keccak256": "0x816aaa02d489535da4f4103a5df5444307487d3121eda4be0a1bd8e7c0f7cdf9",
+        "urls": [
+          "bzz-raw://54f58369f286eaa6d2ab3c6b8250774b1de46c9935d4af09518bbdeec08a906e",
+          "dweb:/ipfs/QmZPmSTAu4fmR7TeBijDTYNM2bsv5DHh9H8gtyP7Ap1DwE"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/interfaces/IStrategyManager.sol": {
+        "keccak256": "0xfb25e5f240254ed71f62b5ec622a14846c10861d77cca55c8f838a28b455ea87",
+        "urls": [
+          "bzz-raw://93744359e00d692cbdfbbfd1adf4bdaf6b784ef9d3c804e161acdbbec1c5d0b1",
+          "dweb:/ipfs/QmVX7X9bhaeZzMr4WLx1PmVCv4GTmtjWC68FxokTPAPCuo"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/libraries/BeaconChainProofs.sol": {
+        "keccak256": "0x0bb92e390e73d450282108dd84f1cf7922de6e1a7e810ad5351b8708785ba659",
+        "urls": [
+          "bzz-raw://b03baa849b9e0b17ce4f5e35905b73ec83429e464ec3dbe229574333261ea460",
+          "dweb:/ipfs/Qmd1FviY3CbqBzpYoTxCeEpS2R53vT9MijZ6qv71S2QEzo"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/libraries/Endian.sol": {
+        "keccak256": "0x098850d09b65bb7dbad5ea0513eacb77f2701e135d9727b3627e13f303b2ff41",
+        "urls": [
+          "bzz-raw://3519f5a415b99d196f3cecef3f48ea116f2f3a2b381efcc96a5d7eff6934c2f3",
+          "dweb:/ipfs/QmbCcFWgmFjXeZrvfEFQ17AgEueW9wS17HhvjkxMi5x3H8"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/lib/eigenlayer-contracts/src/contracts/libraries/Merkle.sol": {
+        "keccak256": "0x6e82a559dc583bf4b15867654e82f3aca9a862589209abac1c4356142a3b2211",
+        "urls": [
+          "bzz-raw://8a1a4819b95c7da710e11efb279bd4b596139dc12c96c45a366d8e1893018eb1",
+          "dweb:/ipfs/QmZBHPLKoYepZmA7AL9ECJFkbBhujSNvvc8pJmNC9MnRni"
+        ],
+        "license": "MIT"
+      },
+      "lib/eigenlayer-middleware/src/StakeRegistry.sol": {
+        "keccak256": "0x5b0d17f02374a0a57380fac9cab9caf61db584b2ba3b2bc4c895f966f8bcc046",
+        "urls": [
+          "bzz-raw://3983ffc83cb50cf5ea6e4c690a03c68da17119d2303c684246ac8e9ae08a98e3",
+          "dweb:/ipfs/QmeQHyxJYa8om6NxUDREhkG7pXMdayBRZtWbTrR9DKSHHN"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/src/StakeRegistryStorage.sol": {
+        "keccak256": "0x24c60f20f5275f2d18ea6ad390e42d003ef4a3508fcfc43d971a94905857901e",
+        "urls": [
+          "bzz-raw://9b1e0414bf03a43a28ee6e8d46484744b01f3ef4273d4b2cf11d51ffea280e41",
+          "dweb:/ipfs/QmbbEvx2QswHnpwTeD7dqrrh93yvVJyqjrDNYTqmggehTD"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/src/interfaces/IBLSApkRegistry.sol": {
+        "keccak256": "0x13d6e05624af5da6e8171e4b4541109d65fa3719e92f2608f3bf740944ba8f44",
+        "urls": [
+          "bzz-raw://db268f1418341ab8145d1f9c4de5dd7592288b5024f317f227a8bca64c4ddc2e",
+          "dweb:/ipfs/QmRGHtHj5BE38BAXFB5dWZvrAawAz1LGVdMtL13tvn95wE"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/src/interfaces/IIndexRegistry.sol": {
+        "keccak256": "0x9273b91572ec3fdb4c1d7a712c4d8725adf31d5ac3f062f279aa1dfd3b0436ab",
+        "urls": [
+          "bzz-raw://cab02cf821685c93bdf1b62046b8c71c652dcd7d5c0226318e2fd071bace3ee2",
+          "dweb:/ipfs/QmTfUP1VCJW8TPU3GYhm1x9WDXKMibbDVwmg8wBxNBU5N5"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/src/interfaces/IRegistry.sol": {
+        "keccak256": "0x51426a17fb7e54bd3720e2890104e97a8559a13ff248b3d6b840916751c143d3",
+        "urls": [
+          "bzz-raw://01f91289e6100d528cb8b318cb14ff22a0bc52882c9d4db41585e030cc9ddc25",
+          "dweb:/ipfs/Qmb22nqGrsrtNovHRwbMCvDHGENuxAgrWu3Db4p7Er2MHY"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/src/interfaces/IRegistryCoordinator.sol": {
+        "keccak256": "0xd70b3a401a0204235ebac75f1fb14bb409f26f1cb1b8d59085a1bfe7137b75ae",
+        "urls": [
+          "bzz-raw://0100864ae58973b26c7f07853bd5f81d01f5c912a39e75fd325748f779626496",
+          "dweb:/ipfs/QmRzdiYeNfKdooaFBGHGYsZ8mN8z79EDuhMfnRj2xrdqPk"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/src/interfaces/ISocketRegistry.sol": {
+        "keccak256": "0x6c7c92f1daa9cb5d9424ea14d373e9a66e1322d083d994f82038272d76aae527",
+        "urls": [
+          "bzz-raw://38bedebda68f51312f90174dbf680b4584fa0eb462452cd98eebac499ca875fc",
+          "dweb:/ipfs/QmbdwVnE42EcAkV4dUPBnkV89Jytb5Y5cV3DkvSsjLasEb"
+        ],
+        "license": "MIT"
+      },
+      "lib/eigenlayer-middleware/src/interfaces/IStakeRegistry.sol": {
+        "keccak256": "0xb83920fda2546a4428a2114b7099f46449c3f5e0477ac49145ffac0ccede7175",
+        "urls": [
+          "bzz-raw://99db2479c3d959ea4e23120cc7b73a2ad48d599348f5311ad385a99a91984ff0",
+          "dweb:/ipfs/Qma9kNLndk6FJSBure46f54tzcZL4zbgeeWCTkxBf9iq6v"
+        ],
+        "license": "BUSL-1.1"
+      },
+      "lib/eigenlayer-middleware/src/libraries/BN254.sol": {
+        "keccak256": "0x5d0d87e77625c1ba945d3e835431ca5d02cd6b5ec684b34979cf0a6804e34620",
+        "urls": [
+          "bzz-raw://700341f6f902d993832b5db975a4ce0cec484ad2b7569d3a6b9cddaf00e9f1a0",
+          "dweb:/ipfs/QmUybAB2ssPVt7ABmKytKCJ9oGwnUNeoS5PBvimh8mJsSZ"
+        ],
+        "license": "MIT"
+      },
+      "lib/eigenlayer-middleware/src/libraries/BitmapUtils.sol": {
+        "keccak256": "0xc59388a68fd166d70c9742fdf7b79b5bc7932aed50bb889ebbe775f2885081ee",
+        "urls": [
+          "bzz-raw://3b9c7159b8f832f5ff17e5824421d1a0336129f449f8ae4b3d184c8507e8147e",
+          "dweb:/ipfs/QmaPrPa8n4PAa6ZabCg3WG5ZASNSX2j61BuZLxV5paVccV"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/proxy/beacon/IBeacon.sol": {
+        "keccak256": "0xd50a3421ac379ccb1be435fa646d66a65c986b4924f0849839f08692f39dde61",
+        "urls": [
+          "bzz-raw://ada1e030c0231db8d143b44ce92b4d1158eedb087880cad6d8cc7bd7ebe7b354",
+          "dweb:/ipfs/QmWZ2NHZweRpz1U9GF6R1h65ri76dnX7fNxLBeM2t5N5Ce"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+        "keccak256": "0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0",
+        "urls": [
+          "bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1",
+          "dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "id": 56
+}

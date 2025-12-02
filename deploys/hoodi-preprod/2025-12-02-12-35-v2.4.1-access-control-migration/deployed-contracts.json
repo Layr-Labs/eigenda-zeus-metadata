@@ -1,0 +1,184 @@
+{
+  "contracts": [
+    {
+      "address": "0xAAE6298CB113276a863F16DF98CE42840931045c",
+      "contract": "AccessControl_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0xdb2e9affae6ce987aaf41bc62c604cbd572956f2709766fa0c8864beb478d2c3",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xA105C497EeED6Bc0Ccde3bb09adA1bA7F19eDc1B",
+      "contract": "BlsApkRegistry_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x548c572aaa417eb64f07ad8351481deef92704f27fb6dd8adc902516fde68f68",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xD08F534e6cAB7958A549B2EC27c0d24d876F0B73",
+      "contract": "CertVerifierRouter_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x9eb5ad3b51c519d06d3ac9f4d4108e2962037c475a50776f70c7461d59d38c40",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xe4D2681Ebe00a82aA973CDb47248CdD97DcF0AB6",
+      "contract": "Directory_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0xe3a5fb6b092cabd4255b93b6afdfff29e12414a1c24a8a727bb348e8f931d9d7",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xF83165bD441E61A8442d1D58c4906b100438d2Cd",
+      "contract": "DisperserRegistry_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0xf444555b1da57e5c07c7b2b6f9d4977ec192c4cad48ac60882e106eb2fdd4804",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xfFDfbAad1f5d5b6d0A19064896F4316E644d627c",
+      "contract": "IndexRegistry_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0xd697bb215da56618e0efdfd1c7a84f8e0879892cdd1db9dcadfaf076bb9a06b0",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0x9cf811F4607D0918c83F6623c2B54D09d23FFBdF",
+      "contract": "OperatorStateRetriever_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0xb5d78dc417f035607cacd8908a97967224c89e89dd234f14e69bf56f8905b5ff",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xA4493F7f0F1598AacaAF5eBd978f1d2227ca2c63",
+      "contract": "PauserRegistry_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x87e73c79fddea86c55c333dde385b82d3b61b045b37aab77ccd8e182abf09c46",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xa4328f0cAde5AE942f8d6EB89DEc228Ad53b7A00",
+      "contract": "PaymentVault_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0xddbc79f26e22dbe7f6d4406b192556fbef4c7c04d62a0db504d2dbc04f2d12aa",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xB6dDb77eb5dc2CFB8966ac46192bd1397698E6aE",
+      "contract": "RegistryCoordinator_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x0b78939059d26e6ff2d1ea51cb4edfc510d67162d3dbd9d576de942f0b67fce0",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xf7D33A6d313Ed8a0649c243E0c6539FAf8668aDC",
+      "contract": "RelayRegistry_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x98928bc68aba3fc0bbf12aa84dc3677ed83e405f2305f1e4043103f4d18ba4b9",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0x435f0C7fC1AD064A0C84f898AC7E4E2bdF0fE195",
+      "contract": "ServiceManager_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x559d672062eb33ae4f29b238cf4d53454b85c9199c6d905b75eb1828bea122d6",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0xbb2e69B96Dc6d5E02B0e026D8DE47F46af1185A6",
+      "contract": "SocketRegistry_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x69d42cbddb5964210492649319662ec20fdec568d44b0f2baca68afb5f66e270",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0x6c70568028036EA6bBa559B970737E5C92D4Ab52",
+      "contract": "StakeRegistry_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x4daa6978fb5c20b52bfdc4eeffa6ac5358b0c0055127b7e2fbd1e51475e7ef52",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    },
+    {
+      "address": "0x707DFBB85CC663F6dA6658EacD541730bf1A8C2C",
+      "contract": "ThresholdRegistry_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x94278e511c515edd51a85604ad60a5eb4d98434b0074a0272f30e18b2786f5e5",
+      "lastUpdatedIn": {
+        "name": "2025-12-02-12-35-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    }
+  ]
+}
