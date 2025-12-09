@@ -259,16 +259,6 @@
           "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
         }
       },
-      "EjectionManager_Proxy": {
-        "singleton": true,
-        "address": "0xe397F202D271d73EAB6444d634F68278B6274830",
-        "deployedBytecodeHash": "0x",
-        "lastUpdatedIn": {
-          "name": "",
-          "phase": "",
-          "segment": 0
-        }
-      },
       "EjectionManager_Impl": {
         "address": "0x868d2dC42C84Acb8185772Ca0Fb4D56D2Ba80549",
         "contract": "EjectionManager_Impl",
