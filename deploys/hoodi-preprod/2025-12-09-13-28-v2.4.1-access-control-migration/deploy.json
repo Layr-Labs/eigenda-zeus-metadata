@@ -1,7 +1,7 @@
 {
   "name": "2025-12-09-13-28-v2.4.1-access-control-migration",
   "env": "hoodi-preprod",
-  "segmentId": 0,
+  "segmentId": 1,
   "segments": [
     {
       "type": "eoa",
@@ -26,12 +26,12 @@
           "singleton": true
         }
       ],
-      "confirmed": false
+      "confirmed": true
     }
   ],
   "upgrade": "v2.4.1-access-control-migration",
   "upgradePath": "script/releases/v2.4.1-access-control-migration",
-  "phase": "eoa_wait_confirm",
+  "phase": "eoa_validate",
   "chainId": 560048,
   "startTime": "Tue Dec 09 2025 13:28:46 GMT-0500 (Eastern Standard Time)",
   "startTimestamp": 1765304926.43
