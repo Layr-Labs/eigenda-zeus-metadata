@@ -1,0 +1,16 @@
+{
+  "contracts": [
+    {
+      "address": "0x7Bd0C3C9B30B7B574445C7EFa24D7156993EF521",
+      "contract": "EjectionManager_Impl",
+      "singleton": true,
+      "deployedBytecodeHash": "0x6e4116be2cd18371bdec3bb668673ae6ebc252efcc67d5e5402772c58d1008e7",
+      "lastUpdatedIn": {
+        "name": "2025-12-09-13-28-v2.4.1-access-control-migration",
+        "phase": "eoa_wait_confirm",
+        "segment": 0,
+        "signer": "0x72447Fea3354F525263F36544A548982e64F230C"
+      }
+    }
+  ]
+}
